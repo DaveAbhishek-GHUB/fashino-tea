@@ -1,0 +1,38 @@
+[
+    {
+        "product_id": 1,
+        "product_name": "Winter Tales Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Winter_20Tales_c017b624-8c36-4c52-928e-7317bc4bf238.jpg?v=1729134179&width=550",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Winter_20Tales_c017b624-8c36-4c52-928e-7317bc4bf238.jpg?v=1729134179&width=283",
+        "product_category": "Gift Set",
+        "product_price": "3849.73",
+        "product": "Surprise your loved ones with cozy tea moments on cold days or treat yourself. Celebrate all the wonderful moods of winter with three tea blends:"
+    },
+    {
+        "product_id": 2,
+        "product_name": "Winter Snow",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Freisteller_20WINTER_20SNOW_10.webp?v=1729134153&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/PAT_RGB_240815_Paper_Tea_24_Silent_Night_1880_20_1_d8f3f1f2-972d-42b3-bedb-4bbeb8c191ca.jpg?v=1729134152&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1500.3",
+        "product": "Close your eyes, take in the tranquility of the snowy surroundings and enjoy every sip to the fullest. For this winter tea dream, we blended fine white tea together with cinnamon, cardamom and apple."
+    },
+    {
+        "product_id": 3,
+        "product_name": "Winter Glow",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Freisteller_20WINTER_20GLOW_10.webp?v=1729134172&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/PAT_RGB_240815_Paper_Tea_24_Silent_Night_1880_20_1_8b4fd4b7-e124-4e1b-814b-8dc98072797f.jpg?v=1729134171&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1374.9",
+        "product": "ClPicture a walk down snowy streets, fairy lights twinkling in the windows, and the scent of cinnamon in the air. This naturally caffeine-free organic fruit tea blend, made with juicy elderberries, rose petals, hibiscus, and your favorite Christmas spices, will take you on an aromatic journey through a holiday market."
+    },
+    {
+        "product_id": 4,
+        "product_name": "Winter Light",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Freisteller_20WINTER_20LIGHT_10_a6d5eb6a-8a2a-455b-855b-c1d8e83fc739.webp?v=1729134162&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/PAT_RGB_240815_Paper_Tea_24_Silent_Night_1880_20_1.jpg?v=1729134162&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1374.9",
+        "product": "A black tea blend that’s as delightful as freshly baked holiday cookies. Winter spices enhance the sweet and malty notes of the black tea and real cocoa beans add the finishing touch, inspired by our favorite cookie recipes."
+    }
+]
