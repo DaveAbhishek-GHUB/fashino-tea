@@ -20,7 +20,7 @@ function Storeclosetoyou() {
                 <div className="Storeimage w-full sm:w-[50vw] h-[60vw] sm:h-full flex justify-center items-center">
                     <div className="inner-image-wrapper w-[90%] sm:w-[85%] md:w-[80%] h-[90%] sm:h-[85%] md:h-[80%]">
                         <img 
-                            className='w-full h-full object-cover sm:object-contain' 
+                            className='w-full h-full object-cover sm:object-cover rounded-md' 
                             src="https://images.unsplash.com/photo-1531058240690-006c446962d8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                             alt="Store interior" 
                         />

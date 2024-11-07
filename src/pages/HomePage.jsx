@@ -3,11 +3,12 @@
 import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
-import StandardBanner from "../utils/standardbanner";
+import StandardBanner from "../utils/Standardbanner";
 import Storeclosetoyou from "../utils/Storeclosetoyou";
 import Welovewhatwedosection from "../utils/Welovewhatwedosection";
 import Yourbenefits from "../utils/Yourbenefits";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const [cozymomentdata, setcozymomentdata] = useState([]);
@@ -65,106 +66,132 @@ function HomePage() {
 
         {/* Category Section */}
         <div className="category-section-wrapper w-full h-[35vh] sm:h-[30vh] md:h-[35vh] flex gap-4 sm:gap-6 md:gap-10 items-center px-3 sm:px-4 md:px-5 overflow-x-auto whitespace-nowrap bg-[#EEEEEE]">
-          <div className="advent-calendars w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-            <img
-              className="w-full h-full rounded-full"
-              src="https://www.paperandtea.com/cdn/shop/files/UNICORN_collection_page_1.jpg?v=1725981579&width=200"
-              alt="..."
-            />
-            <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-              Advent-calendars
-            </span>
-          </div>
-          <div className="tea-chocolate w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-            <img
-              className="w-full h-full rounded-full"
-              src="https://www.paperandtea.com/cdn/shop/files/Collection_Circle.jpg?v=1727185858&width=200"
-              alt="..."
-            />
-            <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-              Tea-chocolate
-            </span>
-          </div>
-          <div className="tea-matcha w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-            <img
-              className="w-full h-full rounded-full"
-              src="https://www.paperandtea.com/cdn/shop/files/icon-matchatee.jpg?v=1721139547&width=200"
-              alt="..."
-            />
-            <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-              Matcha
-            </span>
-          </div>
-          <div className="starter-set w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-            <img
-              className="w-full h-full rounded-full"
-              src="https://www.paperandtea.com/cdn/shop/files/icon-startersets-1.jpg?v=1721139547&width=200"
-              alt="..."
-            />
-            <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-              Starter-set
-            </span>
-          </div>
-          <div className="tea-blends w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-            <img
-              className="w-full h-full rounded-full"
-              src="https://www.paperandtea.com/cdn/shop/files/icon-teemischungen.jpg?v=1721139547&width=200"
-              alt="..."
-            />
-            <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-              Tea-blends
-            </span>
-          </div>
-          <div className="winter-teas w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-            <img
-              className="w-full h-full rounded-full"
-              src="https://www.paperandtea.com/cdn/shop/files/Bilder_Startseite_Winter_Teas.jpg?v=1729069408&width=200"
-              alt="..."
-            />
-            <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-              Winter-teas
-            </span>
-          </div>
-          <div className="green-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-            <img
-              className="w-full h-full rounded-full"
-              src="https://www.paperandtea.com/cdn/shop/files/icon-gruenertee.jpg?v=1721139547&width=200"
-              alt="..."
-            />
-            <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-              Green-tea
-            </span>
-          </div>
-          <div className="black-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-            <img
-              className="w-full h-full rounded-full"
-              src="https://www.paperandtea.com/cdn/shop/files/icon-schwarzertee.jpg?v=1721139547&width=200"
-              alt="..."
-            />
-            <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-              Black-tea
-            </span>
-          </div>
-          <div className="herbal-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-            <img
-              className="w-full h-full rounded-full"
-              src="https://www.paperandtea.com/cdn/shop/files/icon-kraeutertee.jpg?v=1721139547&width=200"
-              alt="..."
-            />
-            <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-              Herbal-tea
-            </span>
-          </div>
-          <div className="oolong-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-            <img
-              className="w-full h-full rounded-full"
-              src="https://www.paperandtea.com/cdn/shop/files/icon-oolong.jpg?v=1721139547&width=200"
-              alt="..."
-            />
-            <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-              Oolong-tea
-            </span>
-          </div>
+          {/* adventcalendars */}
+          <Link to="/Adventcalendar">
+            <div className="advent-calendars w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <img
+                className="w-full h-full rounded-full"
+                src="https://www.paperandtea.com/cdn/shop/files/UNICORN_collection_page_1.jpg?v=1725981579&width=200"
+                alt="..."
+              />
+              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                Advent-calendars
+              </span>
+            </div>
+          </Link>
+
+          {/* teachocolate */}
+          <Link to="/teachocolate">
+            <div className="tea-chocolate w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <img
+                className="w-full h-full rounded-full"
+                src="https://www.paperandtea.com/cdn/shop/files/Collection_Circle.jpg?v=1727185858&width=200"
+                alt="..."
+              />
+              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                Tea-chocolate
+              </span>
+            </div>
+          </Link>
+
+          {/* matcha */}
+          <Link to="/matcha">
+            <div className="tea-matcha w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <img
+                className="w-full h-full rounded-full"
+                src="https://www.paperandtea.com/cdn/shop/files/icon-matchatee.jpg?v=1721139547&width=200"
+                alt="..."
+              />
+              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                Matcha
+              </span>
+            </div>
+          </Link>
+
+          {/* tea-blends */}
+          <Link to="/teablends">
+            <div className="tea-blends w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <img
+                className="w-full h-full rounded-full"
+                src="https://www.paperandtea.com/cdn/shop/files/icon-teemischungen.jpg?v=1721139547&width=200"
+                alt="..."
+              />
+              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                Tea-blends
+              </span>
+            </div>
+          </Link>
+
+          {/* winter-teas */}
+          <Link to="/wintertea">
+            <div className="winter-teas w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <img
+                className="w-full h-full rounded-full"
+                src="https://www.paperandtea.com/cdn/shop/files/Bilder_Startseite_Winter_Teas.jpg?v=1729069408&width=200"
+                alt="..."
+              />
+              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                Winter-teas
+              </span>
+            </div>
+          </Link>
+
+          {/* Green Tea */}
+          <Link to="/greentea">
+            <div className="green-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <img
+                className="w-full h-full rounded-full"
+                src="https://www.paperandtea.com/cdn/shop/files/icon-gruenertee.jpg?v=1721139547&width=200"
+                alt="..."
+              />
+              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                Green-tea
+              </span>
+            </div>
+          </Link>
+
+          {/* Black Tea */}
+          <Link to="/blacktea">
+            <div className="black-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <img
+                className="w-full h-full rounded-full"
+                src="https://www.paperandtea.com/cdn/shop/files/icon-schwarzertee.jpg?v=1721139547&width=200"
+                alt="..."
+              />
+              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                Black-tea
+              </span>
+            </div>
+          </Link>
+
+          {/* Herbal Tea */}
+          <Link to="herbaltea">
+            <div className="herbal-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <img
+                className="w-full h-full rounded-full"
+                src="https://www.paperandtea.com/cdn/shop/files/icon-kraeutertee.jpg?v=1721139547&width=200"
+                alt="..."
+              />
+              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                Herbal-tea
+              </span>
+            </div>
+          </Link>
+
+          {/* Oolong Tea */}
+
+          <Link to="/oolongtea">
+            <div className="oolong-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <img
+                className="w-full h-full rounded-full"
+                src="https://www.paperandtea.com/cdn/shop/files/icon-oolong.jpg?v=1721139547&width=200"
+                alt="..."
+              />
+              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                Oolong-tea
+              </span>
+            </div>
+          </Link>
         </div>
 
         {/* Cozy moments */}
@@ -218,56 +245,56 @@ function HomePage() {
           </div>
         </div>
 
-{/* Advent calendars 2024 */}
-<div className="Advent-calendars-section-wrapper w-full min-h-screen">
-  <div className="heading-wrapper w-full h-auto px-4 sm:px-8 md:px-10">
-    <h1 className="font-serif text-[6vw] sm:text-[5vw] md:text-[4vw]">
-      Advent calendars 2024
-    </h1>
-    <span className="block text-[2.5vw] sm:text-[2vw] md:text-[1.5vw] mt-2">
-      Choose the perfect companion for the festive season
-    </span>
-  </div>
-
-  <div className="product-wrapper w-full h-auto flex flex-wrap sm:flex-nowrap gap-4 sm:gap-3 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
-    {adventcalendars.length > 0 ? (
-      adventcalendars.map((adventcalendars, index) => (
-        <div
-          key={index}
-          className="product w-[100vw] sm:w-[30vw] md:w-[25vw] h-[65vw] sm:h-[50vw] md:h-[40vw]"
-        >
-          <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
-            <img
-              className="w-full h-full object-contain sm:object-cover"
-              src={adventcalendars.product_image}
-              alt={adventcalendars.product_name}
-            />
+        {/* Advent calendars 2024 */}
+        <div className="Advent-calendars-section-wrapper w-full min-h-screen">
+          <div className="heading-wrapper w-full h-auto px-4 sm:px-8 md:px-10">
+            <h1 className="font-serif text-[6vw] sm:text-[5vw] md:text-[4vw]">
+              Advent calendars 2024
+            </h1>
+            <span className="block text-[2.5vw] sm:text-[2vw] md:text-[1.5vw] mt-2">
+              Choose the perfect companion for the festive season
+            </span>
           </div>
-          <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
-            <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686]">
-              Gift Set
-            </span>
-            <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans">
-              {adventcalendars.product_name}
-            </span>
-            <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold">
-              ₹ {adventcalendars.product_price}
-            </span>
+
+          <div className="product-wrapper w-full h-auto flex flex-wrap sm:flex-nowrap gap-4 sm:gap-3 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
+            {adventcalendars.length > 0 ? (
+              adventcalendars.map((adventcalendars, index) => (
+                <div
+                  key={index}
+                  className="product w-[100vw] sm:w-[30vw] md:w-[25vw] h-[65vw] sm:h-[50vw] md:h-[40vw]"
+                >
+                  <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
+                    <img
+                      className="w-full h-full object-contain sm:object-cover"
+                      src={adventcalendars.product_image}
+                      alt={adventcalendars.product_name}
+                    />
+                  </div>
+                  <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
+                    <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686]">
+                      Gift Set
+                    </span>
+                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans">
+                      {adventcalendars.product_name}
+                    </span>
+                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold">
+                      ₹ {adventcalendars.product_price}
+                    </span>
+                  </div>
+                </div>
+              ))
+            ) : (
+              <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-red-500">
+                Fetch Issue!
+              </span>
+            )}
+          </div>
+          <div className="button-wrapper w-full flex justify-center items-center mt-8 mb-10">
+            <button className="py-2 sm:py-2.5 md:py-3 px-6 sm:px-8 md:px-10 border-black border-[1px] font-sans text-[4vw] sm:text-[1.5vw] md:text-[1.2vw]">
+              Discover all
+            </button>
           </div>
         </div>
-      ))
-    ) : (
-      <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-red-500">
-        Fetch Issue!
-      </span>
-    )}
-  </div>
-  <div className="button-wrapper w-full flex justify-center items-center mt-8 mb-10">
-    <button className="py-2 sm:py-2.5 md:py-3 px-6 sm:px-8 md:px-10 border-black border-[1px] font-sans text-[4vw] sm:text-[1.5vw] md:text-[1.2vw]">
-      Discover all
-    </button>
-  </div>
-</div>
 
         {/* StandardBanner */}
         <StandardBanner />

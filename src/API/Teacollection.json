@@ -1,0 +1,470 @@
+[
+    {
+        "product_id": 1,
+        "product_name": "Perfect Day",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Perfect_20Day_20N719_10987_10_5d31c0c8-1afa-4349-8422-3b7d62b5c43d.png?v=1712072281&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-perfect_day_n_719_1.jpg?v=1712072281&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product": "An organic blend of white and green tea with apples and peach flavour"
+    },
+    {
+        "product_id": 2,
+        "product_name": "Brave New Earl",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Brave_20New_20Earl_20N711_10889_10.png?v=1708962823&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/webBraveNewEarlCupLeavesCaddy.jpg?v=1708962823&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product": "An organic Earl Grey tea with an elegant twist of juniper"
+    },
+    {
+        "product_id": 3,
+        "product_name": "Winter Tales Variety",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Freisteller_20winter_20tales_20Variety_15.webp?v=1730117066&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/PaperTea_09_202413261_0e885c9b-7fd6-4fba-a769-a9f4ee53f370.jpg?v=1730117066&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product": "Tasting box with three delicious winter teas for cozy breaks"
+    },
+    {
+        "product_id": 4,
+        "product_name": "Pink Mandarin",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/PINK_20MANDARIN_freisteller.webp?v=1730260948&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/PaperTea_09_202413695.jpg?v=1730260949&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product": "Organic black tea mingles with the vibrant aroma of tart mandarin"
+    },
+    {
+        "product_id": 5,
+        "product_name": "Minty Green",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/MINTY_20GREEN_Freisteller.webp?v=1730260967&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/PaperTea_09_202413703_d258e765-bdfb-40df-ab28-39b38bd5ab4e.jpg?v=1730260967&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product": "Organic Sencha green tea meets refreshing spearmint"
+    },
+    {
+        "product_id": 6,
+        "product_name": "Hariman Classic Chai",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Hariman_20Classic_20Chai_20N718_10980_10_5b683eca-9774-4e27-a99c-ade7bf1c05f1.png?v=1712071876&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/webHarimanClassicChaiCupLeavesCaddy.jpg?v=1712071877&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product": "An organic chai made of malty black tea and spices"
+    },
+    {
+        "product_id": 7,
+        "product_name": "Bollywood",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Bollywood_20N724_11921_10.png?v=1715184880&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/dscf2724web.jpg?v=1715184880&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product": "Organic green chai blend with mango, cool spearmint and exotic spices"
+    },
+    {
+        "product_id": 8,
+        "product_name": "Mint Julep",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Mint_20Julep_20N715_10959_10_673fec07-7b03-4863-a01a-853a8bcea146.png?v=1712072174&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/webMintJulepCupLeavesCaddy.jpg?v=1712072174&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product": "An organic blend of green tea, peppermint and lively zing of orange"
+    },
+    {
+        "product_id": 9,
+        "product_name": "Unicorn's Collection Advent Calendar 2024",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Unicorn-Selection_Product-Card_02_2000x2000_0d000871-a0ef-46f6-833a-d052c08803fa.jpg?v=1725937391&width=811",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Unicorn-Selection_Product-Card_03_2000x2000_65c73921-7d42-4ee9-8030-26980d413389.jpg?v=1725937392&width=811",
+        "product_category": "Advent Calendar",
+        "product_price": "3,203.17",
+        "product": "Advent calendar with organic tea blends in cotton tea bags & poster"
+    },
+    {
+        "product_id": 10,
+        "product_name": "Winter Harmony Advent Calendar 2024",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/WINTER_20HARMONY_20SIDE_20_1_26dd2898-8900-4828-be83-ad8c401179d4.webp?v=1725937407&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Winter-Harmony_Product-Card_03_2000x2000_e9f95de7-8549-4318-be70-c203795addce.jpg?v=1725937407&width=811",
+        "product_category": "Advent Calendar",
+        "product_price": "4,118.36",
+        "product": "Advent calendar with 24 loose pure teas in sachets & design poster"
+    },
+    {
+        "product_id": 11,
+        "product_name": "Tea for Tomorrow Advent Calendar 2024",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/gmund_green_innovation_award_2024_9_20_1_20_1_e64e0ed7-c161-4957-a101-915dcef342f4.webp?v=1730191945&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Tea-for-Tomorrow_Product-Card_04_2000x2000_e2f2d05f-5ef0-4187-97df-109181f4ffd6.jpg?v=1730191945&width=811",
+        "product_category": "Advent Calendar",
+        "product_price": "27,455.76",
+        "product": "Sustainable Advent Calendar with exclusive teas & chocolates"
+    },
+    {
+        "product_id": 12,
+        "product_name": "Oolong Secrets Advent Calendar 2024",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/OOLONG_20SECRETS_SET_20_1_20_1.webp?v=1728561568&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/PaperTea_10_202414202_824e8d10-35f0-45b2-a3f1-39546abcb33f.jpg?v=1728561568&width=811",
+        "product_category": "Advent Calendar",
+        "product_price": "54,911.51",
+        "product": "Luxury calendar with exclusive oolong tea, gaiwan set & tea chocolate"
+    },  
+    {
+        "product_id": 13,
+        "product_name": "Konomi Do Matcha",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/11363_Konomi_20Do_20N321_20-_20Aroma_20Tin_1_20_12f2b2d6-0738-4c70-a4b0-3bf51dd0625b.webp?v=1712071981&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/N_321_Konomi_Do_Matcha_51_1.jpg?v=1712071981&width=811",
+        "product_category": "Matcha",
+        "product_price": "3799.24",
+        "product": "A finely ground green tea of the highest grade for ceremonial use"
+    },
+    {
+        "product_id": 14,
+        "product_name": "Maho Matcha",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/11390_Maho_20Matcha_20N308_20-_20Aroma_20Tin_1_20_e8e13ec4-8804-465d-a16b-e19472dea320.webp?v=1714100498&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-maho_matcha_20_1.jpg?v=1714100498&width=811",
+        "product_category": "Matcha",
+        "product_price": "3527.87",
+        "product": "A finely ground Japanese green tea for culinary purpose"
+    },
+    {
+        "product_id": 15,
+        "product_name": "Shinto Matcha",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/11154_Shinto_20Matcha_20N320_20-_20Aroma_20Tin_1_20_23f0468a-334d-45e2-86e4-9714ba9e1f11.webp?v=1712072480&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/shinto_matcha-lifestyle_1.jpg?v=1712072481&width=811",
+        "product_category": "Matcha",
+        "product_price": "2623.29",
+        "product": "A finely ground Japanese green tea for culinary purpose"
+    },
+    {
+        "product_id": 16,
+        "product_name": "Hojicha Powder",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-Hojicha_20Powder_20N331_12272_20.webp?v=1712072945&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-hojicha_powder_1.jpg?v=1712072945&width=811",
+        "product_category": "Matcha",
+        "product_price": "2171",
+        "product": "A roasted organic green tea from Japan"
+    },
+    {
+        "product_id": 17,
+        "product_name": "Milk Chocolate & Tea – Daily Toast",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20Daily_20Toast_202024_1_10_b8652834-76a8-412e-81c9-547d171433c1.webp?v=1726715073&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_4.jpg?v=1726715073&width=811",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product": "Mild nutty milk chocolate infused with roasted Japanese green tea"
+    },
+    {
+        "product_id": 18,
+        "product_name": "Dark Chocolate & Tea – Grain of Truth",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Dark_20Chocolate_20and_20Tea_20Grain_20Of_20Truth_2024_1_10_fr8e2n_067e19b2-4aa6-412b-8534-bfc49fd1e8ff.webp?v=1726715141&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_2.jpg?v=1726715142&width=811",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product": "Fruity dark chocolate infused with sencha and crunchy roasted rice"
+    },
+    {
+        "product_id": 19,
+        "product_name": "White Chocolate & Tea – Matcha",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/White_20Chocolate_20and_20Tea_20Matcha_202024_1_10_ca6b07da-8402-4cc4-bb37-f0148c022a3e.webp?v=1726715100&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_8.jpg?v=1726715100&width=811",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product": "Handcrafted creamy white chocolate infused with Japanese matcha"
+    },
+    {
+        "product_id": 20,
+        "product_name": "Milk Chocolate & Tea – Golden Earl",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20Golden_20Earl_202024_1_10_0ee0212d-c222-4e05-86db-b8ace9a9588a.webp?v=1726715046&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_1.jpg?v=1726715047&width=811",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product": "Hearty milk chocolate with the fragrant bergamot citrus of Earl Grey"
+    },
+    {
+        "product_id": 21,
+        "product_name": "Dark Chocolate & Tea – Orange Kiss",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Dark_20Chocolate_20and_20Tea_20Orange_20Kiss_2024_1_10_a52ac7e8-d076-4832-b0ad-bd5c08a722a1.webp?v=1726715114&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_7.jpg?v=1726715114&width=811",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product": "Fruity dark chocolate infused with orange and chamomile blend"
+    },
+    {
+        "product_id": 22,
+        "product_name": "White Chocolate & Tea – Golden Boost",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/White_20Chocolate_20and_20Tea_20Golden_20Boost_2024_1_10_d4c6988d-e064-4e14-be1c-3d784d14bccc.webp?v=1726715086&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_3.jpg?v=1726715087&width=811",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product": "Smooth white chocolate infused with curcuma and ginger spice tea blend"
+    },
+    {
+        "product_id": 23,
+        "product_name": "Milk Chocolate & Tea – In the Mood for Love",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20In_20The_20Mood_20For_20Love_2024_1_10_d5a9ee5a-6447-4093-b843-c426af866741.webp?v=1726715128&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_9.jpg?v=1726715127&width=811",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product": "Hearty milk chocolate infused with delicate Chinese jasmine tea"
+    },
+    {
+        "product_id": 24,
+        "product_name": "Milk Chocolate & Tea – Hariman Classic Chai",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20Hariman_20Classic_20Chai_202024_1_10_xoqe2b.webp?v=1726887788&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_6_a6222b7f-61cd-4400-8c82-f4ab2a82f10a.jpg?v=1726887788&width=811",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product": "Mild and malty milk chocolate infused with Indian Chai tea"
+    },
+    {
+        "product_id": 25,
+        "product_name": "Winter Tales Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Winter_20Tales_c017b624-8c36-4c52-928e-7317bc4bf238.jpg?v=1729134179&width=550",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Winter_20Tales_c017b624-8c36-4c52-928e-7317bc4bf238.jpg?v=1729134179&width=283",
+        "product_category": "Gift Set",
+        "product_price": "3849.73",
+        "product": "Surprise your loved ones with cozy tea moments on cold days or treat yourself."
+    },
+    {
+        "product_id": 26,
+        "product_name": "What Friends Are For Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-What_friends_are_for_80163_4505c1f1-f413-4f6e-8078-1b22b68838e2.png?v=1720625493&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-what_friends_are_for_set_80163_585e5a6b-5e66-40be-a857-9fd491a90585.jpg?v=1720625492&width=811",
+        "product_category": "Gift Set",
+        "product_price": "3799.24",
+        "product": "Tea blends as diverse and alike as only close friends can be"
+    },
+    {
+        "product_id": 27,
+        "product_name": "Joie de Vivre Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-Joie_de_Vivre_Set_80182_5_8ee16fa5-93a5-4c69-8740-b5a440d4297f.png?v=1715184719&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-joie_de_vivre_set_80182.jpg?v=1715184719&width=811",
+        "product_category": "Gift Set",
+        "product_price": "2487.6",
+        "product": "Two white and green tea blends from the master blends collection"
+    },    
+    {
+        "product_id": 28,
+        "product_name": "Sunrise to Nightfall Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-Sunrise_to_nightfall_80158_13066091-8ee9-4ab0-a69c-e6758e832ee5.png?v=1720625568&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-sunrise_to_nightfall_set_80158_ded0d348-4aa0-46cd-9f25-0fb1d0d94786.jpg?v=1720625568&width=811",
+        "product_category": "Gift Set",
+        "product_price": "3799.24",
+        "product": "Three tea blends that stay by your side during the whole day"
+    },
+    {
+        "product_id": 29,
+        "product_name": "Sunrise to Nightfall Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-Sunrise_to_nightfall_80158_13066091-8ee9-4ab0-a69c-e6758e832ee5.png?v=1720625568&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-sunrise_to_nightfall_set_80158_ded0d348-4aa0-46cd-9f25-0fb1d0d94786.jpg?v=1720625568&width=811",
+        "product_category": "Gift Set",
+        "product_price": "3799.24",
+        "product": "Three tea blends that stay by your side during the whole day"
+    },
+    {
+        "product_id": 30,
+        "product_name": "From Dawn 'til Dusk Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-From_Dawn_til_Dusk_Set_80180_5_a9c5e236-5006-4373-8e2d-205be3a44404.png?v=1715184699&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-from_dawn_til_dusk_set_80180.jpg?v=1715184699&width=811",
+        "product_category": "Gift Set",
+        "product_price": "2487.6",
+        "product": "A set of two herbal blends from the master blends collection"
+    },
+    {
+        "product_id": 31,
+        "product_name": "Herbal Variety Box",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Herbal_20Variety_20Box_20Sampler_11813_15_b8885973-a362-47e4-9065-15bab63a0d28.png?v=1720626716&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-herbal_variety_8c82b0f3-5dba-407d-8ddc-b99e6d954ac1.jpg?v=1720626716&width=779",
+        "product_category": "Gift Set",
+        "product_price": "1356.87",
+        "product": "A fine selection of organic herbal tea blends"
+    },
+    {
+        "product_id": 32,
+        "product_name": "Rich & Warming Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-rich_and_warming_set.png?v=1720626316&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/mirkapflueger_paperandtea_gifting_season_tees-0130_1_59e7e8ab-daaa-44cc-9145-b468183f8330.jpg?v=1720626316&width=811",
+        "product_category": "Gift Set",
+        "product_price": "4070.62",
+        "product": "A set made up of a teapot and five best-selling master blend teas"
+    },
+    {
+        "product_id": 33,
+        "product_name": "Green Earl",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Green_20Earl_20N340_11976_20.png?v=1729851627&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/EMERALDEARLN_340_Lifestyle_WEB_33_1_ac616dd9-4a1b-42ff-b4b1-a345029adc4b.jpg?v=1729851627&width=811",
+        "product_category": "Green tea",
+        "product_price": "1899.62",
+        "product": "A bright new green tea version, endowed with fragrant bergamot oil"
+    },
+    {
+        "product_id": 34,
+        "product_name": "In the mood for love",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Kumano_20N313_10462_20_b1760c13-6edc-4586-9599-34aeb2530d8e.png?v=1715788771&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-kumano.jpg?v=1715788771&width=811",
+        "product_category": "Green tea",
+        "product_price": "2532.83",
+        "product": "A Japanese green tea blend of stems, sencha, and gyokuro leaves"
+    },
+    {
+        "product_id": 35,
+        "product_name": "Mighty Green",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Mighty_20Green_20N319_11187_20.png?v=1718334128&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/mighty_20green_202.jpg?v=1718334128&width=811",
+        "product_category": "Green tea",
+        "product_price": "1628.25",
+        "product": "An organic, rich premium Japanese sencha green tea for daily enjoyment"
+    },
+    {
+        "product_id": 36,
+        "product_name": "In the mood for love",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/In_20the_20mood_20for_20Love_20N323_11071_20_7af2f116-8816-4458-b06d-2a375ccfeaa1.png?v=1715788762&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/moodIMG_4218_1.jpg?v=1715788762&width=811",
+        "product_category": "Green tea",
+        "product_price": "1628.25",
+        "product": "A delicate organic green tea, naturally scented with jasmine blossoms"
+    },
+    {
+        "product_id": 37,
+        "product_name": "Daily Toast",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Daily_20Toast_20N318_11246_20.png?v=1715788732&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-daily_toast_318.jpg?v=1715788732&width=811",
+        "product_category": "Green tea",
+        "product_price": "1718.71",
+        "product": "Hojicha, a roasted Japanese green tea with aromas of nuts and malt"
+    },
+    {
+        "product_id": 38,
+        "product_name": "Daikoku",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Daikoku_20N317_11194_20.png?v=1715788725&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-daikoku_n_317.jpg?v=1715788726&width=811",
+        "product_category": "Green tea",
+        "product_price": "3166.04",
+        "product": "A semi-shade green tea from Japan with the freshness of a sencha"
+    },
+    {
+        "product_id": 39,
+        "product_name": "Imperial Dragon N°302",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Imperial_20Dragon_20N302_11811_20_69225fe0-4dd2-4da9-849d-d25cbb6a796d.png?v=1715788752&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/c2bf4159-d566-4317-bf08-7d6b4eddb64b.jpg?v=1715788752&width=811",
+        "product_category": "Green tea",
+        "product_price": "1628.25",
+        "product": "A famous green tea known for its flat leaves and chestnut flavor"
+    },
+    {
+        "product_id": 40,
+        "product_name": "Maia's Pick",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Maias_20Pick_20N316_10452_20_678c30af-4cee-4596-867c-870182b23d9b.png?v=1726542204&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/d5b75934-7039-4cb1-bf96-3aad2313ed9d_d8c8d57e-801d-4931-929d-e7c8696d491c.jpg?v=1726542203&width=811",
+        "product_category": "Green tea",
+        "product_price": "3437.41",
+        "product": "A dejak, big-leaved green tea with a distinctly Korean roasted flavor"
+    },
+    {
+        "product_id": 41,
+        "product_name": "Golden Earl",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Golden-Earl_20_20_1_4dafeb37-6589-4320-a953-1e36d75a0f7a.webp?v=1730865751&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Golden_20Earl_Lifestyle_2000x2000_20_1_3b1ca127-8fd7-46d5-a5cc-2b0ba4a0e412.jpg?v=1730865752&width=811",
+        "product_category": "Black Tea",
+        "product_price": "1628.25",
+        "product": "A fine Earl Grey blend of black tea from Yunnan and bergamot oil"
+    },
+    {
+        "product_id": 42,
+        "product_name": "Tip of the Morning",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Tip_20of_20the_20Morning_20N518_11443_20_75f4fd59-cee9-40bb-881b-b66c71409e76.png?v=1715789006&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-tip_of_the_morning_n_518.jpg?v=1715789006&width=811",
+        "product_category": "Black Tea",
+        "product_price": "1628.25",
+        "product": "A finely balanced organic black tea breakfast blend to welcome the day"
+    },
+    {
+        "product_id": 43,
+        "product_name": "Muse",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Muse_20N504_10675_20_80c0ebc1-4eb5-47b6-a6e8-7a21a28330e7.png?v=1715788847&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/8aa347ff-2b91-4f73-a19c-2bc24348f202.jpg?v=1715788847&width=811",
+        "product_category": "Black Tea",
+        "product_price": "1628.25",
+        "product": "A second flush Darjeeling with muscatel notes and full-bodied spice"
+    },
+    {
+        "product_id": 44,
+        "product_name": "Nandana",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Nandana_20N506_10453_20_46db0d41-4eac-41b5-a7fd-3e741528c480.png?v=1715788854&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/10192_Nandana_20N506_20-_20Aromabag_2050g_1_5.webp?v=1715788854&width=600",
+        "product_category": "Black Tea",
+        "product_price": "1628.25",
+        "product": "An intense and full-bodied black tea from Assam with milky sweetness"
+    },
+    {
+        "product_id": 45,
+        "product_name": "Red Earl",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Red-Earl_20_20_1_4a0d18f0-6a8f-42bc-a930-5f55d71abf63.webp?v=1730865741&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/d843bfba-06a9-47c1-af74-a5157c312ce0_c1f6346e-4a4d-44fb-823e-505761a3f0b2.jpg?v=1730865741&width=811",
+        "product_category": "Herbal",
+        "product_price": "1718.71",
+        "product": "Full-flavour Earl Grey based on South African Rooibos with bergamot"
+    },
+    {
+        "product_id": 46,
+        "product_name": "Mount Olympus",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-Mount_Olympus_N824_Organic_12150.png?v=1712072849&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-Mount_Olympus_n_824_6af7ca72-62cb-4a3d-8b63-6b64f6414c73.jpg?v=1712072850&width=811",
+        "product_category": "Herbal",
+        "product_price": "1356.87",
+        "product": "An organic Greek mountain tea blend with zingy peppermint and citrus"
+    },
+    {
+        "product_id": 47,
+        "product_name": "Unter den Linden",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Unter_20den_20Linden_20N818_10917_10_9b550ce3-98ed-4f5b-9229-a93fbef42809.png?v=1712072722&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/webUnterDenLindenCupLeavesCaddy.jpg?v=1712072722&width=811",
+        "product_category": "Herbal",
+        "product_price": "1356.87",
+        "product": "A organic blend made from lime-tree blossoms, elderflower and apple"
+    },
+    {
+        "product_id": 48,
+        "product_name": "Magic Mum",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/12121_Magic_20Mum_20N833_20-_20Caddy_1_hq.webp?v=1726887754&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Family_Teas_Campaign_Stills_Lifestyle-2166.jpg?v=1726887755&width=811",
+        "product_category": "Herbal",
+        "product_price": "1356.87",
+        "product": "Refreshing organic herbal tea with fenugreek seeds and hibiscus flower"
+    },
+    {
+        "product_id": 49,
+        "product_name": "Gabacha",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Gabacha_20N405_10568_20_c5cfb9b6-a95c-466b-9400-ce8a3bc11f3a.png?v=1717008620&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/web_Gaba_DSCF4573_1.jpg?v=1717008620&width=811",
+        "product_category": "Oolong Tea",
+        "product_price": "1356.87",
+        "product": "A GABA amino acid rich oolong from China with a roasted flavor"
+    },
+    {
+        "product_id": 50,
+        "product_name": "Four Seasons of Spring",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Four_20Seasons_20of_20Spring_20N402_10454_20.png?v=1715788675&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-four_seasons_of_spring_n_402_2.jpg?v=1715788676&width=811",
+        "product_category": "Oolong Tea",
+        "product_price": "2623.29",
+        "product": "A daily favourite oolong in Taiwan with a strong floral character"
+    },
+    {
+        "product_id": 51,
+        "product_name": "Oriental Beauty",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Oriental_20Beauty_20N403_10467_20_34fb86c1-cf3f-41fe-ae65-74b0a3a0a459.png?v=1726542193&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/1562f3d6-534f-4bea-a1d7-a20691dcb886_65be940d-e847-4f6f-9ee4-df4997a5cb1c.jpg?v=1726542193&width=811",
+        "product_category": "Oolong Tea",
+        "product_price": "3346.95",
+        "product": "A special oolong biten by a grasshopper with a unique sweetness"
+    },
+    {
+        "product_id": 52,
+        "product_name": "Milk River",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20River_20N406_11917_20_ec0ecaed-adc3-4f2b-970e-8061c602bd6c.png?v=1715788835&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/lifestyle-milk_river_n_406.jpg?v=1715788835&width=811",
+        "product_category": "Oolong Tea",
+        "product_price": "2171",
+        "product": "A handmade milky Oolong with subtle creamy aroma and gentle fragrance"
+    }
+]

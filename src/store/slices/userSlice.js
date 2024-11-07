@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     user: [],  
-    Loggedin: [],  
+    Loggedin: [],
 };
 
 const userSlice = createSlice({

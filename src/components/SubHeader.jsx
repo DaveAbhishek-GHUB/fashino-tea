@@ -8,10 +8,10 @@ function SubHeader() {
       <div className="main-subheader-container mb-3">
         <div className="subheader w-full h-[3vw] flex">
           <div className="navlinks-wrapper w-[70%] h-full flex items-center gap-[5vw] px-10 text-[1.5vw]">
-            <Link>Tea</Link>
-            <Link>Matcha</Link>
-            <Link>Tea Accessories</Link>
-            <Link>Gifts</Link>
+            <Link to="/teablends">Tea-blends</Link>
+            <Link to="/herbaltea">herbal-Tea</Link>
+            <Link to="/greentea">Green-Tea</Link>
+            <Link to="/matcha">Matcha</Link>
           </div>
           <div className="user-icons-wrapper w-[30%] h-full flex justify-center items-center gap-[3vw]">
             <div className="favourite-icon-wrapper">
