@@ -239,9 +239,11 @@ function HomePage() {
             )}
           </div>
           <div className="button-wrapper w-full flex justify-center items-center mt-8 mb-10">
-            <button className="py-2 sm:py-2.5 md:py-3 px-6 sm:px-8 md:px-10 border-black border-[1px] font-sans text-[4vw] sm:text-[1.5vw] md:text-[1.2vw]">
-              Discover all
-            </button>
+            <Link to="/wintertea">
+              <button className="py-2 sm:py-2.5 md:py-3 px-6 sm:px-8 md:px-10 border-black border-[1px] font-sans text-[4vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                Discover all
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -290,9 +292,11 @@ function HomePage() {
             )}
           </div>
           <div className="button-wrapper w-full flex justify-center items-center mt-8 mb-10">
-            <button className="py-2 sm:py-2.5 md:py-3 px-6 sm:px-8 md:px-10 border-black border-[1px] font-sans text-[4vw] sm:text-[1.5vw] md:text-[1.2vw]">
-              Discover all
-            </button>
+            <Link to="/Adventcalendar">
+              <button className="py-2 sm:py-2.5 md:py-3 px-6 sm:px-8 md:px-10 border-black border-[1px] font-sans text-[4vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                Discover all
+              </button>
+            </Link>
           </div>
         </div>
 
