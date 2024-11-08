@@ -6,6 +6,7 @@ import SubHeader from "../components/SubHeader";
 import Storenearyou from "../utils/Storeclosetoyou"
 import Yourbenefits from "../utils/Yourbenefits";
 import Footer from "../components/Footer"
+import { Link } from "react-router-dom";
 
 function AdventCalendars() {
   const [TeaCollection, setTeaCollection] = useState([]);
@@ -47,6 +48,7 @@ function AdventCalendars() {
                 key={index}
                 className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[40vw]"
               >
+                <Link to={`/adventcalendar/${TeaData.product_id}`}>
                 <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
                   <img
                     className="w-full h-full object-contain sm:object-cover"
@@ -68,6 +70,7 @@ function AdventCalendars() {
                     ₹ {TeaData.product_price}
                   </span>
                 </div>
+                </Link>
               </div>
             ))
           ) : (

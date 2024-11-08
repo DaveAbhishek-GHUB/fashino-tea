@@ -6,6 +6,7 @@ import SubHeader from "../components/SubHeader";
 import Storenearyou from "../utils/Storeclosetoyou";
 import Yourbenefits from "../utils/Yourbenefits";
 import Footer from "../components/Footer";
+import { Link } from "react-router-dom";
 
 function BlackTea() {
   const [TeaCollection, setTeaCollection] = useState([]);
@@ -46,13 +47,14 @@ function BlackTea() {
               <div
                 key={index}
                 className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[40vw]"
-              >
+                >
+                  <Link to={`/blacktea/${TeaData.product_id}`}>
                 <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
                   <img
                     className="w-full h-full object-contain sm:object-cover"
                     src={TeaData.product_image}
                     alt={TeaData.product_name}
-                  />
+                    />
                 </div>
                 <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
                   <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686]">
@@ -68,6 +70,7 @@ function BlackTea() {
                     ₹ {TeaData.product_price}
                   </span>
                 </div>
+                </Link>
               </div>
             ))
           ) : (

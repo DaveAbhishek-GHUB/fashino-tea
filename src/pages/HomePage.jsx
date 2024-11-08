@@ -11,29 +11,19 @@ import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 
 function HomePage() {
-  const [cozymomentdata, setcozymomentdata] = useState([]);
-  const [adventcalendars, setadventcalendars] = useState([]);
+  const [TeaCollection, setTeaCollection] = useState([]);
 
-  const cozymomentsData = import.meta.env.VITE_COZYMOMENTS_API;
-  const Adventcalendars = import.meta.env.VITE_ADVENTCALENDARS_API;
+  const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
 
   useEffect(() => {
-    fetch(cozymomentsData)
+    fetch(teaCollection)
       .then((Response) => Response.json())
-      .then((data) => {
-        console.log("CozyMoment's data here: ", data);
-        setcozymomentdata(data);
+      .then((Data) => {
+        console.log(Data);
+        setTeaCollection(Data);
       });
   }, []);
 
-  useEffect(() => {
-    fetch(Adventcalendars)
-      .then((Response) => Response.json())
-      .then((data) => {
-        console.log("advent calendars's data here: ", data);
-        setadventcalendars(data);
-      });
-  }, []);
 
   return (
     <>
@@ -207,39 +197,46 @@ function HomePage() {
             </span>
           </div>
 
-          <div className="product-wrapper w-full h-auto flex flex-wrap sm:flex-nowrap gap-4 sm:gap-3 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
-            {cozymomentdata.length > 0 ? (
-              cozymomentdata.map((cozydata, index) => (
-                <div
-                  key={index}
-                  className="product w-[100vw] sm:w-[30vw] md:w-[25vw] h-[65vw] sm:h-[50vw] md:h-[40vw]"
-                >
-                  <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
-                    <img
-                      className="w-full h-full object-contain sm:object-cover"
-                      src={cozydata.product_image}
-                      alt={cozydata.product_name}
-                    />
-                  </div>
-                  <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
-                    <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686]">
-                      Gift Set
-                    </span>
-                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans">
-                      {cozydata.product_name}
-                    </span>
-                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold">
-                      ₹ {cozydata.product_price}
-                    </span>
-                  </div>
+          <div className="product-wrapper w-full h-auto flex flex-wrap justify-between gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
+          {TeaCollection.length > 0 ? (
+            TeaCollection.filter(
+              (Teafilter) => Teafilter.product_category === "Gift Set"
+            ).slice(0, 4).map((TeaData, index) => (
+              <div
+                key={index}
+                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[40vw]"
+              >
+                <Link to={`/wintertea/${TeaData.product_id}`}>
+                <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
+                  <img
+                    className="w-full h-full object-contain sm:object-cover"
+                    src={TeaData.product_image}
+                    alt={TeaData.product_name}
+                  />
                 </div>
-              ))
-            ) : (
-              <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-red-500">
-                Fetch Issue!
-              </span>
-            )}
-          </div>
+                <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
+                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686]">
+                    {TeaData.product_category}
+                  </span>
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans">
+                    {TeaData.product_name}
+                  </span>
+                  <span className="text-[1.2vw] text-[#484848]">
+                    {TeaData.product}
+                  </span>
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold">
+                    ₹ {TeaData.product_price}
+                  </span>
+                </div>
+                </Link>
+              </div>
+            ))
+          ) : (
+            <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-red-500">
+              Fetch Issue!
+            </span>
+          )}
+        </div>
           <div className="button-wrapper w-full flex justify-center items-center mt-8 mb-10">
             <Link to="/wintertea">
               <button className="py-2 sm:py-2.5 md:py-3 px-6 sm:px-8 md:px-10 border-black border-[1px] font-sans text-[4vw] sm:text-[1.5vw] md:text-[1.2vw]">
@@ -260,39 +257,46 @@ function HomePage() {
             </span>
           </div>
 
-          <div className="product-wrapper w-full h-auto flex flex-wrap sm:flex-nowrap gap-4 sm:gap-3 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
-            {adventcalendars.length > 0 ? (
-              adventcalendars.map((adventcalendars, index) => (
-                <div
-                  key={index}
-                  className="product w-[100vw] sm:w-[30vw] md:w-[25vw] h-[65vw] sm:h-[50vw] md:h-[40vw]"
-                >
-                  <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
-                    <img
-                      className="w-full h-full object-contain sm:object-cover"
-                      src={adventcalendars.product_image}
-                      alt={adventcalendars.product_name}
-                    />
-                  </div>
-                  <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
-                    <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686]">
-                      Gift Set
-                    </span>
-                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans">
-                      {adventcalendars.product_name}
-                    </span>
-                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold">
-                      ₹ {adventcalendars.product_price}
-                    </span>
-                  </div>
+          <div className="product-wrapper w-full h-auto flex flex-wrap justify-between gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
+          {TeaCollection.length > 0 ? (
+            TeaCollection.filter(
+              (Teafilter) => Teafilter.product_category === "Advent Calendar"
+            ).map((TeaData, index) => (
+              <div
+                key={index}
+                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[40vw]"
+              >
+                <Link to={`/adventcalendar/${TeaData.product_id}`}>
+                <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
+                  <img
+                    className="w-full h-full object-contain sm:object-cover"
+                    src={TeaData.product_image}
+                    alt={TeaData.product_name}
+                  />
                 </div>
-              ))
-            ) : (
-              <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-red-500">
-                Fetch Issue!
-              </span>
-            )}
-          </div>
+                <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
+                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686]">
+                    {TeaData.product_category}
+                  </span>
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans">
+                    {TeaData.product_name}
+                  </span>
+                  <span className="text-[1.2vw] text-[#484848]">
+                    {TeaData.product}
+                  </span>
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold">
+                    ₹ {TeaData.product_price}
+                  </span>
+                </div>
+                </Link>
+              </div>
+            ))
+          ) : (
+            <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-red-500">
+              Fetch Issue!
+            </span>
+          )}
+        </div>
           <div className="button-wrapper w-full flex justify-center items-center mt-8 mb-10">
             <Link to="/Adventcalendar">
               <button className="py-2 sm:py-2.5 md:py-3 px-6 sm:px-8 md:px-10 border-black border-[1px] font-sans text-[4vw] sm:text-[1.5vw] md:text-[1.2vw]">
