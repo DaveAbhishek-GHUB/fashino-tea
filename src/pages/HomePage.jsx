@@ -57,9 +57,11 @@ function HomePage() {
               Advent calendars 2024
             </h1>
             <div className="hero-info-button">
+              <Link to="/Adventcalendar">              
               <button className="bg-black text-white p-2 sm:px-3 md:px-4 rounded-md text-sm sm:text-base">
                 Discover more
               </button>
+              </Link>
             </div>
           </div>
         </div>
