@@ -31,7 +31,7 @@ function HomePage() {
       <SubHeader />
       <div className="main-wrapper w-full min-h-screen">
         {/* Here section */}
-        <div className="hero-wrapper h-[50vh] sm:h-[45vh] md:h-[50vh] relative">
+        <div className="hero-wrapper h-[50vh] sm:h-[45vh] md:h-[50vh] relative max-sm:h-[30vh]">
           <video
             className="w-full h-full object-cover"
             src="https://videos.pexels.com/video-files/7592873/7592873-uhd_2732_1318_30fps.mp4"
@@ -39,16 +39,16 @@ function HomePage() {
             autoPlay
             muted
           ></video>
-          <div className="hero-info-wrapper absolute top-[8vw] sm:top-[6vw] md:top-[8vw] left-[3vw]">
-            <span className="text-white text-sm sm:text-base md:text-lg">
+          <div className="hero-info-wrapper absolute sm:top-[6vw] md:top-[8vw] left-[3vw] max-sm:bottom-[10vw]">
+            <span className="text-white sm:text-base md:text-lg max-sm:text-[10vw]">
               Small doors, big joy
             </span>
-            <h1 className="text-white text-[4vw] sm:text-[3.5vw] md:text-[4vw] font-serif">
+            <h1 className="text-white sm:text-[3.5vw] md:text-[4vw] font-serif max-sm:text-[5vw]">
               Advent calendars 2024
             </h1>
             <div className="hero-info-button">
               <Link to="/Adventcalendar">              
-              <button className="bg-black text-white p-2 sm:px-3 md:px-4 rounded-md text-sm sm:text-base">
+              <button className="bg-black text-white p-2 sm:px-3 md:px-4 rounded-md text-sm sm:text-base max-sm:p-3 max-sm:mt-3">
                 Discover more
               </button>
               </Link>
@@ -57,7 +57,7 @@ function HomePage() {
         </div>
 
         {/* Category Section */}
-        <div className="category-section-wrapper w-full h-[35vh] sm:h-[30vh] md:h-[35vh] flex gap-4 sm:gap-6 md:gap-10 items-center px-3 sm:px-4 md:px-5 overflow-x-auto whitespace-nowrap bg-[#EEEEEE]">
+        <div className="category-section-wrapper w-full h-[25vh] sm:h-[30vh] md:h-[35vh] flex gap-4 sm:gap-6 md:gap-10 items-center px-3 sm:px-4 md:px-5 overflow-x-auto whitespace-nowrap bg-[#EEEEEE]">
           {/* adventcalendars */}
           <Link to="/Adventcalendar">
             <div className="advent-calendars w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
@@ -192,7 +192,7 @@ function HomePage() {
             <h1 className="font-serif text-[6vw] sm:text-[5vw] md:text-[4vw]">
               Cozy moments - the new winter teas
             </h1>
-            <span className="block text-[2.5vw] sm:text-[2vw] md:text-[1.5vw] mt-2">
+            <span className="block text-[2.5vw] sm:text-[2vw] md:text-[1.5vw] mt-2 max-sm:text-[3.5vw]">
               Enjoy the winter with aromatic blends that will warm you up.
             </span>
           </div>
@@ -204,7 +204,7 @@ function HomePage() {
             ).slice(0, 4).map((TeaData, index) => (
               <div
                 key={index}
-                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[40vw]"
+                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[65vw] sm:h-[50vw] md:h-[40vw]"
               >
                 <Link to={`/wintertea/${TeaData.product_id}`}>
                 <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
@@ -215,16 +215,16 @@ function HomePage() {
                   />
                 </div>
                 <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
-                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686]">
+                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[4vw]">
                     {TeaData.product_category}
                   </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans">
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[5vw]">
                     {TeaData.product_name}
                   </span>
-                  <span className="text-[1.2vw] text-[#484848]">
+                  <span className="text-[1.2vw] text-[#484848] max-sm:text-[4vw]">
                     {TeaData.product}
                   </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold">
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[4vw]">
                     ₹ {TeaData.product_price}
                   </span>
                 </div>
@@ -252,7 +252,7 @@ function HomePage() {
             <h1 className="font-serif text-[6vw] sm:text-[5vw] md:text-[4vw]">
               Advent calendars 2024
             </h1>
-            <span className="block text-[2.5vw] sm:text-[2vw] md:text-[1.5vw] mt-2">
+            <span className="block text-[2.5vw] sm:text-[2vw] md:text-[1.5vw] mt-2 max-sm:text-[3.5vw]">
               Choose the perfect companion for the festive season
             </span>
           </div>
@@ -264,7 +264,7 @@ function HomePage() {
             ).map((TeaData, index) => (
               <div
                 key={index}
-                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[40vw]"
+                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[65vw] sm:h-[50vw] md:h-[40vw]"
               >
                 <Link to={`/adventcalendar/${TeaData.product_id}`}>
                 <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
@@ -275,16 +275,16 @@ function HomePage() {
                   />
                 </div>
                 <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
-                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686]">
+                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[4vw]">
                     {TeaData.product_category}
                   </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans">
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[5vw]">
                     {TeaData.product_name}
                   </span>
-                  <span className="text-[1.2vw] text-[#484848]">
+                  <span className="text-[1.2vw] text-[#484848] max-sm:text-[4vw]">
                     {TeaData.product}
                   </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold">
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[4vw]">
                     ₹ {TeaData.product_price}
                   </span>
                 </div>

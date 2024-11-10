@@ -1,40 +1,66 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function SubHeader() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <>
+    <div className="relative">
       <div className="main-subheader-container mb-3">
-        <div className="subheader w-full h-[3vw] flex">
-          <div className="navlinks-wrapper w-[70%] h-full flex items-center gap-[5vw] px-10 text-[1.5vw]">
+        <div className="subheader w-full h-12 sm:h-[3vw] flex items-center">
+          {/* Hamburger Menu Button - Only visible on small screens */}
+          <button 
+            className="sm:hidden ml-4 p-2"
+            onClick={toggleMenu}
+          >
+            {isMenuOpen ? (
+              <svg
+                className="w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            ) : (
+              <svg
+                className="w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              >
+                <line x1="4" y1="12" x2="20" y2="12" />
+                <line x1="4" y1="6" x2="20" y2="6" />
+                <line x1="4" y1="18" x2="20" y2="18" />
+              </svg>
+            )}
+          </button>
+
+          {/* Navigation Links - Hidden on small screens */}
+          <div className="hidden sm:flex navlinks-wrapper w-[70%] h-full items-center gap-[5vw] px-10 text-[1.5vw]">
             <Link to="/teablends">Tea-blends</Link>
-            <Link to="/herbaltea">herbal-Tea</Link>
+            <Link to="/herbaltea">Herbal-Tea</Link>
             <Link to="/greentea">Green-Tea</Link>
             <Link to="/matcha">Matcha</Link>
           </div>
-          <div className="user-icons-wrapper w-[30%] h-full flex justify-center items-center gap-[3vw]">
-            <div className="favourite-icon-wrapper">
-              <svg
-                className="w-[2vw]"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width={24}
-                height={24}
-                color={"#000000"}
-                fill={"none"}
-              >
-                <path
-                  d="M19.4626 3.99415C16.7809 2.34923 14.4404 3.01211 13.0344 4.06801C12.4578 4.50096 12.1696 4.71743 12 4.71743C11.8304 4.71743 11.5422 4.50096 10.9656 4.06801C9.55962 3.01211 7.21909 2.34923 4.53744 3.99415C1.01807 6.15294 0.221721 13.2749 8.33953 19.2834C9.88572 20.4278 10.6588 21 12 21C13.3412 21 14.1143 20.4278 15.6605 19.2834C23.7783 13.2749 22.9819 6.15294 19.4626 3.99415Z"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
-            </div>
+
+          {/* User Icons */}
+          <div className="user-icons-wrapper ml-auto sm:w-[30%] h-full flex justify-center items-center gap-4 sm:gap-[3vw] pr-4">
             <div className="profile-icon-wrapper">
               <svg
-                className="w-[2vw]"
+                className="w-6 sm:w-[2vw]"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 width={24}
@@ -58,7 +84,7 @@ function SubHeader() {
             </div>
             <div className="cart-icon-wrapper">
               <svg
-                className="w-[2vw]"
+                className="w-6 sm:w-[2vw]"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 width={24}
@@ -104,7 +130,27 @@ function SubHeader() {
           </div>
         </div>
       </div>
-    </>
+
+      {/* Mobile Menu - Positioned right after the subheader */}
+      {isMenuOpen && (
+        <div className="sm:hidden w-full bg-white shadow-lg border-t">
+          <div className="flex flex-col py-2">
+            <Link to="/teablends" className="px-6 py-3 hover:bg-gray-100 text-gray-800">
+              Tea-blends
+            </Link>
+            <Link to="/herbaltea" className="px-6 py-3 hover:bg-gray-100 text-gray-800">
+              Herbal-Tea
+            </Link>
+            <Link to="/greentea" className="px-6 py-3 hover:bg-gray-100 text-gray-800">
+              Green-Tea
+            </Link>
+            <Link to="/matcha" className="px-6 py-3 hover:bg-gray-100 text-gray-800">
+              Matcha
+            </Link>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 

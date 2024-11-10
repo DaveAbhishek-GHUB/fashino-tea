@@ -8,7 +8,7 @@ function Header() {
     <>
       {/* Header-start */}
       <div className="main-header-wrapper">
-        <div className="header w-full h-[5vw] flex justify-between">
+        <div className="header w-full h-[5vw] flex justify-between py-5 px-2">
           <div className="Policy h-full w-[20%] flex justify-center items-center gap-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,17 +33,17 @@ function Header() {
                 strokeLinejoin="round"
               />
             </svg>
-            <span className="text-[1.5vw]">30 days return Policy</span>
+            <span className="text-[1.5vw] max-sm:text-[2vw]">30 days return Policy</span>
           </div>
           <div className="Logo h-full w-[60%] flex justify-center items-center">
             <h1 className="text-[2vw] monsterrat">
             <Link to="/">
-              <img className="w-[10vw]" src={Logo} alt="" />
+              <img className="w-[10vw] max-sm:w-[25vw]" src={Logo} alt="" />
             </Link>
             </h1>
           </div>
           <div className="LocalStores h-full w-[20%] flex justify-center items-center gap-1">
-            <span className="text-[1.5vw]">our store</span>
+            <span className="text-[1.5vw] max-sm:text-[2.3vw]">our store</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
