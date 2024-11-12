@@ -59,6 +59,7 @@ function SubHeader() {
           {/* User Icons */}
           <div className="user-icons-wrapper ml-auto sm:w-[30%] h-full flex justify-center items-center gap-4 sm:gap-[3vw] pr-4">
             <div className="profile-icon-wrapper">
+              <Link to="/account">              
               <svg
                 className="w-6 sm:w-[2vw]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -81,6 +82,7 @@ function SubHeader() {
                   strokeWidth="1.5"
                 />
               </svg>
+              </Link>
             </div>
             <div className="cart-icon-wrapper">
               <svg

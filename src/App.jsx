@@ -18,6 +18,8 @@ import BlackTea from "./pages/BlackTea";
 import HerbalTea from "./pages/HerbalTea";
 import Oolongtea from "./pages/Oolongtea";
 import ProductDetail from "./pages/ProductDetail";
+import ProfilePage from "./pages/ProfilePage";
+import Cart from "./pages/Cart";
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
         <Route path="/herbaltea/:productId" element={<ProductDetail />} />
         <Route path="/oolongtea" element={<Oolongtea />} />
         <Route path="/oolongtea/:productId" element={<ProductDetail />} />
+        <Route path="/account" element={<ProfilePage />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </>
   );

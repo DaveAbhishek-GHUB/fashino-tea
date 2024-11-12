@@ -26,15 +26,15 @@ function BlackTea() {
       <Header />
       <SubHeader />
       <div className="main-wrapper w-full h-screen">
-        <div className="page-header-wrapper w-full h-[30vw] relative">
+        <div className="page-header-wrapper w-full h-[30vw] relative max-sm:h-[60vw]">
           <img
             className="w-full h-full object-cover"
             src="https://www.paperandtea.com/cdn/shop/collections/collection_header-black_tea.jpg?v=1680248260&width=2000"
             alt="..."
           />
           <div className="page-heading-info-wrapper absolute bottom-[8vw] left-[3vw] w-[70vw]">
-            <h1 className="text-[5vw] text-white font-serif">Black Tea</h1>
-            <span className="text-[1.5vw] text-white">
+            <h1 className="text-[5vw] text-white font-serif max-sm:text-[8vw]">Black Tea</h1>
+            <span className="text-[1.5vw] text-white max-sm:text-[3vw]">
             Full-bodied, strong, sometimes flowery, sometimes malty: black tea is so nuanced in taste. That makes it the most popular tea in the West.
             </span>
           </div>
@@ -47,26 +47,26 @@ function BlackTea() {
               <div
                 key={index}
                 className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[40vw]"
-                >
-                  <Link to={`/blacktea/${TeaData.product_id}`}>
+              >
+                <Link to={`/adventcalendar/${TeaData.product_id}`}>
                 <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
                   <img
                     className="w-full h-full object-contain sm:object-cover"
                     src={TeaData.product_image}
                     alt={TeaData.product_name}
-                    />
+                  />
                 </div>
                 <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
-                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686]">
+                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[3vw]">
                     {TeaData.product_category}
                   </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans">
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[3vw]">
                     {TeaData.product_name}
                   </span>
-                  <span className="text-[1.2vw] text-[#484848]">
+                  <span className="text-[1.2vw] text-[#484848] max-sm:text-[2vw]">
                     {TeaData.product}
                   </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold">
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[3vw]">
                     ₹ {TeaData.product_price}
                   </span>
                 </div>

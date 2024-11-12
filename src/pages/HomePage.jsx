@@ -204,10 +204,10 @@ function HomePage() {
             ).slice(0, 4).map((TeaData, index) => (
               <div
                 key={index}
-                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[65vw] sm:h-[50vw] md:h-[40vw]"
+                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[35vw] sm:h-[50vw] md:h-[40vw]"
               >
                 <Link to={`/wintertea/${TeaData.product_id}`}>
-                <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
+                <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
                   <img
                     className="w-full h-full object-contain sm:object-cover"
                     src={TeaData.product_image}
@@ -264,12 +264,12 @@ function HomePage() {
             ).map((TeaData, index) => (
               <div
                 key={index}
-                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[65vw] sm:h-[50vw] md:h-[40vw]"
+                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[35vw] sm:h-[50vw] md:h-[40vw]"
               >
                 <Link to={`/adventcalendar/${TeaData.product_id}`}>
-                <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
+                <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
                   <img
-                    className="w-full h-full object-contain sm:object-cover"
+                    className="w-full h-full object-contain"
                     src={TeaData.product_image}
                     alt={TeaData.product_name}
                   />

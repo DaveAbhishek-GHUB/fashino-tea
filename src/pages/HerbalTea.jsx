@@ -26,15 +26,15 @@ function HerbalTea() {
       <Header />
       <SubHeader />
       <div className="main-wrapper w-full h-screen">
-        <div className="page-header-wrapper w-full h-[30vw] relative">
+        <div className="page-header-wrapper w-full h-[30vw] relative max-sm:h-[60vw]">
           <img
             className="w-full h-full object-cover"
             src="https://www.paperandtea.com/cdn/shop/collections/header-kraeutertee.jpg?v=1724054451&width=2600"
             alt="..."
           />
-          <div className="page-heading-info-wrapper absolute bottom-[8vw] left-[3vw] w-[40vw]">
-            <h1 className="text-[5vw] text-white font-serif">Herbal Tea</h1>
-            <span className="text-[1.5vw] text-white">
+          <div className="page-heading-info-wrapper absolute bottom-[8vw] left-[3vw] w-[40vw] max-sm:w-[70vw]">
+            <h1 className="text-[5vw] text-white font-serif max-sm:text-[8vw]">Herbal Tea</h1>
+            <span className="text-[1.5vw] text-white max-sm:text-[3vw]">
             Enjoy naturally caffeine-free herbal blends at any time of the day. Our infusions made of blossoms, tea leaves, and roots are a true delight.
             </span>
           </div>
@@ -49,7 +49,7 @@ function HerbalTea() {
                 key={index}
                 className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[40vw]"
               >
-                <Link to={`/herbaltea/${TeaData.product_id}`}>
+                <Link to={`/adventcalendar/${TeaData.product_id}`}>
                 <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
                   <img
                     className="w-full h-full object-contain sm:object-cover"
@@ -58,16 +58,16 @@ function HerbalTea() {
                   />
                 </div>
                 <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
-                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686]">
+                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[3vw]">
                     {TeaData.product_category}
                   </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans">
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[3vw]">
                     {TeaData.product_name}
                   </span>
-                  <span className="text-[1.2vw] text-[#484848]">
+                  <span className="text-[1.2vw] text-[#484848] max-sm:text-[2vw]">
                     {TeaData.product}
                   </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold">
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[3vw]">
                     ₹ {TeaData.product_price}
                   </span>
                 </div>

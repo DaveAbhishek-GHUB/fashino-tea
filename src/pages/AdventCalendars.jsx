@@ -26,15 +26,15 @@ function AdventCalendars() {
       <Header />
       <SubHeader />
       <div className="main-wrapper w-full h-screen">
-        <div className="page-header-wrapper w-full h-[30vw] relative">
+        <div className="page-header-wrapper w-full h-[30vw] relative max-sm:h-[60vw]">
           <img
             className="w-full h-full object-cover"
             src="https://www.paperandtea.com/cdn/shop/collections/Collection_Header_02_2000x1000_948f13df-4470-4499-bd09-049bb8c257da.webp?v=1726126206&width=2600"
             alt="..."
           />
           <div className="page-heading-info-wrapper absolute bottom-[8vw] left-[3vw] w-[70vw]">
-            <h1 className="text-[5vw] text-white font-serif">Advent calendars 2024</h1>
-            <span className="text-[1.5vw] text-white">
+            <h1 className="text-[5vw] text-white font-serif max-sm:text-[8vw]">Advent calendars 2024</h1>
+            <span className="text-[1.5vw] text-white max-sm:text-[3vw]">
             Your Advent, Your Calendar, Your Moments of Joy
             </span>
           </div>
@@ -57,16 +57,16 @@ function AdventCalendars() {
                   />
                 </div>
                 <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
-                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686]">
+                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[3vw]">
                     {TeaData.product_category}
                   </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans">
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[3vw]">
                     {TeaData.product_name}
                   </span>
-                  <span className="text-[1.2vw] text-[#484848]">
+                  <span className="text-[1.2vw] text-[#484848] max-sm:text-[2vw]">
                     {TeaData.product}
                   </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold">
+                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[3vw]">
                     ₹ {TeaData.product_price}
                   </span>
                 </div>

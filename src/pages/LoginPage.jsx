@@ -1,16 +1,22 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Login } from "../store/slices/userSlice";
 
 function LoginPage() {
+  const [loggedinuser, setLoggedinuser] = useState(null);
   const navigate = useNavigate()
-
   const dispatch = useDispatch();
+
+  const user = useSelector((state) => state.user.Loggedin);
+
+  useEffect(() => {
+    setLoggedinuser(user);
+  }, [user]);
 
   const {
     register,
@@ -25,7 +31,12 @@ function LoginPage() {
 
   const onSubmit = (LoginData) => {
     dispatch(Login(LoginData));
-    navigate("/")
+    if(loggedinuser === null){
+      alert("Email or password incorrect")
+    }
+    else{
+      navigate("/")
+    }
   };
   return (
     <>

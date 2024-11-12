@@ -6,10 +6,14 @@ import Welovewhatwedosection from "../utils/Welovewhatwedosection";
 import Yourbenefits from "../utils/Yourbenefits";
 import Footer from "../components/Footer";
 import { useParams } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/slices/userSlice";
 
 function ProductDetail() {
     const [selectedProduct, setselectedProduct] = useState([]);
 
+    const dispatch = useDispatch();
+  
     const { productId }  = useParams();
     const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
 
@@ -19,9 +23,13 @@ function ProductDetail() {
             .then((data) => {
                 const product = data.find(item => item.product_id == productId);
                 setselectedProduct(product);
-                console.log("Product found:", product);  
+                console.log("Product found:", product);
             });
-    }, [teaCollection, productId]);  
+    }, [teaCollection, productId]);
+
+    const addtocart = () => {
+      dispatch(addToCart({id: selectedProduct.product_id, name: selectedProduct.product_name, category: selectedProduct.product_category, price: selectedProduct.product_price, quantity: "1"}));
+    }
     
   return (
     <>
@@ -57,7 +65,7 @@ function ProductDetail() {
                 <span className="text-sm">incl. VAT, plus shipping</span>
               </div>
 
-              <button className="w-full md:w-auto py-3 px-6 bg-black text-white text-base md:text-lg">
+              <button onClick={() => addtocart()} className="w-full md:w-auto py-3 px-6 bg-black text-white text-base md:text-lg">
                 Add to cart
               </button>
 
