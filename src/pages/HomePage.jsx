@@ -11,8 +11,30 @@ import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { addToCart } from "../store/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 function HomePage() {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 7,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 4,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 3,
+    },
+  };
+
   const [TeaCollection, setTeaCollection] = useState([]);
   const dispatch = useDispatch();
 
@@ -90,133 +112,145 @@ function HomePage() {
         </div>
 
         {/* Category Section */}
-        <div className="category-section-wrapper w-full h-[25vh] sm:h-[30vh] md:h-[35vh] flex gap-4 sm:gap-6 md:gap-10 items-center px-3 sm:px-4 md:px-5 overflow-x-auto whitespace-nowrap bg-[#EEEEEE]">
-          {/* adventcalendars */}
-          <Link to="/Adventcalendar">
-            <div className="advent-calendars w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-              <img
-                className="w-full h-full rounded-full"
-                src="https://www.paperandtea.com/cdn/shop/files/UNICORN_collection_page_1.jpg?v=1725981579&width=200"
-                alt="..."
-              />
-              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-                Advent-calendars
-              </span>
-            </div>
-          </Link>
-
-          {/* teachocolate */}
-          <Link to="/teachocolate">
-            <div className="tea-chocolate w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-              <img
-                className="w-full h-full rounded-full"
-                src="https://www.paperandtea.com/cdn/shop/files/Collection_Circle.jpg?v=1727185858&width=200"
-                alt="..."
-              />
-              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-                Tea-chocolate
-              </span>
-            </div>
-          </Link>
-
-          {/* matcha */}
-          <Link to="/matcha">
-            <div className="tea-matcha w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-              <img
-                className="w-full h-full rounded-full"
-                src="https://www.paperandtea.com/cdn/shop/files/icon-matchatee.jpg?v=1721139547&width=200"
-                alt="..."
-              />
-              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-                Matcha
-              </span>
-            </div>
-          </Link>
-
-          {/* tea-blends */}
-          <Link to="/teablends">
-            <div className="tea-blends w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-              <img
-                className="w-full h-full rounded-full"
-                src="https://www.paperandtea.com/cdn/shop/files/icon-teemischungen.jpg?v=1721139547&width=200"
-                alt="..."
-              />
-              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-                Tea-blends
-              </span>
-            </div>
-          </Link>
-
-          {/* winter-teas */}
-          <Link to="/wintertea">
-            <div className="winter-teas w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-              <img
-                className="w-full h-full rounded-full"
-                src="https://www.paperandtea.com/cdn/shop/files/Bilder_Startseite_Winter_Teas.jpg?v=1729069408&width=200"
-                alt="..."
-              />
-              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-                Winter-teas
-              </span>
-            </div>
-          </Link>
-
-          {/* Green Tea */}
-          <Link to="/greentea">
-            <div className="green-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-              <img
-                className="w-full h-full rounded-full"
-                src="https://www.paperandtea.com/cdn/shop/files/icon-gruenertee.jpg?v=1721139547&width=200"
-                alt="..."
-              />
-              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-                Green-tea
-              </span>
-            </div>
-          </Link>
-
-          {/* Black Tea */}
-          <Link to="/blacktea">
-            <div className="black-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-              <img
-                className="w-full h-full rounded-full"
-                src="https://www.paperandtea.com/cdn/shop/files/icon-schwarzertee.jpg?v=1721139547&width=200"
-                alt="..."
-              />
-              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-                Black-tea
-              </span>
-            </div>
-          </Link>
-
-          {/* Herbal Tea */}
-          <Link to="herbaltea">
-            <div className="herbal-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-              <img
-                className="w-full h-full rounded-full"
-                src="https://www.paperandtea.com/cdn/shop/files/icon-kraeutertee.jpg?v=1721139547&width=200"
-                alt="..."
-              />
-              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-                Herbal-tea
-              </span>
-            </div>
-          </Link>
-
-          {/* Oolong Tea */}
-          <Link to="/oolongtea">
-            <div className="oolong-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-              <img
-                className="w-full h-full rounded-full"
-                src="https://www.paperandtea.com/cdn/shop/files/icon-oolong.jpg?v=1721139547&width=200"
-                alt="..."
-              />
-              <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
-                Oolong-tea
-              </span>
-            </div>
-          </Link>
-        </div>
+        <Carousel className="py-10 px-3" responsive={responsive}>
+          <div>
+            {/* adventcalendars */}
+            <Link to="/Adventcalendar">
+              <div className="advent-calendars w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+                <img
+                  className="w-full h-full rounded-full"
+                  src="https://www.paperandtea.com/cdn/shop/files/UNICORN_collection_page_1.jpg?v=1725981579&width=200"
+                  alt="..."
+                />
+                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                  Advent-calendars
+                </span>
+              </div>
+            </Link>
+          </div>
+          <div>
+            {/* teachocolate */}
+            <Link to="/teachocolate">
+              <div className="tea-chocolate w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+                <img
+                  className="w-full h-full rounded-full"
+                  src="https://www.paperandtea.com/cdn/shop/files/Collection_Circle.jpg?v=1727185858&width=200"
+                  alt="..."
+                />
+                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                  Tea-chocolate
+                </span>
+              </div>
+            </Link>
+          </div>
+          <div>
+            {/* matcha */}
+            <Link to="/matcha">
+              <div className="tea-matcha w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+                <img
+                  className="w-full h-full rounded-full"
+                  src="https://www.paperandtea.com/cdn/shop/files/icon-matchatee.jpg?v=1721139547&width=200"
+                  alt="..."
+                />
+                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                  Matcha
+                </span>
+              </div>
+            </Link>
+          </div>
+          <div>
+            {/* tea-blends */}
+            <Link to="/teablends">
+              <div className="tea-blends w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+                <img
+                  className="w-full h-full rounded-full"
+                  src="https://www.paperandtea.com/cdn/shop/files/icon-teemischungen.jpg?v=1721139547&width=200"
+                  alt="..."
+                />
+                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                  Tea-blends
+                </span>
+              </div>
+            </Link>
+          </div>
+          <div>
+            {/* winter-teas */}
+            <Link to="/wintertea">
+              <div className="winter-teas w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+                <img
+                  className="w-full h-full rounded-full"
+                  src="https://www.paperandtea.com/cdn/shop/files/Bilder_Startseite_Winter_Teas.jpg?v=1729069408&width=200"
+                  alt="..."
+                />
+                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                  Winter-teas
+                </span>
+              </div>
+            </Link>
+          </div>
+          <div>
+            {/* Green Tea */}
+            <Link to="/greentea">
+              <div className="green-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+                <img
+                  className="w-full h-full rounded-full"
+                  src="https://www.paperandtea.com/cdn/shop/files/icon-gruenertee.jpg?v=1721139547&width=200"
+                  alt="..."
+                />
+                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                  Green-tea
+                </span>
+              </div>
+            </Link>
+          </div>
+          <div>
+            {/* Black Tea */}
+            <Link to="/blacktea">
+              <div className="black-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+                <img
+                  className="w-full h-full rounded-full"
+                  src="https://www.paperandtea.com/cdn/shop/files/icon-schwarzertee.jpg?v=1721139547&width=200"
+                  alt="..."
+                />
+                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                  Black-tea
+                </span>
+              </div>
+            </Link>
+          </div>
+          <div>
+            {/* Herbal Tea */}
+            <Link to="herbaltea">
+              <div className="herbal-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+                <img
+                  className="w-full h-full rounded-full"
+                  src="https://www.paperandtea.com/cdn/shop/files/icon-kraeutertee.jpg?v=1721139547&width=200"
+                  alt="..."
+                />
+                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                  Herbal-tea
+                </span>
+              </div>
+            </Link>
+          </div>
+          <div>
+            {/* Oolong Tea */}
+            <Link to="/oolongtea">
+              <div className="oolong-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+                <img
+                  className="w-full h-full rounded-full"
+                  src="https://www.paperandtea.com/cdn/shop/files/icon-oolong.jpg?v=1721139547&width=200"
+                  alt="..."
+                />
+                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                  Oolong-tea
+                </span>
+              </div>
+            </Link>
+          </div>
+        </Carousel>
+        {/* <div className="category-section-wrapper w-full h-[25vh] sm:h-[30vh] md:h-[35vh] flex gap-4 sm:gap-6 md:gap-10 items-center px-3 sm:px-4 md:px-5 overflow-x-auto whitespace-nowrap bg-[#EEEEEE]">
+        </div> */}
 
         {/* Cozy moments */}
         <div className="cozymoments-section-wrapper w-full min-h-screen">
