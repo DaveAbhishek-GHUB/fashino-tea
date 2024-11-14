@@ -10,13 +10,14 @@ import Yourbenefits from "../utils/Yourbenefits";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { addToCart } from "../store/slices/userSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 function HomePage() {
   const [TeaCollection, setTeaCollection] = useState([]);
   const dispatch = useDispatch();
 
   const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
+  const user = useSelector((state) => state.user.Loggedin);
 
   useEffect(() => {
     fetch(teaCollection)
@@ -28,6 +29,9 @@ function HomePage() {
   }, []);
 
   const AddToCart = (Data) => {
+    if (!user) {
+      alert("Login First");
+    }
     dispatch(
       addToCart({
         id: Data.product_id,
@@ -50,11 +54,24 @@ function HomePage() {
         <div className="hero-wrapper h-[50vh] sm:h-[45vh] md:h-[50vh] relative max-sm:h-[30vh]">
           <video
             className="w-full h-full object-cover"
-            src="https://videos.pexels.com/video-files/7592873/7592873-uhd_2732_1318_30fps.mp4"
-            loop
-            autoPlay
-            muted
-          ></video>
+            playsInline="true"
+            autoPlay="autoplay"
+            muted="muted"
+            loop="loop"
+            preload="metadata"
+          >
+            <source
+              data-src="//www.paperandtea.com/cdn/shop/videos/c/vp/b7af3202049b4b70a612de1a7310ae64/b7af3202049b4b70a612de1a7310ae64.m3u8?v=0"
+              type="application/x-mpegURL"
+              src="//www.paperandtea.com/cdn/shop/videos/c/vp/b7af3202049b4b70a612de1a7310ae64/b7af3202049b4b70a612de1a7310ae64.m3u8?v=0"
+            />
+            <source
+              data-src="//www.paperandtea.com/cdn/shop/videos/c/vp/b7af3202049b4b70a612de1a7310ae64/b7af3202049b4b70a612de1a7310ae64.HD-1080p-7.2Mbps-34324110.mp4?v=0"
+              type="video/mp4"
+              src="//www.paperandtea.com/cdn/shop/videos/c/vp/b7af3202049b4b70a612de1a7310ae64/b7af3202049b4b70a612de1a7310ae64.HD-1080p-7.2Mbps-34324110.mp4?v=0"
+            />
+          </video>
+
           <div className="hero-info-wrapper absolute sm:top-[6vw] md:top-[8vw] left-[3vw] max-sm:bottom-[10vw]">
             <span className="text-white sm:text-base md:text-lg max-sm:text-[10vw]">
               Small doors, big joy

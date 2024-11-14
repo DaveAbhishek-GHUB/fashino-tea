@@ -8,15 +8,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Login } from "../store/slices/userSlice";
 
 function LoginPage() {
-  const [loggedinuser, setLoggedinuser] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const user = useSelector((state) => state.user.Loggedin);
-
-  useEffect(() => {
-    setLoggedinuser(user);
-  }, [user]);
+  const allusers = useSelector((state)=>state.user.user);
 
   const {
     register,
@@ -30,8 +25,9 @@ function LoginPage() {
   });
 
   const onSubmit = (LoginData) => {
+    const user = allusers.find((user)=>user.email === LoginData.email && user.password === LoginData.password);
     dispatch(Login(LoginData));
-    if (loggedinuser === null) {
+    if (!user) {
       alert("Email or password incorrect");
     } else {
       navigate("/");
@@ -86,7 +82,9 @@ function LoginPage() {
               Login
             </button>
             <div className="login-navigator m-auto text-[1.3vw] text-center max-md:text-[2vw] max-sm:text-[3vw]">
-              <span>Not yet a member of the Fascino? Create an account? <br /><Link to="/register">Create an account</Link></span>
+              <span>Not yet a member of the Fascino? Create an account? <br /><Link to="/register">
+                <span className="text-blue-400">Create an account</span>
+              </Link></span>
             </div>
           </form>
         </div>

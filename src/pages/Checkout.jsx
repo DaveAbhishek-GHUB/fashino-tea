@@ -3,11 +3,13 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
-import { addAddress, removeFromCart, updateQuantity } from "../store/slices/userSlice";
+import { addAddress, clearcart, removeFromCart, updateQuantity } from "../store/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 function Checkout() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const user = useSelector((state) => state.user.user);
   console.log(user);
@@ -73,7 +75,8 @@ function Checkout() {
 
   const onSubmit = (data) => {
     dispatch(addAddress({firstname: data.firstname, lastname: data.lastname, address: data.address, apartment: data.apartment, aptno: data.apartment, postalcode: data.postalcode, city: data.city}));
-    console.log("submited data", data)
+    navigate("/orderconfirm");
+    dispatch(clearcart());
   };
   return (
     <>

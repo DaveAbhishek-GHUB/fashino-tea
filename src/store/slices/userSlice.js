@@ -62,7 +62,6 @@ const userSlice = createSlice({
         alert("Product added to cart");
       }
     },
-    
 
     addAddress: (state, action) => {
       console.log("Loggedin user:", state.Loggedin);
@@ -97,6 +96,13 @@ const userSlice = createSlice({
       }
     },
 
+    clearcart: (state) => {
+      const user = state.user.find((user)=>user.email === state.Loggedin);
+      if(user){
+        user.cart = [];
+      }
+    },
+
     logout: (state) => {
       state.Loggedin = null;
     },
@@ -111,5 +117,6 @@ export const {
   updateQuantity,
   removeFromCart,
   addAddress,
+  clearcart
 } = userSlice.actions;
 export default userSlice.reducer;

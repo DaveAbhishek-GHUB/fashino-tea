@@ -22,6 +22,7 @@ import ProfilePage from "./pages/ProfilePage";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Page404 from "./pages/Page404";
+import OrderConfirm from "./pages/OrderConfirm";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
         <Route path="/account" element={<ProfilePage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/orderconfirm" element={<OrderConfirm/>}/>
         <Route path="*" element={<Page404 />} />
       </Routes>
     </>
