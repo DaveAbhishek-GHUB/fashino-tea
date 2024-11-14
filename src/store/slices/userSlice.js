@@ -46,14 +46,23 @@ const userSlice = createSlice({
       const userForCart = state.user.find(
         (user) => user.email === state.Loggedin
       );
-      console.log("userforcart", userForCart);
-
+    
       if (userForCart) {
-        userForCart.cart.push(action.payload);
-        console.log("pushed");
+        const alreadyAvailable = userForCart.cart.find(
+          (item) => item.name === action.payload.name
+        );
+    
+        if (alreadyAvailable) {
+          alreadyAvailable.quantity += 1;
+        } else {
+          userForCart.cart.push(action.payload);
+        }
+    
+        console.log("Cart updated:", userForCart.cart);
         alert("Product added to cart");
       }
     },
+    
 
     addAddress: (state, action) => {
       console.log("Loggedin user:", state.Loggedin);

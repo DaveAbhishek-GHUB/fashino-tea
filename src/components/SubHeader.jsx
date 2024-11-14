@@ -1,14 +1,27 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 function SubHeader() {
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const loggedinuser = useSelector((state) => state.user.Loggedin);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  
 
+  const isLoggedin = () => {
+    if(loggedinuser){
+      navigate("/cart")
+    }
+    else{
+      alert("Login first")
+    }
+  }
   return (
     <div className="relative">
       <div className="main-subheader-container mb-3">
@@ -84,10 +97,10 @@ function SubHeader() {
               </svg>
               </Link>
             </div>
-            <div className="cart-icon-wrapper">
-              <Link to="/cart">              
+            <div className="cart-icon-wrapper">            
               <svg
-                className="w-6 sm:w-[2vw]"
+               onClick={isLoggedin}
+                className="w-6 sm:w-[2vw] cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 width={24}
@@ -129,7 +142,6 @@ function SubHeader() {
                   strokeWidth="1.5"
                 />
               </svg>
-              </Link>
             </div>
           </div>
         </div>

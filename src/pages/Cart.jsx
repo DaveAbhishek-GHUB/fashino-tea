@@ -4,9 +4,11 @@ import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart, updateQuantity } from "../store/slices/userSlice";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // Select user and logged-in user data from the Redux store
   const user = useSelector((state) => state.user.user);
@@ -26,7 +28,7 @@ function Cart() {
   // Function to decrease the quantity of a cart item
   const descreaseQuantity = (id) => {
     const product = cartitems.find((item) => id === item.id);
-    if (product) {
+    if (product && product.quantity > 1) {
       const newQuantity = product.quantity - 1;
       dispatch(updateQuantity({ productId: id, newQuantity }));
     }
@@ -44,6 +46,10 @@ function Cart() {
       return total + itemPrice * item.quantity;
     }, 0);
   };
+
+  const navigateToCheckout = () => {
+      navigate("/checkout")
+  }
 
   return (
     <>
@@ -87,7 +93,7 @@ function Cart() {
         <div className="cart-wrapper w-full flex flex-col items-center p-2">
           {cartitems.length > 0 ? (
             cartitems.map((items, index) => (
-              <div
+              <div                     
                 key={index}
                 className="cart w-full h-[15vw] max-md:h-[20vw] max-sm:h-[25vw] border-black border-b-[1px] flex items-center p-2"
               >
@@ -180,7 +186,7 @@ function Cart() {
               <h1 className="font-bold">₹ {calculateCartPrice()}</h1>
             </div>
             <div className="checkout-button-wrapper">
-              <button className="text-white bg-black p-2 rounded-md items-center">
+              <button onClick={navigateToCheckout} className="text-white bg-black p-2 rounded-md items-center">
                 Checkout
               </button>
             </div>
