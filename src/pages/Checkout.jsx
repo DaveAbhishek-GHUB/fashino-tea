@@ -31,7 +31,7 @@ function Checkout() {
 
   const descreaseQuantity = (id) => {
     const product = cartitems.find((item) => id === item.id);
-    if (product) {
+    if (product && product.quantity > 1) {
       const newQuantity = product.quantity - 1;
       dispatch(updateQuantity({ productId: id, newQuantity }));
     }
@@ -281,7 +281,7 @@ function Checkout() {
           </div>
         </div>
         <div className="price-checkout w-full md:w-[40vw] h-full p-2">
-          <div className="carted-item-wrapper w-full h-[30vw] overflow-y-scroll">
+          <div className="carted-item-wrapper w-full h-[55vw] overflow-y-scroll">
             <div className="cart-wrapper w-full flex flex-col items-center p-2">
               {cartitems.length > 0 ? (
                 cartitems.map((items, index) => (
@@ -372,7 +372,7 @@ function Checkout() {
             <div className="totolwrapper flex justify-center">
             <div className="total-wrapper flex gap-2">
               <span>Total :</span>
-              <h1 className="font-bold">₹ {calculateCartPrice()}</h1>
+              <h1 className="font-bold">₹ {Math.round(calculateCartPrice())}</h1>
             </div>
           </div>
           </div>

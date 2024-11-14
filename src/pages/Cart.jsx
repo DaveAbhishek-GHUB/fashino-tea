@@ -180,10 +180,10 @@ function Cart() {
 
         {/* Total price and checkout button */}
         {cartitems.length > 0 && (
-          <div className="totolwrapper flex justify-center gap-[50vw] max-md:gap-[30vw] max-sm:gap-[20vw] mt-10">
+          <div className="totolwrapper flex justify-center gap-[50vw] max-md:gap-[30vw] max-sm:gap-[20vw] mt-10 mb-10">
             <div className="total-wrapper flex gap-2">
               <span>Total :</span>
-              <h1 className="font-bold">₹ {calculateCartPrice()}</h1>
+              <h1 className="font-bold">₹ {Math.round(calculateCartPrice())}</h1>
             </div>
             <div className="checkout-button-wrapper">
               <button onClick={navigateToCheckout} className="text-white bg-black p-2 rounded-md items-center">
