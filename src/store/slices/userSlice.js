@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   user: [],
   Loggedin: null,
+  LoggedinUserData: []
 };
 
 const userSlice = createSlice({
@@ -10,7 +11,7 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     Register: (state, action) => {
-      const { firstname, lastname, email, password, address } = action.payload;
+      const { firstname, lastname, email, password } = action.payload;
 
       const newUser = {
         id: state.user.length + 1,
@@ -18,8 +19,8 @@ const userSlice = createSlice({
         lastname,
         email,
         password,
-        address,
         cart: [],
+        address: [],
       };
 
       state.user.push(newUser);
@@ -42,15 +43,49 @@ const userSlice = createSlice({
     },
 
     addToCart: (state, action) => {
-        const userForCart = state.user.find(
-            (user) => user.email === state.Loggedin
-        );
-        console.log("userforcart", userForCart);
+      const userForCart = state.user.find(
+        (user) => user.email === state.Loggedin
+      );
+      console.log("userforcart", userForCart);
 
-        if (userForCart) {
-            userForCart.cart.push(action.payload);
-            console.log("pushed")
-        }       
+      if (userForCart) {
+        userForCart.cart.push(action.payload);
+        console.log("pushed");
+        alert("Product added to cart");
+      }
+    },
+
+    addAddress: (state, action) => {
+      console.log("Loggedin user:", state.Loggedin);
+      const userForAddress = state.user.find(
+        (user) => user.email === state.Loggedin
+      );
+      
+      if (userForAddress) {
+        userForAddress.address.push(action.payload);
+        console.log("address saved");
+      } else {
+        console.log("No user found for adding address");
+      }
+    },
+
+    updateQuantity: (state, action) => {
+      const { productId, newQuantity } = action.payload;
+      const user = state.user.find((user) => user.email === state.Loggedin);
+
+      if (user) {
+        const product = user.cart.find((item) => item.id === productId);
+        if (product) {
+          product.quantity = newQuantity;
+        }
+      }
+    },
+
+    removeFromCart: (state, action) => {
+      const user = state.user.find((user) => user.email === state.Loggedin);
+      if (user) {
+        user.cart = user.cart.filter((item) => item.id !== action.payload);
+      }
     },
 
     logout: (state) => {
@@ -59,5 +94,13 @@ const userSlice = createSlice({
   },
 });
 
-export const { Register, Login, logout, addToCart } = userSlice.actions;
+export const {
+  Register,
+  Login,
+  logout,
+  addToCart,
+  updateQuantity,
+  removeFromCart,
+  addAddress,
+} = userSlice.actions;
 export default userSlice.reducer;

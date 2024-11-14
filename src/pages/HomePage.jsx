@@ -24,7 +24,6 @@ function HomePage() {
       });
   }, []);
 
-
   return (
     <>
       <Header />
@@ -47,10 +46,10 @@ function HomePage() {
               Advent calendars 2024
             </h1>
             <div className="hero-info-button">
-              <Link to="/Adventcalendar">              
-              <button className="bg-black text-white p-2 sm:px-3 md:px-4 rounded-md text-sm sm:text-base max-sm:p-3 max-sm:mt-3">
-                Discover more
-              </button>
+              <Link to="/Adventcalendar">
+                <button className="bg-black text-white p-2 sm:px-3 md:px-4 rounded-md text-sm sm:text-base max-sm:p-3 max-sm:mt-3">
+                  Discover more
+                </button>
               </Link>
             </div>
           </div>
@@ -171,7 +170,6 @@ function HomePage() {
           </Link>
 
           {/* Oolong Tea */}
-
           <Link to="/oolongtea">
             <div className="oolong-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
               <img
@@ -196,47 +194,49 @@ function HomePage() {
               Enjoy the winter with aromatic blends that will warm you up.
             </span>
           </div>
-
+          
           <div className="product-wrapper w-full h-auto flex flex-wrap justify-between gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
-          {TeaCollection.length > 0 ? (
-            TeaCollection.filter(
-              (Teafilter) => Teafilter.product_category === "Gift Set"
-            ).slice(0, 4).map((TeaData, index) => (
-              <div
-                key={index}
-                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[35vw] sm:h-[50vw] md:h-[40vw]"
-              >
-                <Link to={`/wintertea/${TeaData.product_id}`}>
-                <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
-                  <img
-                    className="w-full h-full object-contain sm:object-cover"
-                    src={TeaData.product_image}
-                    alt={TeaData.product_name}
-                  />
-                </div>
-                <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
-                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[4vw]">
-                    {TeaData.product_category}
-                  </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[5vw]">
-                    {TeaData.product_name}
-                  </span>
-                  <span className="text-[1.2vw] text-[#484848] max-sm:text-[4vw]">
-                    {TeaData.product}
-                  </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[4vw]">
-                    ₹ {TeaData.product_price}
-                  </span>
-                </div>
-                </Link>
-              </div>
-            ))
-          ) : (
-            <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-red-500">
-              Fetch Issue!
-            </span>
-          )}
-        </div>
+            {TeaCollection.length > 0 ? (
+              TeaCollection.filter(
+                (Teafilter) => Teafilter.product_category === "Gift Set"
+              )
+                .slice(0, 4)
+                .map((TeaData, index) => (
+                  <div
+                    key={index}
+                    className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[35vw] sm:h-[50vw] md:h-[40vw]"
+                  >
+                    <Link to={`/wintertea/${TeaData.product_id}`}>
+                      <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
+                        <img
+                          className="w-full h-full object-contain sm:object-cover"
+                          src={TeaData.product_image}
+                          alt={TeaData.product_name}
+                        />
+                      </div>
+                      <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
+                        <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[4vw]">
+                          {TeaData.product_category}
+                        </span>
+                        <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[5vw]">
+                          {TeaData.product_name}
+                        </span>
+                        <span className="text-[1.2vw] text-[#484848] max-sm:text-[4vw]">
+                          {TeaData.product}
+                        </span>
+                        <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[4vw]">
+                          ₹ {TeaData.product_price}
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                ))
+            ) : (
+              <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-red-500">
+                Fetch Issue!
+              </span>
+            )}
+          </div>
           <div className="button-wrapper w-full flex justify-center items-center mt-8 mb-10">
             <Link to="/wintertea">
               <button className="py-2 sm:py-2.5 md:py-3 px-6 sm:px-8 md:px-10 border-black border-[1px] font-sans text-[4vw] sm:text-[1.5vw] md:text-[1.2vw]">
@@ -258,45 +258,45 @@ function HomePage() {
           </div>
 
           <div className="product-wrapper w-full h-auto flex flex-wrap justify-between gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
-          {TeaCollection.length > 0 ? (
-            TeaCollection.filter(
-              (Teafilter) => Teafilter.product_category === "Advent Calendar"
-            ).map((TeaData, index) => (
-              <div
-                key={index}
-                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[35vw] sm:h-[50vw] md:h-[40vw]"
-              >
-                <Link to={`/adventcalendar/${TeaData.product_id}`}>
-                <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
-                  <img
-                    className="w-full h-full object-contain"
-                    src={TeaData.product_image}
-                    alt={TeaData.product_name}
-                  />
+            {TeaCollection.length > 0 ? (
+              TeaCollection.filter(
+                (Teafilter) => Teafilter.product_category === "Advent Calendar"
+              ).map((TeaData, index) => (
+                <div
+                  key={index}
+                  className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[35vw] sm:h-[50vw] md:h-[40vw]"
+                >
+                  <Link to={`/adventcalendar/${TeaData.product_id}`}>
+                    <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
+                      <img
+                        className="w-full h-full object-contain"
+                        src={TeaData.product_image}
+                        alt={TeaData.product_name}
+                      />
+                    </div>
+                    <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
+                      <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[4vw]">
+                        {TeaData.product_category}
+                      </span>
+                      <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[5vw]">
+                        {TeaData.product_name}
+                      </span>
+                      <span className="text-[1.2vw] text-[#484848] max-sm:text-[4vw]">
+                        {TeaData.product}
+                      </span>
+                      <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[4vw]">
+                        ₹ {TeaData.product_price}
+                      </span>
+                    </div>
+                  </Link>
                 </div>
-                <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
-                  <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[4vw]">
-                    {TeaData.product_category}
-                  </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[5vw]">
-                    {TeaData.product_name}
-                  </span>
-                  <span className="text-[1.2vw] text-[#484848] max-sm:text-[4vw]">
-                    {TeaData.product}
-                  </span>
-                  <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[4vw]">
-                    ₹ {TeaData.product_price}
-                  </span>
-                </div>
-                </Link>
-              </div>
-            ))
-          ) : (
-            <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-red-500">
-              Fetch Issue!
-            </span>
-          )}
-        </div>
+              ))
+            ) : (
+              <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-red-500">
+                Fetch Issue!
+              </span>
+            )}
+          </div>
           <div className="button-wrapper w-full flex justify-center items-center mt-8 mb-10">
             <Link to="/Adventcalendar">
               <button className="py-2 sm:py-2.5 md:py-3 px-6 sm:px-8 md:px-10 border-black border-[1px] font-sans text-[4vw] sm:text-[1.5vw] md:text-[1.2vw]">

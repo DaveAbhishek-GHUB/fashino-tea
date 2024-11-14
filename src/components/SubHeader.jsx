@@ -85,6 +85,7 @@ function SubHeader() {
               </Link>
             </div>
             <div className="cart-icon-wrapper">
+              <Link to="/cart">              
               <svg
                 className="w-6 sm:w-[2vw]"
                 xmlns="http://www.w3.org/2000/svg"
@@ -128,6 +129,7 @@ function SubHeader() {
                   strokeWidth="1.5"
                 />
               </svg>
+              </Link>
             </div>
           </div>
         </div>

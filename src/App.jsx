@@ -20,6 +20,8 @@ import Oolongtea from "./pages/Oolongtea";
 import ProductDetail from "./pages/ProductDetail";
 import ProfilePage from "./pages/ProfilePage";
 import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import Page404 from "./pages/Page404";
 
 function App() {
   return (
@@ -48,6 +50,8 @@ function App() {
         <Route path="/oolongtea/:productId" element={<ProductDetail />} />
         <Route path="/account" element={<ProfilePage />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
     </>
   );

@@ -6,13 +6,14 @@ import Welovewhatwedosection from "../utils/Welovewhatwedosection";
 import Yourbenefits from "../utils/Yourbenefits";
 import Footer from "../components/Footer";
 import { useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/slices/userSlice";
 
 function ProductDetail() {
     const [selectedProduct, setselectedProduct] = useState([]);
 
     const dispatch = useDispatch();
+    const user = useSelector((state)=> state.user.Loggedin);
   
     const { productId }  = useParams();
     const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
@@ -28,7 +29,10 @@ function ProductDetail() {
     }, [teaCollection, productId]);
 
     const addtocart = () => {
-      dispatch(addToCart({id: selectedProduct.product_id, name: selectedProduct.product_name, category: selectedProduct.product_category, price: selectedProduct.product_price, quantity: "1"}));
+      if(!user){
+        alert("Login First");
+      }
+      dispatch(addToCart({id: selectedProduct.product_id, image:selectedProduct.product_image, name: selectedProduct.product_name, category: selectedProduct.product_category, price: selectedProduct.product_price, quantity: 1}));
     }
     
   return (
