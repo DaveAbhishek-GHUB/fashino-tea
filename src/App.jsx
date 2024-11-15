@@ -16,13 +16,14 @@ import Wintertea from "./pages/Wintertea";
 import GreenTea from "./pages/GreenTea";
 import BlackTea from "./pages/BlackTea";
 import HerbalTea from "./pages/HerbalTea";
-import Oolongtea from "./pages/Oolongtea";
+import Oolongtea from "./pages/Oolongtea"; 
 import ProductDetail from "./pages/ProductDetail";
 import ProfilePage from "./pages/ProfilePage";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Page404 from "./pages/Page404";
 import OrderConfirm from "./pages/OrderConfirm";
+import AllProducts from "./pages/AllProducts";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/orderconfirm" element={<OrderConfirm/>}/>
+        <Route path="/ourproducts" element={<AllProducts/>}/> 
         <Route path="*" element={<Page404 />} />
       </Routes>
     </>

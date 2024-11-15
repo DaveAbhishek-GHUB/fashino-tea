@@ -63,10 +63,11 @@ function SubHeader() {
 
           {/* Navigation Links - Hidden on small screens */}
           <div className="hidden sm:flex navlinks-wrapper w-[70%] h-full items-center gap-[5vw] px-10 text-[1.5vw]">
-            <Link to="/teablends">Tea-blends</Link>
-            <Link to="/herbaltea">Herbal-Tea</Link>
-            <Link to="/greentea">Green-Tea</Link>
-            <Link to="/matcha">Matcha</Link>
+            <Link to="/ourproducts">our products</Link>
+            <Link to="/teablends">tea-blends</Link>
+            <Link to="/herbaltea">herbal-Tea</Link>
+            <Link to="/greentea">green-Tea</Link>
+            <Link to="/matcha">matcha</Link>
           </div>
 
           {/* User Icons */}
