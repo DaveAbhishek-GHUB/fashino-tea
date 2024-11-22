@@ -33,6 +33,7 @@ function AdventCalendars() {
     if (!user) {
       alert("Login First");
     }
+    
     dispatch(
       addToCart({
         id: Data.product_id,

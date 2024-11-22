@@ -7,7 +7,7 @@ import Storenearyou from "../utils/Storeclosetoyou";
 import Yourbenefits from "../utils/Yourbenefits";
 import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/slices/userSlice";
 
 function TeaChocolate() {
@@ -27,7 +27,12 @@ function TeaChocolate() {
       });
   }, []);
 
+  const user = useSelector((state) => state.user.Loggedin);
+
   const AddToCart = (Data) => {
+    if (!user) {
+      alert("Login First");
+    }
     dispatch(addToCart({id: Data.product_id, image:Data.product_image, name: Data.product_name, category: Data.product_category, price: Data.product_price, quantity: 1}));
       console.log(Data);
   }

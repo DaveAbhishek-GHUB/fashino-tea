@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -36,8 +36,14 @@ function AllProducts() {
       });
   }, []);
 
+  const user = useSelector((state) => state.user.Loggedin);
+
   // Cart handling
   const AddToCart = (Data) => {
+    if (!user) {
+      alert("Login First");
+    }
+    
     dispatch(
       addToCart({
         id: Data.product_id,
