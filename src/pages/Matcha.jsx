@@ -9,6 +9,8 @@ import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/slices/userSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function TeaBlends() {
   const [TeaCollection, setTeaCollection] = useState([]);
@@ -31,25 +33,69 @@ function TeaBlends() {
 
   const AddToCart = (Data) => {
     if (!user) {
-      alert("Login First");
+      toast.warn("Login First!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      dispatch(
+        addToCart({
+          id: Data.product_id,
+          image: Data.product_image,
+          name: Data.product_name,
+          category: Data.product_category,
+          price: Data.product_price,
+          quantity: 1,
+        })
+      );
+      console.log(Data);
+      toast.success("Successfully added to cart", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
-
-    dispatch(
-      addToCart({
-        id: Data.product_id,
-        image: Data.product_image,
-        name: Data.product_name,
-        category: Data.product_category,
-        price: Data.product_price,
-        quantity: 1,
-      })
-    );
-    console.log(Data);
   };
+
   return (
     <>
       <Header />
       <SubHeader />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className="main-wrapper w-full h-screen">
         {/* Page header with background image and title */}
         <div className="page-header-wrapper w-full h-[30vw] relative max-sm:h-[60vw]">

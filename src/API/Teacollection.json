@@ -364,7 +364,7 @@
         "product_id": 41,
         "product_name": "Golden Earl",
         "product_image": "https://www.paperandtea.com/cdn/shop/files/Golden-Earl_20_20_1.webp?v=1732169077&width=600",
-        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Golden_20Earl_Lifestyle_2000x2000_20_1_3b1ca127-8fd7-46d5-a5cc-2b0ba4a0e412.jpg?v=1730865752&width=811",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Golden_20Earl_Lifestyle_2000x2000_20_1.jpg?v=1732169078&width=811",
         "product_category": "Black Tea",
         "product_price": "1628.25",
         "product": "A fine Earl Grey blend of black tea from Yunnan and bergamot oil"
@@ -399,8 +399,8 @@
     {
         "product_id": 45,
         "product_name": "Red Earl",
-        "product_image": "https://www.paperandtea.com/cdn/shop/files/Red-Earl_20_20_1_4a0d18f0-6a8f-42bc-a930-5f55d71abf63.webp?v=1730865741&width=600",
-        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/d843bfba-06a9-47c1-af74-a5157c312ce0_c1f6346e-4a4d-44fb-823e-505761a3f0b2.jpg?v=1730865741&width=811",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Red-Earl_20_20_1.webp?v=1732204290&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/d843bfba-06a9-47c1-af74-a5157c312ce0_56bcef26-fb07-4ad5-b41a-fa26d6a9feed.jpg?v=1732204290&width=811",
         "product_category": "Herbal",
         "product_price": "1718.71",
         "product": "Full-flavour Earl Grey based on South African Rooibos with bergamot"

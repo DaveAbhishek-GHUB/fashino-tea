@@ -23,7 +23,7 @@ function SubHeader() {
     }
   }
   return (
-    <div className="relative">
+    <div className="relative border-black border-b-[1px]">
       <div className="main-subheader-container mb-3">
         <div className="subheader w-full h-12 sm:h-[3vw] flex items-center">
           {/* Hamburger Menu Button - Only visible on small screens */}

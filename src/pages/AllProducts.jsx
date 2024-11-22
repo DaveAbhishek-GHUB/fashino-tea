@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -12,16 +12,22 @@ import Storeclosetoyou from "../utils/Storeclosetoyou";
 import Welovewhatwedosection from "../utils/Welovewhatwedosection";
 import Footer from "../components/Footer";
 import Yourbenefits from "../utils/Yourbenefits";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Redux actions
 import { addToCart } from "../store/slices/userSlice";
 
 function AllProducts() {
+
+
   // State management
   const [TeaCollection, setTeaCollection] = useState([]);
   const [category, setCategory] = useState("Tea blend");
   const [minimumPrice, setMinimumPrice] = useState(null);
   const [maximumPrice, setMaximumPrice] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [isMenuOpen, setisMenuOpen] = useState();
 
   const dispatch = useDispatch();
   const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
@@ -35,26 +41,46 @@ function AllProducts() {
         setTeaCollection(Data);
       });
   }, []);
-
-  const user = useSelector((state) => state.user.Loggedin);
+  const toggleDropdown = (category) => {
+    setOpenDropdown(openDropdown === category ? null : category);
+  };
 
   // Cart handling
   const AddToCart = (Data) => {
     if (!user) {
-      alert("Login First");
+      toast.warn("Login First!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      dispatch(
+        addToCart({
+          id: Data.product_id,
+          image: Data.product_image,
+          name: Data.product_name,
+          category: Data.product_category,
+          price: Data.product_price,
+          quantity: 1,
+        })
+      );
+      console.log(Data);
+      toast.success("Successfully added to cart", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
-    
-    dispatch(
-      addToCart({
-        id: Data.product_id,
-        image: Data.product_image,
-        name: Data.product_name,
-        category: Data.product_category,
-        price: Data.product_price,
-        quantity: 1,
-      })
-    );
-    console.log(Data);
   };
 
   // Filter handling
@@ -76,286 +102,302 @@ function AllProducts() {
     <>
       <Header />
       <SubHeader />
-      <div className="main-wrapper w-full min-h-[100dvh]">
-        <div className="inner-wrapper w-full h-full flex">
-          <div className="sidebar w-[30vw] h-full">
-            <div className="category-wrapper w-full p-2">
-              <div className="heading">
-                <span className="text-[1.3vw] font-bold">Category</span>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <div className="main-wrapper w-full min-h-screen bg-gray-50">
+        <div className="inner-wrapper w-full h-full flex relative">
+          {/* Sidebar */}
+          <div
+            className="sidebar w-[20vw] max-lg:w-[30vw] min-h-screen hidden lg:flex flex-col p-4"
+          >
+            <div className="category-wrapper">
+              <div className="heading mb-4">
+                <span className="text-lg font-bold">Category</span>
               </div>
-              <div className="category-links-wrapper w-full flex flex-col items-start gap-1">
-                <button
-                  onClick={() => SETCategory("Advent Calendar")}
-                  className="w-full p-2 border-black border-b-[1px] text-start flex justify-between"
-                >
-                  <span>advent-calendar</span>
-                  <div className="arrow-icon-wrapper">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={24}
-                      height={24}
-                      color={"#000000"}
-                      fill={"none"}
-                    >
-                      <path
-                        d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </button>
 
+              {/* Tea Dropdown */}
+              <div className="category-links-wrapper flex flex-col gap-2">
                 <button
-                  onClick={() => SETCategory("Chocolate")}
-                  className="w-full p-2 border-black border-b-[1px] text-start flex justify-between"
+                  onClick={() => toggleDropdown('tea')}
+                  className="w-full p-2 border-b border-gray-300 text-start flex justify-between hover:bg-gray-100"
                 >
-                  <span>tea-chocolate</span>
-                  <div className="arrow-icon-wrapper">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={24}
-                      height={24}
-                      color={"#000000"}
-                      fill={"none"}
-                    >
-                      <path
-                        d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
+                  <span className="capitalize text-sm">Tea</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width={18}
+                    height={18}
+                    className="text-gray-600"
+                  >
+                    <path
+                      d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </button>
+                {openDropdown === 'tea' && (
+                  <div className="pl-4">
+                    {['Green tea', 'Black Tea', 'Herbal', 'Oolong Tea', 'Matcha', 'Tea blend'].map((item) => (
+                      <button
+                        key={item}
+                        onClick={() => setCategory(item)}
+                        className="w-full p-2 border-b border-gray-300 text-start hover:bg-gray-100"
+                      >
+                        <span className="capitalize text-sm">
+                          {item.toLowerCase().replaceAll(' ', '-')}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
 
+              {/* Products Dropdown */}
+              <div className="category-links-wrapper flex flex-col gap-2">
                 <button
-                  onClick={() => SETCategory("Matcha")}
-                  className="w-full p-2 border-black border-b-[1px] text-start flex justify-between"
+                  onClick={() => toggleDropdown('products')}
+                  className="w-full p-2 border-b border-gray-300 text-start flex justify-between hover:bg-gray-100"
                 >
-                  <span>matcha</span>
-                  <div className="arrow-icon-wrapper">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={24}
-                      height={24}
-                      color={"#000000"}
-                      fill={"none"}
-                    >
-                      <path
-                        d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
+                  <span className="capitalize text-sm">Products</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width={18}
+                    height={18}
+                    className="text-gray-600"
+                  >
+                    <path
+                      d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </button>
+                {openDropdown === 'products' && (
+                  <div className="pl-4">
+                    {['Advent Calendar', 'Gift Set'].map((item) => (
+                      <button
+                        key={item}
+                        onClick={() => setCategory(item)}
+                        className="w-full p-2 border-b border-gray-300 text-start hover:bg-gray-100"
+                      >
+                        <span className="capitalize text-sm">
+                          {item.toLowerCase().replaceAll(' ', '-')}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
 
+              {/* Food Dropdown */}
+              <div className="category-links-wrapper flex flex-col gap-2">
                 <button
-                  onClick={() => SETCategory("Tea blend")}
-                  className="w-full p-2 border-black border-b-[1px] text-start flex justify-between"
+                  onClick={() => toggleDropdown('food')}
+                  className="w-full p-2 border-b border-gray-300 text-start flex justify-between hover:bg-gray-100"
                 >
-                  <span>tea-blends</span>
-                  <div className="arrow-icon-wrapper">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={24}
-                      height={24}
-                      color={"#000000"}
-                      fill={"none"}
-                    >
-                      <path
-                        d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
+                  <span className="capitalize text-sm">Food</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width={18}
+                    height={18}
+                    className="text-gray-600"
+                  >
+                    <path
+                      d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
                 </button>
-
-                <button
-                  onClick={() => SETCategory("Gift Set")}
-                  className="w-full p-2 border-black border-b-[1px] text-start flex justify-between"
-                >
-                  <span>winter-teas</span>
-                  <div className="arrow-icon-wrapper">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={24}
-                      height={24}
-                      color={"#000000"}
-                      fill={"none"}
-                    >
-                      <path
-                        d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                {openDropdown === 'food' && (
+                  <div className="pl-4">
+                    {['Chocolate'].map((item) => (
+                      <button
+                        key={item}
+                        onClick={() => setCategory(item)}
+                        className="w-full p-2 border-b border-gray-300 text-start hover:bg-gray-100"
+                      >
+                        <span className="capitalize text-sm">
+                          {item.toLowerCase().replaceAll(' ', '-')}
+                        </span>
+                      </button>
+                    ))}
                   </div>
-                </button>
-                <button
-                  onClick={() => SETCategory("Green tea")}
-                  className="w-full p-2 border-black border-b-[1px] text-start flex justify-between"
-                >
-                  <span>green-tea</span>
-                  <div className="arrow-icon-wrapper">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={24}
-                      height={24}
-                      color={"#000000"}
-                      fill={"none"}
-                    >
-                      <path
-                        d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </button>
-
-                <button
-                  onClick={() => SETCategory("Black Tea")}
-                  className="w-full p-2 border-black border-b-[1px] text-start flex justify-between"
-                >
-                  <span>black-tea</span>
-                  <div className="arrow-icon-wrapper">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={24}
-                      height={24}
-                      color={"#000000"}
-                      fill={"none"}
-                    >
-                      <path
-                        d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </button>
-
-                <button
-                  onClick={() => SETCategory("Herbal")}
-                  className="w-full p-2 border-black border-b-[1px] text-start flex justify-between"
-                >
-                  <span>herbal-tea</span>
-                  <div className="arrow-icon-wrapper">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={24}
-                      height={24}
-                      color={"#000000"}
-                      fill={"none"}
-                    >
-                      <path
-                        d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </button>
-
-                <button
-                  onClick={() => SETCategory("Oolong Tea")}
-                  className="w-full p-2 border-black border-b-[1px] text-start flex justify-between"
-                >
-                  <span>oolong-tea</span>
-                  <div className="arrow-icon-wrapper">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      width={24}
-                      height={24}
-                      color={"#000000"}
-                      fill={"none"}
-                    >
-                      <path
-                        d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </button>
+                )}
               </div>
             </div>
-            <div className="sort-by-price my-3">
+
+
+            <div className="sort-by-price my-3 w-full">
               <div className="heading">
                 <span className="text-[1.3vw] font-bold p-2">
                   Sort by price
                 </span>
               </div>
-              <div className="sort-by-price-wrapper px-10">
+              <div className="sort-by-price-wrapper w-full ml-5">
                 <button
                   onClick={() => setFilter(0, 2000)}
-                  className="w-full p-2 text-start flex items-center"
+                  className="w-full p-2 text-start flex"
                 >
-                  <div className="price-wrapper">₹ 0 - ₹ 2000</div>
+                  <div className="price-wrapper text-[1.3vw] w-full">₹ 0 - ₹ 2000</div>
                 </button>
 
                 <button
                   onClick={() => setFilter(2001, 5000)}
                   className="w-full p-2 text-start flex items-center"
                 >
-                  <div className="price-wrapper">₹ 2001- ₹ 5000</div>
+                  <div className="price-wrapper text-[1.3vw] w-full">₹ 2001- ₹ 5000</div>
                 </button>
 
                 <button
                   onClick={() => setFilter(5001, 10000)}
                   className="w-full p-2 text-start flex items-center"
                 >
-                  <div className="price-wrapper">₹ 5001- ₹ 10000</div>
+                  <div className="price-wrapper text-[1.3vw] w-full">₹ 5001- ₹ 10000</div>
                 </button>
 
                 <button
                   onClick={() => setFilter(10001, 20000)}
                   className="w-full p-2 text-start flex items-center"
                 >
-                  <div className="price-wrapper">₹ 10001- ₹ 20000</div>
+                  <div className="price-wrapper text-[1.3vw] w-full">₹ 10001- ₹ 20000</div>
                 </button>
 
                 <button
                   onClick={() => setFilter(20001, 100000)}
                   className="w-full p-2 text-start flex items-center"
                 >
-                  <div className="price-wrapper">₹ 20001 - Above</div>
+                  <div className="price-wrapper text-[1.3vw] w-full">₹ 20001 - Above</div>
                 </button>
               </div>
             </div>
           </div>
-          <div className="sidebar w-[70vw] h-full">
-            <div className="heading-wrapper w-full">
-              <span className="text-[2vw] px-10 py-5 font-bold">{`${category}`}</span>
+
+          {/* Mobile Sidebar */}
+          {isMenuOpen && (
+            <div className="sidebar w-[70vw] max-md:w-[80vw] max-sm:w-full max-sm:absolute z-20  shadow-lg h-full max-sm:min-h-screen p-4 lg:hidden bg-white">
+              <div className="category-wrapper">
+                <div className="heading mb-4">
+                  <span className="text-lg font-bold">Category</span>
+                </div>
+                <div className="category-links-wrapper flex flex-col gap-2">
+                  {[
+                    "Advent Calendar",
+                    "Chocolate",
+                    "Matcha",
+                    "Tea blend",
+                    "Gift Set",
+                    "Green tea",
+                    "Black Tea",
+                    "Herbal",
+                    "Oolong Tea",
+                  ].map((item) => (
+                    <button
+                      key={item}
+                      onClick={() => SETCategory(item)}
+                      className="w-full p-2 border-b border-gray-300 text-start flex justify-between hover:bg-gray-100"
+                    >
+                      <span className="capitalize text-sm">
+                        {item.toLowerCase().replaceAll(" ", "-")}
+                      </span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width={18}
+                        height={18}
+                        className="text-gray-600"
+                      >
+                        <path
+                          d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="sort-by-price my-6">
+                <div className="heading mb-2">
+                  <span className="text-lg font-bold">Sort by price</span>
+                </div>
+                <div className="sort-by-price-wrapper flex flex-col gap-2">
+                  {[
+                    { range: "₹ 0 - ₹ 2000" },
+                    { range: "₹ 2001 - ₹ 5000" },
+                    { range: "₹ 5001 - ₹ 10000" },
+                    { range: "₹ 10001 - ₹ 20000" },
+                    { range: "₹ 20001 - Above" },
+                  ].map(({ range }) => (
+                    <button
+                      key={range}
+                      onClick={() => setFilter(...range.match(/\d+/g))}
+                      className="w-full p-2 text-start hover:bg-gray-100"
+                    >
+                      <span className="text-sm">{range}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Main Content */}
+          <div className="main-content w-full lg:w-[80vw] h-full">
+            <div className="header flex justify-between items-center p-4 border-b">
+              <span className="text-2xl max-sm:text-lg font-bold">
+                {category}
+              </span>
+              <button
+                className="filter-btn lg:hidden"
+                onClick={() => setisMenuOpen(true)}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  height={24}
+                  className="text-gray-600"
+                >
+                  <path
+                    d="M8.85746 12.5061C6.36901 10.6456 4.59564 8.59915 3.62734 7.44867C3.3276 7.09253 3.22938 6.8319 3.17033 6.3728C2.96811 4.8008 2.86701 4.0148 3.32795 3.5074C3.7889 3 4.60404 3 6.23433 3H17.7657C19.396 3 20.2111 3 20.672 3.5074C21.133 4.0148 21.0319 4.8008 20.8297 6.37281C20.7706 6.83191 20.6724 7.09254 20.3726 7.44867C19.403 8.60062 17.6261 10.6507 15.1326 12.5135C14.907 12.6821 14.7583 12.9561 14.6827 13.2635C14.6071 13.5709 14.6071 13.8934 14.6827 14.2008C14.7583 14.5083 14.907 14.7824 15.1326 14.9511C17.6261 16.8139 19.403 18.8639 20.3726 20.0158C20.6724 20.3719 20.7706 20.6325 20.8297 21.0916C21.0319 22.6636 21.133 23.4496 20.672 23.957C20.2111 24.4644 19.396 24.4644 17.7657 24.4644H6.23433C4.60404 24.4644 3.7889 24.4644 3.32795 23.957C2.86701 23.4496 2.96811 22.6636 3.17033 21.0916C3.22938 20.6325 3.3276 20.3719 3.62734 20.0158C4.59564 18.8649 6.36901 16.8184 8.85746 14.9579"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
             </div>
             <div className="product-wrapper w-full h-auto flex flex-wrap justify-between gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
               {TeaCollection.length > 0 ? (
@@ -381,7 +423,7 @@ function AllProducts() {
                     >
                       <button
                         onClick={() => AddToCart(TeaData)}
-                        className="absolute bottom-[16vw] right-[1vw] bg-white p-2 rounded-full border-black border-[1px] max-sm:bottom-[22vw]"
+                        className="absolute bottom-[16vw] right-[1vw]  p-2 rounded-full border-black border-[1px] max-sm:bottom-[22vw] bg-white"
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -441,11 +483,6 @@ function AllProducts() {
             </div>
           </div>
         </div>
-        <StandardBanner />
-        <Storeclosetoyou />
-        <Welovewhatwedosection />
-        <Yourbenefits />
-        <Footer />
       </div>
     </>
   );

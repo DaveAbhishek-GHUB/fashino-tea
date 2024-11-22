@@ -59,7 +59,6 @@ const userSlice = createSlice({
         }
     
         console.log("Cart updated:", userForCart.cart);
-        alert("Product added to cart");
       }
     },
 

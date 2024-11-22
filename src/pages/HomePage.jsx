@@ -13,11 +13,14 @@ import { addToCart } from "../store/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function HomePage() {
+
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
+      
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -39,7 +42,7 @@ function HomePage() {
   const dispatch = useDispatch();
 
   const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
-  
+
   const user = useSelector((state) => state.user.Loggedin);
 
   useEffect(() => {
@@ -53,25 +56,69 @@ function HomePage() {
 
   const AddToCart = (Data) => {
     if (!user) {
-      alert("Login First");
+      toast.warn("Login First!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      dispatch(
+        addToCart({
+          id: Data.product_id,
+          image: Data.product_image,
+          name: Data.product_name,
+          category: Data.product_category,
+          price: Data.product_price,
+          quantity: 1,
+        })
+      );
+      console.log(Data);
+      toast.success("Successfully added to cart", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
-    dispatch(
-      addToCart({
-        id: Data.product_id,
-        image: Data.product_image,
-        name: Data.product_name,
-        category: Data.product_category,
-        price: Data.product_price,
-        quantity: 1,
-      })
-    );
-    console.log(Data);
   };
 
   return (
     <>
       <Header />
       <SubHeader />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <div className="main-wrapper w-full min-h-screen">
         {/* Here section */}
         <div className="hero-wrapper h-[50vh] sm:h-[45vh] md:h-[50vh] relative max-sm:h-[30vh]">
@@ -123,7 +170,7 @@ function HomePage() {
                   src="https://www.paperandtea.com/cdn/shop/files/UNICORN_collection_page_1.jpg?v=1725981579&width=200"
                   alt="..."
                 />
-                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
                   Advent-calendars
                 </span>
               </div>
@@ -138,7 +185,7 @@ function HomePage() {
                   src="https://www.paperandtea.com/cdn/shop/files/Collection_Circle.jpg?v=1727185858&width=200"
                   alt="..."
                 />
-                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
                   Tea-chocolate
                 </span>
               </div>
@@ -153,7 +200,7 @@ function HomePage() {
                   src="https://www.paperandtea.com/cdn/shop/files/icon-matchatee.jpg?v=1721139547&width=200"
                   alt="..."
                 />
-                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
                   Matcha
                 </span>
               </div>
@@ -168,7 +215,7 @@ function HomePage() {
                   src="https://www.paperandtea.com/cdn/shop/files/icon-teemischungen.jpg?v=1721139547&width=200"
                   alt="..."
                 />
-                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
                   Tea-blends
                 </span>
               </div>
@@ -183,7 +230,7 @@ function HomePage() {
                   src="https://www.paperandtea.com/cdn/shop/files/Bilder_Startseite_Winter_Teas.jpg?v=1729069408&width=200"
                   alt="..."
                 />
-                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
                   Winter-teas
                 </span>
               </div>
@@ -198,7 +245,7 @@ function HomePage() {
                   src="https://www.paperandtea.com/cdn/shop/files/icon-gruenertee.jpg?v=1721139547&width=200"
                   alt="..."
                 />
-                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
                   Green-tea
                 </span>
               </div>
@@ -213,7 +260,7 @@ function HomePage() {
                   src="https://www.paperandtea.com/cdn/shop/files/icon-schwarzertee.jpg?v=1721139547&width=200"
                   alt="..."
                 />
-                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
                   Black-tea
                 </span>
               </div>
@@ -228,7 +275,7 @@ function HomePage() {
                   src="https://www.paperandtea.com/cdn/shop/files/icon-kraeutertee.jpg?v=1721139547&width=200"
                   alt="..."
                 />
-                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
                   Herbal-tea
                 </span>
               </div>
@@ -243,7 +290,7 @@ function HomePage() {
                   src="https://www.paperandtea.com/cdn/shop/files/icon-oolong.jpg?v=1721139547&width=200"
                   alt="..."
                 />
-                <span className="w-full flex justify-center text-[2vw] sm:text-[1.5vw] md:text-[1.2vw]">
+                <span className="w-full flex justify-center text-[3.5vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
                   Oolong-tea
                 </span>
               </div>
