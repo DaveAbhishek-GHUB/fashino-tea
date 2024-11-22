@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -44,6 +44,8 @@ function AllProducts() {
   const toggleDropdown = (category) => {
     setOpenDropdown(openDropdown === category ? null : category);
   };
+
+  const user = useSelector((state) => state.user.Loggedin);
 
   // Cart handling
   const AddToCart = (Data) => {
