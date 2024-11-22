@@ -33,8 +33,8 @@ function TeaChocolate() {
     if (!user) {
       alert("Login First");
     }
-    dispatch(addToCart({id: Data.product_id, image:Data.product_image, name: Data.product_name, category: Data.product_category, price: Data.product_price, quantity: 1}));
-      console.log(Data);
+    dispatch(addToCart({ id: Data.product_id, image: Data.product_image, name: Data.product_name, category: Data.product_category, price: Data.product_price, quantity: 1 }));
+    console.log(Data);
   }
 
   return (
@@ -67,31 +67,34 @@ function TeaChocolate() {
             ).map((TeaData, index) => (
               <div
                 key={index}
-                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[40vw] relative"
+                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[40vw] relative max-sm:h-[120vw]"
               >
-                                    <button onClick={() => AddToCart(TeaData)} className="absolute bottom-[13.5vw] right-[2vw] bg-white p-2 rounded-full border-black border-[1px] max-sm:bottom-[22vw]">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width={24}
-                        height={24}
-                        color={"#000000"}
-                        fill={"none"}
-                      >
-                        <path
-                          d="M3.87289 17.0194L2.66933 9.83981C2.48735 8.75428 2.39637 8.21152 2.68773 7.85576C2.9791 7.5 3.51461 7.5 4.58564 7.5H19.4144C20.4854 7.5 21.0209 7.5 21.3123 7.85576C21.6036 8.21152 21.5126 8.75428 21.3307 9.83981L20.1271 17.0194C19.7282 19.3991 19.5287 20.5889 18.7143 21.2945C17.9 22 16.726 22 14.3782 22H9.62182C7.27396 22 6.10003 22 5.28565 21.2945C4.47127 20.5889 4.27181 19.3991 3.87289 17.0194Z"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                        />
-                        <path
-                          d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                        />
-                      </svg>
-                    </button>
+                <button
+                  onClick={() => AddToCart(TeaData)}
+                  className="absolute bottom-[13.5vw] right-[2vw] bg-white p-2 rounded-full border-black border-[1px] max-sm:bottom-[22vw]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    width={24}
+                    height={24}
+                    color={"#000000"}
+                    fill={"none"}
+                  >
+                    <path
+                      d="M3.87289 17.0194L2.66933 9.83981C2.48735 8.75428 2.39637 8.21152 2.68773 7.85576C2.9791 7.5 3.51461 7.5 4.58564 7.5H19.4144C20.4854 7.5 21.0209 7.5 21.3123 7.85576C21.6036 8.21152 21.5126 8.75428 21.3307 9.83981L20.1271 17.0194C19.7282 19.3991 19.5287 20.5889 18.7143 21.2945C17.9 22 16.726 22 14.3782 22H9.62182C7.27396 22 6.10003 22 5.28565 21.2945C4.47127 20.5889 4.27181 19.3991 3.87289 17.0194Z"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
+                    <path
+                      d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
+                  </svg>
+                </button>
                 <Link to={`/adventcalendar/${TeaData.product_id}`}>
-                  <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
+                  <div className="image-wrapper bg-[#F5F6F3] w-full min-h-[70%] ">
                     <img
                       className="w-full h-full object-contain sm:object-cover"
                       src={TeaData.product_image}
@@ -99,16 +102,16 @@ function TeaChocolate() {
                     />
                   </div>
                   <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
-                    <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[3vw]">
+                    <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[5vw]">
                       {TeaData.product_category}
                     </span>
-                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[3vw]">
+                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[4vw]">
                       {TeaData.product_name}
                     </span>
-                    <span className="text-[1.2vw] text-[#484848] max-sm:text-[2vw]">
+                    <span className="text-[1.2vw] text-[#484848] max-sm:text-[3.5vw]">
                       {TeaData.product}
                     </span>
-                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[3vw]">
+                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[4vw]">
                       ₹ {TeaData.product_price}
                     </span>
                   </div>

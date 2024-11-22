@@ -108,6 +108,7 @@
         "product": "Luxury calendar with exclusive oolong tea, gaiwan set & tea chocolate"
     },  
     {
+
         "product_id": 13,
         "product_name": "Konomi Do Matcha",
         "product_image": "https://www.paperandtea.com/cdn/shop/files/11363_Konomi_20Do_20N321_20-_20Aroma_20Tin_1_20_12f2b2d6-0738-4c70-a4b0-3bf51dd0625b.webp?v=1712071981&width=600",
@@ -146,8 +147,8 @@
     {
         "product_id": 17,
         "product_name": "Milk Chocolate & Tea – Daily Toast",
-        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20Daily_20Toast_202024_1_10_b8652834-76a8-412e-81c9-547d171433c1.webp?v=1726715073&width=600",
-        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_4.jpg?v=1726715073&width=811",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20Golden_20Earl_202024_1_10.webp?v=1731668411&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_4_f9761653-fde4-4f4d-ae25-c7876b90006b.jpg?v=1731668433&width=811",
         "product_category": "Chocolate",
         "product_price": "815",
         "product": "Mild nutty milk chocolate infused with roasted Japanese green tea"
@@ -155,8 +156,8 @@
     {
         "product_id": 18,
         "product_name": "Dark Chocolate & Tea – Grain of Truth",
-        "product_image": "https://www.paperandtea.com/cdn/shop/files/Dark_20Chocolate_20and_20Tea_20Grain_20Of_20Truth_2024_1_10_fr8e2n_067e19b2-4aa6-412b-8534-bfc49fd1e8ff.webp?v=1726715141&width=600",
-        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_2.jpg?v=1726715142&width=811",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Dark_20Chocolate_20and_20Tea_20Grain_20Of_20Truth_2024_1_10_fr8e2n.webp?v=1731668469&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_2_37ae5d85-8913-474c-b804-dd05819a053d.jpg?v=1731668470&width=811",
         "product_category": "Chocolate",
         "product_price": "815",
         "product": "Fruity dark chocolate infused with sencha and crunchy roasted rice"
@@ -164,8 +165,8 @@
     {
         "product_id": 19,
         "product_name": "White Chocolate & Tea – Matcha",
-        "product_image": "https://www.paperandtea.com/cdn/shop/files/White_20Chocolate_20and_20Tea_20Matcha_202024_1_10_ca6b07da-8402-4cc4-bb37-f0148c022a3e.webp?v=1726715100&width=600",
-        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_8.jpg?v=1726715100&width=811",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/White_20Chocolate_20and_20Tea_20Matcha_202024_1_10.webp?v=1731668631&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_8_b1f027e3-a8fd-457d-94cd-658a0f4b4ed2.jpg?v=1731668632&width=811",
         "product_category": "Chocolate",
         "product_price": "815",
         "product": "Handcrafted creamy white chocolate infused with Japanese matcha"
@@ -173,8 +174,8 @@
     {
         "product_id": 20,
         "product_name": "Milk Chocolate & Tea – Golden Earl",
-        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20Golden_20Earl_202024_1_10_0ee0212d-c222-4e05-86db-b8ace9a9588a.webp?v=1726715046&width=600",
-        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_1.jpg?v=1726715047&width=811",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20Golden_20Earl_202024_1_10.webp?v=1731668411&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_1_3591dd6b-6a67-4c56-9a56-b5c290edd6ce.jpg?v=1731668410&width=811",
         "product_category": "Chocolate",
         "product_price": "815",
         "product": "Hearty milk chocolate with the fragrant bergamot citrus of Earl Grey"
@@ -191,8 +192,8 @@
     {
         "product_id": 22,
         "product_name": "White Chocolate & Tea – Golden Boost",
-        "product_image": "https://www.paperandtea.com/cdn/shop/files/White_20Chocolate_20and_20Tea_20Golden_20Boost_2024_1_10_d4c6988d-e064-4e14-be1c-3d784d14bccc.webp?v=1726715086&width=600",
-        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_3.jpg?v=1726715087&width=811",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/White_20Chocolate_20and_20Tea_20Golden_20Boost_2024_1_10.webp?v=1731668447&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_3_b5b33060-c3eb-4eba-b28a-4232e5b1bcbc.jpg?v=1731668447&width=811",
         "product_category": "Chocolate",
         "product_price": "815",
         "product": "Smooth white chocolate infused with curcuma and ginger spice tea blend"
@@ -200,8 +201,8 @@
     {
         "product_id": 23,
         "product_name": "Milk Chocolate & Tea – In the Mood for Love",
-        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20In_20The_20Mood_20For_20Love_2024_1_10_d5a9ee5a-6447-4093-b843-c426af866741.webp?v=1726715128&width=600",
-        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_9.jpg?v=1726715127&width=811",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20In_20The_20Mood_20For_20Love_2024_1_10.webp?v=1731668654&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_9_e2d104c7-1147-4360-bf3b-71632513571d.jpg?v=1731668654&width=811",
         "product_category": "Chocolate",
         "product_price": "815",
         "product": "Hearty milk chocolate infused with delicate Chinese jasmine tea"
@@ -209,8 +210,8 @@
     {
         "product_id": 24,
         "product_name": "Milk Chocolate & Tea – Hariman Classic Chai",
-        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20Hariman_20Classic_20Chai_202024_1_10_xoqe2b.webp?v=1726887788&width=600",
-        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_6_a6222b7f-61cd-4400-8c82-f4ab2a82f10a.jpg?v=1726887788&width=811",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20Hariman_20Classic_20Chai_202024_1_10_xoqe2b_5f4ba9b5-eb71-4a12-a288-2c6c0654ee6d.webp?v=1731668610&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_6.jpg?v=1731668611&width=811",
         "product_category": "Chocolate",
         "product_price": "815",
         "product": "Mild and malty milk chocolate infused with Indian Chai tea"
@@ -362,7 +363,7 @@
     {
         "product_id": 41,
         "product_name": "Golden Earl",
-        "product_image": "https://www.paperandtea.com/cdn/shop/files/Golden-Earl_20_20_1_4dafeb37-6589-4320-a953-1e36d75a0f7a.webp?v=1730865751&width=600",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Golden-Earl_20_20_1.webp?v=1732169077&width=600",
         "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/Golden_20Earl_Lifestyle_2000x2000_20_1_3b1ca127-8fd7-46d5-a5cc-2b0ba4a0e412.jpg?v=1730865752&width=811",
         "product_category": "Black Tea",
         "product_price": "1628.25",

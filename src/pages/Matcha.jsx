@@ -33,7 +33,7 @@ function TeaBlends() {
     if (!user) {
       alert("Login First");
     }
-    
+
     dispatch(
       addToCart({
         id: Data.product_id,
@@ -70,7 +70,7 @@ function TeaBlends() {
           </div>
         </div>
 
-        {/* Product display section */}
+        {/* All product section here */}
         <div className="product-wrapper w-full h-auto flex flex-wrap justify-between gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
           {TeaCollection.length > 0 ? (
             TeaCollection.filter(
@@ -78,7 +78,7 @@ function TeaBlends() {
             ).map((TeaData, index) => (
               <div
                 key={index}
-                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[40vw] relative"
+                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[40vw] relative max-sm:h-[125vw]"
               >
                 <button
                   onClick={() => AddToCart(TeaData)}
@@ -105,7 +105,7 @@ function TeaBlends() {
                   </svg>
                 </button>
                 <Link to={`/adventcalendar/${TeaData.product_id}`}>
-                  <div className="image-wrapper bg-[#F5F6F3] w-full h-[70%]">
+                  <div className="image-wrapper bg-[#F5F6F3] w-full min-h-[70%] ">
                     <img
                       className="w-full h-full object-contain sm:object-cover"
                       src={TeaData.product_image}
@@ -113,16 +113,16 @@ function TeaBlends() {
                     />
                   </div>
                   <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
-                    <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[3vw]">
+                    <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[5vw]">
                       {TeaData.product_category}
                     </span>
-                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[3vw]">
+                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[4vw]">
                       {TeaData.product_name}
                     </span>
-                    <span className="text-[1.2vw] text-[#484848] max-sm:text-[2vw]">
+                    <span className="text-[1.2vw] text-[#484848] max-sm:text-[3.5vw]">
                       {TeaData.product}
                     </span>
-                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[3vw]">
+                    <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[4vw]">
                       ₹ {TeaData.product_price}
                     </span>
                   </div>
