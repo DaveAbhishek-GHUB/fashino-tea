@@ -1,0 +1,806 @@
+[
+    {
+        "product_id": 1,
+        "product_name": "Perfect Day",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Perfect_20Day_20N719_10987_10_5d31c0c8-1afa-4349-8422-3b7d62b5c43d.png?v=1712072281&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/lifestyle-perfect_day_n_719_1.jpg?v=1712072281&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/lifestyle-perfect_day_n_719_2.jpg?v=1712072281&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/10983_PerfectDayN719-Teabags_1_15.png?v=1712072282&width=600",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product_details": {
+            "01": "Organic blend with white & green tea, elderflower, apples & peach aroma",
+            "02": "100% natural flavors",
+            "03": "Exceptional recipe by PAPER & TEA",
+            "04": "In a practical tea caddy, tea bag box or refill bag"
+        }
+    },
+    {
+        "product_id": 2,
+        "product_name": "Brave New Earl",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Brave_20New_20Earl_20N711_10889_10.png?v=1708962823&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/webBraveNewEarlCupLeavesCaddy.jpg?v=1708962823&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/IMG_8668.jpg?v=1708962824&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/10753_BraveNewEarlN711-Teabags_1_15.png?v=1708962824&width=600",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product_details": {
+            "01": "Organic Earl Grey black tea blend",
+            "02": "Modern interpretation of a classic",
+            "03": "Exceptional recipe by PAPER & TEA",
+            "04": "Indian black tea* (56%), Chinese green tea flavoured with jasmine flowers* (30%), juniper berries* (10%), tea flowers*, bergamot oil*, bergamot bits* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 3,
+        "product_name": "Unter den Linden",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Unter_20den_20Linden_20N818_10917_10_9b550ce3-98ed-4f5b-9229-a93fbef42809.png?v=1712072722&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/webUnterDenLindenCupLeavesCaddy.jpg?v=1712072722&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/10914_UnterdenLindenN818-Teabags_1_15.png?v=1712072723&width=600",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/11617_UnterdenLindenN818-Aromabag50g_1_5.png?v=1712072723&width=600",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product_details": {
+            "01": "Naturally caffeine-free organic herbal tea blend with apple, elderflower & lime-tree blossom",
+            "02": "Exceptional recipe by Fascino",
+            "03": "Apples* (48%), lime blossoms* (20%), elderflowers* (16%), lemon balm*, lemon myrtle*, sunflower petals* (* certified organic)",
+            "04": "Important note: Always add boiling water and leave to infuse for 5 minutes. This is the only way to get a safe food."
+        }
+    },
+    {
+        "product_id": 4,
+        "product_name": "Pink Mandarin",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/PINK_20MANDARIN_freisteller.webp?v=1730260948&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/PaperTea_09_202413695.jpg?v=1730260949&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/PaperTea_09_202413816.jpg?v=1730260949&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/PaperTea_09_202413468.jpg?v=1730260949&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product_details": {
+            "01": "Organic black tea blend from Second Flush Darjeeling with mandarin oil",
+            "02": "Limited edition",
+            "03": "Organic Darjeeling black tea flavoured with mandarin oil",
+            "04": "Indian black tea* (96%), mandarin oil*, rose petals* (1%) (*certified organic)"
+        }
+    },
+    {
+        "product_id": 5,
+        "product_name": "Minty Green",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/MINTY_20GREEN_Freisteller.webp?v=1730260967&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/PaperTea_09_202413703_d258e765-bdfb-40df-ab28-39b38bd5ab4e.jpg?v=1730260967&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/PaperTea_09_202413821_bc54093f-cc51-4816-89f6-1f3dcadfd6f6.jpg?v=1730260967&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/PaperTea_09_202413493_b44002cc-f776-4e6f-bd51-d0b187cd2895.jpg?v=1730260967&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product_details": {
+            "01": "Organic green tea blend of Japanese Sencha and mint",
+            "02": "Exceptional recipe by Fascino",
+            "03": "Organic green tea with spearmint",
+            "04": "Japanese green tea* (78%), spearmint* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 6,
+        "product_name": "Hariman Classic Chai",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Hariman_20Classic_20Chai_20N718_10980_10_5b683eca-9774-4e27-a99c-ade7bf1c05f1.png?v=1712071876&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/webHarimanClassicChaiCupLeavesCaddy.jpg?v=1712071877&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/chaiIMG_3303_1.jpg?v=1712071877&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/10976_HarimanClassicChaiN718-Teabags_1_15.png?v=1712071877&width=600",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product_details": {
+            "01": "Organic chai with Assam black tea & spices",
+            "02": "In a stylish tea caddy, tea bag box or refill bag",
+            "03": "Organic blend of black tea and spices",
+            "04": "indian black tea* (55%), carob bits*, cinnamon*, cardamom seeds*, ginger*, fennel*, cloves*, green cardamom*, pepper* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 7,
+        "product_name": "Bollywood",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/12063_BollywoodN724-Teabags_1_15.png?v=1715184880&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/dscf2724web.jpg?v=1715184880&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/THAT_ret.jpg?v=1715184880&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/BollywoodLifestyle_1.jpg?v=1715184880&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product_details": {
+            "01": "Organic green tea blend with mango, mint and spices",
+            "02": "In a stylish tea caddy, tea bag box or refill bag",
+            "03": "Organic blend of green tea and spices with mango flavour and lemon oil",
+            "04": "chinese Green tea* (34%), ginger* (30%), spearmint* (9%), lemongrass*, lemon peel*, mango pieces* (mango, rice flour)* (4%), natural mango flavour, caraway*, cloves*, lemon oil* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 8,
+        "product_name": "Mint Julep",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Mint_20Julep_20N715_10959_10_673fec07-7b03-4863-a01a-853a8bcea146.png?v=1712072174&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/webMintJulepCupLeavesCaddy.jpg?v=1712072174&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/10955_MintJulepN715-Teabags_1_15.png?v=1712072174&width=600",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/11613_MintJulepN715-Aromabag50g_1_5.png?v=1712072174&width=600",
+        "product_hover_image": "https://www.paperandtea.com/cdn/shop/files/webMintJulepCupLeavesCaddy.jpg?v=1712072174&width=811",
+        "product_category": "Tea blend",
+        "product_price": "1356.87",
+        "product_details": {
+            "01": "Organic green tea blend with peppermint",
+            "02": "In a stylish tea caddy, tea bag box or refill bag",
+            "03": "Organic blend of green tea and herbs",
+            "04": "chinese green tea* (64%), orange peel* (10%), jasmine green tea* (10%), liquorice root*, peppermint* (6%), lemon myrtle* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 9,
+        "product_name": "Unicorn's Collection Advent Calendar 2024",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/UNICORN_S_20COLLECTION_20SIDE_xm5v2m_18083f6d-1f5a-4ceb-837b-46b4f5c55ae9.webp?v=1725937391&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Unicorn-Selection_Product-Card_03_2000x2000_65c73921-7d42-4ee9-8030-26980d413389.jpg?v=1725937392&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/Unicorn-Selection_Product-Card_02_2000x2000_0d000871-a0ef-46f6-833a-d052c08803fa.jpg?v=1725937391&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/Unicorn-Selection_Product-Card_04_2000x2000_e69fb266-948f-4d9b-811d-b3e2abefc9e1.jpg?v=1725937391&width=811",
+        "product_category": "Advent Calendar",
+        "product_price": "3203.17",
+        "product_details": {
+            "01": "17 different varieties of our Master Blends",
+            "02": "On each Advent Sunday, there's a bonus tea bag to share",
+            "03": "The packaging is FSC-certified and free of plastic",
+            "04": "Dimensions: Length: 55.5cm, Width: 42.8cm, Depth: 2.5cm"
+        }
+    },
+    {   
+        "product_id": 10,
+        "product_name": "Winter Harmony Advent Calendar 2024",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/WINTER_20HARMONY_20SIDE_20_1_26dd2898-8900-4828-be83-ad8c401179d4.webp?v=1725937407&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Winter-Harmony_Product-Card_03_2000x2000_e9f95de7-8549-4318-be70-c203795addce.jpg?v=1725937407&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/Winter-Harmony_Product-Card_02_2000x2000_aa3ea861-9c96-47bf-acbb-a41641783162.jpg?v=1725937407&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/Winter-Harmony_Product-Card_04_2000x2000_e021d120-fecb-4d24-91e3-eab998dab62a.jpg?v=1725937408&width=811",
+        "product_category": "Advent Calendar",
+        "product_price": "14118.36",
+        "product_details": {
+            "01": "Our Origins are pure creations from whole leaves",
+            "02": "Each tea is a tribute to the tea's countries of origin and is enough for a whole pot",
+            "03": "Includes a poster and cut-outs on the back for decorating the Christmas tree or gifts",
+            "04": "Dimensions: Length: 49cm, Width: 55,5cm, Depth: 4,7cm"
+        }
+    },
+    {
+        "product_id": 11,
+        "product_name": "Tea for Tomorrow Advent Calendar 2024",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/gmund_green_innovation_award_2024_9_20_1_20_1_e64e0ed7-c161-4957-a101-915dcef342f4.webp?v=1730191945&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Tea-for-Tomorrow_Product-Card_02_2000x2000_aa363a1a-5daa-4bf7-8734-58d8e20e744b.jpg?v=1730191946&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/Tea-for-Tomorrow_Product-Card_03_2000x2000_6f02c533-acaa-4e66-a7a8-87df3fa7b0e2.jpg?v=1730191945&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/Tea-for-Tomorrow_Product-Card_04_2000x2000_e2f2d05f-5ef0-4187-97df-109181f4ffd6.jpg?v=1730191945&width=811",
+        "product_category": "Advent Calendar",
+        "product_price": "27455.76",
+        "product_details": {
+            "01": "16 exclusive new teas from farms around the world",
+            "02": "8 exquisite tea chocolates crafted in collaboration with Original Beans",
+            "03": "Each day, you learn more about our partners' social or ecological projects as well as the tea and the corresponding tea farm",
+            "04": "Dimensions: Length: 40,6cm, Width: 28,1cm, Depth: 9cm"
+        }
+    },
+    {
+        "product_id": 12,
+        "product_name": "Oolong Secrets Advent Calendar 2024",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/OOLONG_20SECRETS_SET_20_1_20_1.webp?v=1732204328&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/PaperTea_10_202414202_2000x2000_20_1_d0f4c769-f552-4e3c-9dcd-89d0db1cee6e.jpg?v=1732204328&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/241029_Paper_Tea_32_Just_Luxury_2026_2000x2000_20_1_6a888d42-7303-46c1-844b-e775eb7e92b5.jpg?v=1732204329&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/DSC_3398_2000x2000_201_20_1.jpg?v=1732204328&width=811",
+        "product_category": "Advent Calendar",
+        "product_price": "54911.51",
+        "product_details": {
+            "01": "Our strictly limited-edition luxury Advent Calendar takes you on an exclusive journey through the world of the finest oolong teas",
+            "02": "Taste two new limited edition oolong chocolates, specially created in collaboration with the chocolate pioneers at Original Beans",
+            "03": "A highlight of the calendar is the handmade gaiwan set by the artist Anna Badur – a unique piece for the perfect preparation of your teas",
+            "04": "Dimensions: Length: 27,5cm, Width: 40cm, Height: 10,2cm"
+        }
+    },  
+    {
+
+        "product_id": 13,
+        "product_name": "Konomi Do Matcha",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/11363_Konomi_20Do_20N321_20-_20Aroma_20Tin_1_20_12f2b2d6-0738-4c70-a4b0-3bf51dd0625b.webp?v=1712071981&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/N_321_Konomi_Do_Matcha_51_1.jpg?v=1712071981&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/N_321_Konomi_Do_Matcha_42_3a99aa0a-2314-4e35-b777-6c4afa1fa170.jpg?v=1712071981&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/konomi-do-matcha-preparation.jpg?v=1724320323&width=1000",
+        "product_category": "Matcha",
+        "product_price": "3799.24",
+        "product_details": {
+            "01": "Finest organic matcha from Japan",
+            "02": "Highest ceremonial quality",
+            "03": "Finely ground using stone mills",
+            "04": "Japanese green tea* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 14,
+        "product_name": "Maho Matcha",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/11390_Maho_20Matcha_20N308_20-_20Aroma_20Tin_1_20_e8e13ec4-8804-465d-a16b-e19472dea320.webp?v=1714100498&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/lifestyle-maho_matcha_20_1.jpg?v=1714100498&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/lifestyle-Maho_Matcha_N_308.jpg?v=1714100498&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/maho-matcha-preparation.jpg?v=1724320467&width=1000",
+        "product_category": "Matcha",
+        "product_price": "3527.87",
+        "product_details": {
+            "01": "Organic matcha green tea from Japan",
+            "02": "Intense umami",
+            "03": "For matcha latte & other culinary recipes",
+            "04": "Japanese green tea* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 15,
+        "product_name": "Shinto Matcha",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/11154_Shinto_20Matcha_20N320_20-_20Aroma_20Tin_1_20_23f0468a-334d-45e2-86e4-9714ba9e1f11.webp?v=1712072480&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/shinto_matcha-lifestyle_1.jpg?v=1712072481&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/lifestyle-Shinto_Matcha_n_320.jpg?v=1712072481&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/shinto-matcha-preparation.jpg?v=1724321738&width=1000",
+        "product_category": "Matcha",
+        "product_price": "2623.29",
+        "product_details": {
+            "01": "Ground using traditional stone mills",
+            "02": "Easy matcha preparation at home",
+            "03": "As pure matcha or a matcha latte",
+            "04": "Organic green tea powder"
+        }
+    },
+    {
+        "product_id": 16,
+        "product_name": "Hojicha Powder",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-Hojicha_20Powder_20N331_12272_20.webp?v=1712072945&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/lifestyle-hojicha_powder_1.jpg?v=1712072945&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/lifestyle-hojicha_powder_2.jpg?v=1712072945&width=717",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/lifestyle-hojicha_powder_3.jpg?v=1712072945&width=811",
+        "product_category": "Matcha",
+        "product_price": "2171",
+        "product_details": {
+            "01": "Hojicha speciality",
+            "02": "Finely roasted aroma",
+            "03": "Organic roasted green tea powder",
+            "04": "Japanese green tea (roasted)* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 17,
+        "product_name": "Milk Chocolate & Tea – Daily Toast",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20Daily_20Toast_202024_1_10.webp?v=1731668432&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_4_f9761653-fde4-4f4d-ae25-c7876b90006b.jpg?v=1731668433&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/all_20chocolates_ojguj1_3c79c667-a77b-4812-b8bf-b5aad145029a.jpg?v=1731668432&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20Daily_20Toast_202024_1_10.webp?v=1731668432&width=600",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product_details": {
+            "01": "Cocoa from sustainable cultivation in Ecuador",
+            "02": "High-quality tea chocolate by Fascino",
+            "03": "Composition of tea & chocolate in collaboration with ORIGINAL BEANS",
+            "04": "Raw cane sugar*, cacao butter*, WHOLE MILK POWDER*, cocoa mass*, green tea (roasted)* (5%), salt (*certified organic)"
+        }
+    },
+    {
+        "product_id": 18,
+        "product_name": "Dark Chocolate & Tea – Grain of Truth",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Dark_20Chocolate_20and_20Tea_20Orange_20Kiss_2024_1_10_a52ac7e8-d076-4832-b0ad-bd5c08a722a1.webp?v=1726715114&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_7.jpg?v=1726715114&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/all_20chocolates_s6pq0z.jpg?v=1726715114&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/SCHOKO_Orange_Kiss_origin_1.jpg?v=1727182592&width=1000",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product_details": {
+            "01": "Dark organic tea chocolate with chamomile & orange flavors",
+            "02": "Cocoa from sustainable cultivation",
+            "03": "Composition of tea & chocolate in collaboration with ORIGINAL BEANS",
+            "04": "Cocoa mass*, raw cane sugar*, cacao butter*, chamomile blend* (2%) (chamomile flowers*, lemon myrtle*, marigold*, natural orange flavour), orange zest* (1%) (*certified organic)"
+        }
+    },
+    {
+        "product_id": 19,
+        "product_name": "White Chocolate & Tea – Matcha",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/White_20Chocolate_20and_20Tea_20Golden_20Boost_2024_1_10.webp?v=1731668447&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_3_b5b33060-c3eb-4eba-b28a-4232e5b1bcbc.jpg?v=1731668447&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/all_20chocolates_pmje95_9bb402db-b7b0-4e3a-a66f-5d1e71e62fe5.jpg?v=1731668447&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/White_20Chocolate_20and_20Tea_20Golden_20Boost_2024_1_10.webp?v=1731668447&width=600",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product_details": {
+            "01": "Organic white tea chocolate with matcha",
+            "02": "Cocoa from sustainable cultivation in the Dominican Republic",
+            "03": "Composition of tea & chocolate in collaboration with ORIGINAL BEANS",
+            "04": "Cocoa butter*, raw cane sugar*, WHOLE MILK POWDER*, japanese green tea* (1%) (*certified organic)"
+        }
+    },
+    {
+        "product_id": 20,
+        "product_name": "Milk Chocolate & Tea – Golden Earl",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20Golden_20Earl_202024_1_10.webp?v=1731668411&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_1_3591dd6b-6a67-4c56-9a56-b5c290edd6ce.jpg?v=1731668410&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/all_20chocolates_civ9vl_c5857461-5545-45a0-979b-9971f41da407.jpg?v=1731668411&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/SCHOKO_Golden_Earl_2.jpg?v=1727182721&width=1000",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product_details": {
+            "01": "Organic milk chocolate with Earl Grey black tea",
+            "02": "Cocoa from sustainable cultivation in Congo",
+            "03": "Composition of tea & chocolate in collaboration with ORIGINAL BEANS",
+            "04": "Cocoa mass*, raw cane sugar*, cocoa butter*, WHOLE MILK POWDER*, black tea* (3%), bergamot oil (*certified organic)"
+        }
+    },
+    {
+        "product_id": 21,
+        "product_name": "Dark Chocolate & Tea – Orange Kiss",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Dark_20Chocolate_20and_20Tea_20Orange_20Kiss_2024_1_10_a52ac7e8-d076-4832-b0ad-bd5c08a722a1.webp?v=1726715114&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_7.jpg?v=1726715114&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/all_20chocolates_s6pq0z.jpg?v=1726715114&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/SCHOKO_Orange_Kiss_origin_1.jpg?v=1727182592&width=1000",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product_details": {
+            "01": "Dark organic tea chocolate with chamomile & orange flavors",
+            "02": "Cocoa from sustainable cultivation",
+            "03": "Composition of tea & chocolate in collaboration with ORIGINAL BEANS",
+            "04": "Cocoa mass*, raw cane sugar*, cacao butter*, chamomile blend* (2%) (chamomile flowers*, lemon myrtle*, marigold*, natural orange flavour), orange zest* (1%) (*certified organic)"
+        }
+    },
+    {
+        "product_id": 22,
+        "product_name": "White Chocolate & Tea – Golden Boost",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/White_20Chocolate_20and_20Tea_20Golden_20Boost_2024_1_10.webp?v=1731668447&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_3_b5b33060-c3eb-4eba-b28a-4232e5b1bcbc.jpg?v=1731668447&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/all_20chocolates_pmje95_9bb402db-b7b0-4e3a-a66f-5d1e71e62fe5.jpg?v=1731668447&width=811",
+        "image04": "https://www.paperandtea.com/cdn/shop/files/White_20Chocolate_20and_20Tea_20Golden_20Boost_2024_1_10.webp?v=1731668447&width=600",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product_details": {
+            "01": "Organic white tea chocolate with ginger & turmeric",
+            "02": "Cocoa from sustainable cultivation in the Dominican Republic",
+            "03": "Composition of tea & chocolate in collaboration with ORIGINAL BEANS",
+            "04": "Cocoa butter*, raw cane sugar*, WHOLE MILK POWDER*, spice tea blend* (2%) (turmeric root pieces*, cocoa seeds*, aniseed*, ginger*, cinnamon*) (*certified organic)"
+        }
+    },
+    {
+        "product_id": 23,
+        "product_name": "Milk Chocolate & Tea – In the Mood for Love",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20In_20The_20Mood_20For_20Love_2024_1_10.webp?v=1731668654&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_9_e2d104c7-1147-4360-bf3b-71632513571d.jpg?v=1731668654&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/all_20chocolates_62yqfp_2cba4e28-5106-40a3-995c-bb237bf1ed32.jpg?v=1731668654&width=811",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product_details": {
+            "01": "Organic milk chocolate with green jasmine tea",
+            "02": "Cocoa from sustainable cultivation",
+            "03": "Composition of tea & chocolate in collaboration with ORIGINAL BEANS",
+            "04": "Cocoa mass*, raw cane sugar*, cacao butter*, WHOLE MILK POWDER*, green tea flavoured with jasmine blossoms* (3%) (*certified organic)"
+        }
+    },
+    {
+        "product_id": 24,
+        "product_name": "Milk Chocolate & Tea – Hariman Classic Chai",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20Chocolate_20and_20Tea_20Hariman_20Classic_20Chai_202024_1_10_xoqe2b_5f4ba9b5-eb71-4a12-a288-2c6c0654ee6d.webp?v=1731668610&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Product_20Images_6.jpg?v=1731668611&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/all_20chocolates_h6l0vj.jpg?v=1731668610&width=811",
+        "product_category": "Chocolate",
+        "product_price": "815",
+        "product_details": {
+            "01": "Organic milk chocolate with chai black tea",
+            "02": "Cocoa from sustainable cultivation in Ecuador",
+            "03": "Composition of tea & chocolate in collaboration with ORIGINAL BEANS",
+            "04": "Raw cane sugar*, cacao butter*, WHOLE MILK POWDER*, cocoa mass*, black tea and spice tea blend* (2%) (Indian black tea*, carob pieces*, cinnamon*, cardamom seeds*, ginger*, fennel*, cloves*, green cardamom*, pepper*), salt (*certified organic)"
+        }
+    },
+    {
+        "product_id": 25,
+        "product_name": "Winter Tales Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Freisteller_20WINTER_20TALES_05_5f14618d-fd5a-4d4b-a213-6d929b364bd0.webp?v=1729134179&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Winter_20Tales_c017b624-8c36-4c52-928e-7317bc4bf238.jpg?v=1729134179&width=550",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/Category_USP_giftsets.jpg?v=1723564774&width=1200",
+        "product_category": "Gift Set",
+        "product_price": "3849.73",
+        "product_details": {
+            "01": "Set with three winter tea blends",
+            "02": "Cozy tea blends for cold days",
+            "03": "Exceptional recipes by Fascino",
+            "04": "Surprise your loved ones with cozy tea moments on cold days or treat yourself. Celebrate all the wonderful moods of winter with three tea blends:"
+        }
+    },
+    {
+        "product_id": 26,
+        "product_name": "What Friends Are For Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-What_friends_are_for_80163_4505c1f1-f413-4f6e-8078-1b22b68838e2.png?v=1720625493&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/lifestyle-what_friends_are_for_set_80163_585e5a6b-5e66-40be-a857-9fd491a90585.jpg?v=1720625492&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/Category_USP_giftsets.jpg?v=1723564774&width=1200",
+        "product_category": "Gift Set",
+        "product_price": "3799.24",
+        "product_details": {
+            "01": "Set with three winter tea blends",
+            "02": "100% natural flavors",
+            "03": "Stylish tea caddies",
+            "04": "Perfect as a gift"
+        }
+    },
+    {
+        "product_id": 27,
+        "product_name": "Joie de Vivre Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-Joie_de_Vivre_Set_80182_5_8ee16fa5-93a5-4c69-8740-b5a440d4297f.png?v=1715184719&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/lifestyle-joie_de_vivre_set_80182.jpg?v=1715184719&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/Category_USP_giftsets.jpg?v=1723564774&width=1200",
+        "product_category": "Gift Set",
+        "product_price": "2487.6",
+        "product_details": {
+            "01": "Set with one organic green & one white tea blend",
+            "02": "Try your way through the world of tea",
+            "03": "Stylish tea caddies",
+            "04": "This wonderful gift set brings together a fruity white tea blend meets a lively green tea blend offering tea lovers an exciting burst of floral freshness"
+        }
+    },    
+    {
+        "product_id": 28,
+        "product_name": "Sunrise to Nightfall Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-Sunrise_to_nightfall_80158_13066091-8ee9-4ab0-a69c-e6758e832ee5.png?v=1720625568&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/lifestyle-sunrise_to_nightfall_set_80158_ded0d348-4aa0-46cd-9f25-0fb1d0d94786.jpg?v=1720625568&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/Category_USP_giftsets.jpg?v=1723564774&width=1200",
+        "product_category": "Gift Set",
+        "product_price": "3799.24",
+        "product_details": {
+            "01": "Set with one organic green & one white tea blend",
+            "02": "Try your way through the world of tea",
+            "03": "Stylish tea caddies",
+            "04": "Perfect as a gift"
+        }
+    },
+    {
+        "product_id": 29,
+        "product_name": "From Dawn 'til Dusk Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-From_Dawn_til_Dusk_Set_80180_5_a9c5e236-5006-4373-8e2d-205be3a44404.png?v=1715184699&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/lifestyle-from_dawn_til_dusk_set_80180.jpg?v=1715184699&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/80045_Set_Master_Blend_From_Dawn_Til_Dusk-4600-4596_cf690ead-9377-4b55-9841-7fba7678399d.jpg?v=1715184699&width=811",
+        "product_category": "Gift Set",
+        "product_price": "3799.24",
+        "product_details": {
+            "01": "Set with two organic naturally caffeine-free herbal blends",
+            "02": "Stylish tea caddies",
+            "03": "Exceptional recipe by Fascino",
+            "04": "This delightful set combines two naturally caffeine-free herbal blends in a harmonious gift box. UNTER DEN LINDEN evokes balmy summer nights, while SWEET LULLABY gently winds down your evening."
+        }
+    },
+    {
+        "product_id": 30,
+        "product_name": "Winter Whisper Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Freisteller_20WINTER_20whisper_05.webp?v=1728552715&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Winter_20Whisper_202.jpg?v=1728552714&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/Winter_20Whisper_205.jpg?v=1728552715&width=811",
+        "product_category": "Gift Set",
+        "product_price": "2487.6",
+        "product_details": {
+            "01": "Set with ginger tea and cup",
+            "02": "Easy preparation with practical strainer",
+            "03": "For cozy winter moments",
+            "04": "A real treat during the cold season: Brew this warming ginger tea in a beautiful glass mug using the included strainer. The perfect set for cold winter days"
+        }
+    },
+    {
+        "product_id": 31,
+        "product_name": "Rich & Warming Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-rich_and_warming_set.png?v=1720626316&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/mirkapflueger_paperandtea_gifting_season_tees-0130_1_59e7e8ab-daaa-44cc-9145-b468183f8330.jpg?v=1720626316&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/Category_USP_giftsets.jpg?v=1723564774&width=1200",
+        "product_category": "Gift Set",
+        "product_price": "1356.87",
+        "product_details": {
+            "01": "Set with five selected winter tea blends and pot",
+            "02": "Easy preparation with integrated strainer",
+            "03": "Cozy winter moments for tea lovers",
+            "04": "Celebrate cozy winter moments with this selection of five tea blends and brew them right away in a beautiful glass teapot. Treat your loved ones or yourself to warming flavors."
+        }
+    },
+    {
+        "product_id": 32,
+        "product_name": "Garden Delights Set",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-gardens_delight_set.png?v=1720626330&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/GardenDelights_Set_NewEdition_Lifestyle_WEB_3_924310a9-5121-4895-b4db-75073dde2810.jpg?v=1720626329&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/Category_USP_giftsets.jpg?v=1723564774&width=1200",
+        "product_category": "Gift Set",
+        "product_price": "4070.62",
+        "product_details": {
+            "01": "Set with five selected herbal tea blends and pot",
+            "02": "Easy preparation with integrated strainer",
+            "03": "For herbal tea lovers",
+            "04": "Perfect as a gift"
+        }
+    },
+    {
+        "product_id": 33,
+        "product_name": "Green Earl",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Green_20Earl_20N340_11976_20.png?v=1729851627&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/EMERALDEARLN_340_Lifestyle_WEB_33_1_ac616dd9-4a1b-42ff-b4b1-a345029adc4b.jpg?v=1729851627&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/11975_GreenEarlN340-Aromabag50g_1_15_fcc61730-464f-4e13-b2cb-cb2f2cdfb379.png?v=1729851627&width=811",
+        "product_category": "Green tea",
+        "product_price": "1899.62",
+        "product_details": {
+            "01": "Japanese green tea with bergamot oil",
+            "02": "Earl Grey classic reinterpreted",
+            "03": "For Earl Grey enthusiasts",
+            "04": "Japanese green tea (95%), bergamot peel, bergamot oil"
+        }
+    },
+    {
+        "product_id": 34,
+        "product_name": "In the mood for love",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/In_20the_20mood_20for_20Love_20N323_11071_20_7af2f116-8816-4458-b06d-2a375ccfeaa1.png?v=1715788762&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/moodIMG_4218_1.jpg?v=1715788762&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/11099_InthemoodforloveN323-Teabags_1_15.png?v=1715788762&width=600",
+        "product_category": "Green tea",
+        "product_price": "2532.83",
+        "product_details": {
+            "01": "Delicate green tea with jasmine",
+            "02": "Organic quality",
+            "03": "Organic green tea flavoured with jasmine flowers",
+            "04": "Chinese green tea* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 35,
+        "product_name": "Mighty Green",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Mighty_20Green_20N319_11187_20.png?v=1718334128&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/mighty_20green_202.jpg?v=1718334128&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/11183_MightyGreenN319-Teabags_1_15.png?v=1718334128&width=600",
+        "product_category": "Green tea",
+        "product_price": "1628.25",
+        "product_details": {
+            "01": "Premium Sencha green tea from Japan",
+            "02": "Organic quality",
+            "03": "Strong umami notes",
+            "04": "In a practical tea caddy, tea bag box or refill bag"
+        }
+    },
+    {
+        "product_id": 36,
+        "product_name": "Yuzu Midori",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Yuzu_20Midori_20N328_11686_20_fe8d086f-2574-4aaf-8b17-f754c5d05012.png?v=1715788965&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/yuzuIMG_0462.jpg?v=1715788965&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/11687_YuzuMidoriN328-Aromabag50g_1_5.png?v=1715788965&width=600",
+        "product_category": "Green tea",
+        "product_price": "1628.25",
+        "product_details": {
+            "01": "Japanese Kukicha green tea meets Matcha",
+            "02": "Refined with yuzu fruit",
+            "03": "Exceptional, light green color",
+            "04": "Japanese green tea* (80%), yuzu* (16%), green tea powder* (4%) (*certified organic)"
+        }
+    },
+    {
+        "product_id": 37,
+        "product_name": "Daily Toast",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Daily_20Toast_20N318_11246_20.png?v=1715788732&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/lifestyle-daily_toast_318.jpg?v=1715788732&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/daily-toast-mood.jpg?v=1715788733&width=811",
+        "product_category": "Green tea",
+        "product_price": "1718.71",
+        "product_details": {
+            "01": "Japanese organic green tea",
+            "02": "Roasted Hojicha-specialty from Japan",
+            "03": "Exceptional tea made from stems & tea leaves",
+            "04": "In a practical tea caddy or refill bag"
+        }
+    },
+    {
+        "product_id": 38,
+        "product_name": "Daikoku",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Daikoku_20N317_11194_20.png?v=1715788725&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/lifestyle-daikoku_n_317.jpg?v=1715788726&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/11192_DaikokuN317-Aromabag50g_1_5.png?v=1715788726&width=600",
+        "product_category": "Green tea",
+        "product_price": "3166.04",
+        "product_details": {
+            "01": "High-quality Kabusecha semi-shade tea",
+            "02": "Fresh umami flavors",
+            "03": "Extra shading before harvest",
+            "04": "Japanese green tea* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 39,
+        "product_name": "Imperial Dragon N°302",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Imperial_20Dragon_20N302_11811_20_69225fe0-4dd2-4da9-849d-d25cbb6a796d.png?v=1715788752&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/c2bf4159-d566-4317-bf08-7d6b4eddb64b.jpg?v=1715788752&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/10067_ImperialDragonN302-Aromabag50g_1_5.png?v=1715788753&width=600",
+        "product_category": "Green tea",
+        "product_price": "1628.25",
+        "product_details": {
+            "01": "Famous Long Jing tea specialty from China",
+            "02": "Pure green tea with flat leaves",
+            "03": "100% natural flavors",
+            "04": "Japanese green tea* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 40,
+        "product_name": "Maia's Pick",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Maias_20Pick_20N316_10452_20_678c30af-4cee-4596-867c-870182b23d9b.png?v=1726542204&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/d5b75934-7039-4cb1-bf96-3aad2313ed9d_d8c8d57e-801d-4931-929d-e7c8696d491c.jpg?v=1726542203&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/Maias_20Pick_20N316_10452_20_678c30af-4cee-4596-867c-870182b23d9b.png?v=1726542204&width=600",
+        "product_category": "Green tea",
+        "product_price": "3437.41",
+        "product_details": {
+            "01": "Green tea from South Korea",
+            "02": "Big-leaved tea specialty",
+            "03": "Both steamed and pan fried in the processing",
+            "04": "South Korean green tea"
+        }
+    },
+    {
+        "product_id": 41,
+        "product_name": "Golden Earl",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Golden-Earl_20_20_1.webp?v=1732169077&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/Golden_20Earl_Lifestyle_2000x2000_20_1.jpg?v=1732169078&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/Golden-Earl-Package_15_20_1_20_1.webp?v=1732169078&width=600",
+        "product_category": "Black Tea",
+        "product_price": "1628.25",
+        "product_details": {
+            "01": "Premium Earl Grey made of the most delicate tea buds flavor flavored with bergamot oil",
+            "02": "A classic black tea",
+            "03": "Hot or cold a treat",
+            "04": "Chinese black tea*, bergamot oil* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 42,
+        "product_name": "Tip of the Morning",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Tip_20of_20the_20Morning_20N518_11443_20_75f4fd59-cee9-40bb-881b-b66c71409e76.png?v=1715789006&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/lifestyle-tip_of_the_morning_n_518.jpg?v=1715789006&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/IMG_2998.jpg?v=1715789006&width=811",
+        "product_category": "Black Tea",
+        "product_price": "1628.25",
+        "product_details": {
+            "01": "English Breakfast Tea",
+            "02": "Famous black tea blend",
+            "03": "To be paired with milk if you like",
+            "04": "Notes of malt and honey"
+        }
+    },
+    {
+        "product_id": 43,
+        "product_name": "Muse",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Muse_20N504_10675_20_80c0ebc1-4eb5-47b6-a6e8-7a21a28330e7.png?v=1715788847&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/8aa347ff-2b91-4f73-a19c-2bc24348f202.jpg?v=1715788847&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/ef1120e9-5cb4-4409-972b-8a6790bbc8ce.jpg?v=1715788847&width=811",
+        "product_category": "Black Tea",
+        "product_price": "1628.25",
+        "product_details": {
+            "01": "Second-Flush Darjeeling",
+            "02": "Pure tea",
+            "03": "In a practical tea caddy, tea bag box or refill bag",
+            "04": "Indian black tea* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 44,
+        "product_name": "Nandana",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Nandana_20N506_10453_20_46db0d41-4eac-41b5-a7fd-3e741528c480.png?v=1715788854&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/10192_Nandana_20N506_20-_20Aromabag_2050g_1_5.webp?v=1715788854&width=600",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/BlackTea_Nandana_origin_2.jpg?v=1723555840&width=1000",
+        "product_category": "Black Tea",
+        "product_price": "1628.25",
+        "product_details": {
+            "01": "Assam black tea",
+            "02": "For black tea lovers who appreciate malty notes",
+            "03": "In a practical tea caddy, tea bag box or refill bag",
+            "04": "Indian black tea"
+        }
+    },
+    {
+        "product_id": 45,
+        "product_name": "Red Earl",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Red-Earl_20_20_1.webp?v=1732204290&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/d843bfba-06a9-47c1-af74-a5157c312ce0_56bcef26-fb07-4ad5-b41a-fa26d6a9feed.jpg?v=1732204290&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/d30155c7-3378-40ca-b97c-63382d342f77_cbbfeb33-44d3-4441-bbf1-2dd752e8ca8b.jpg?v=1732204290&width=811",
+        "product_category": "Herbal",
+        "product_price": "1718.71",
+        "product_details": {
+            "01": "Naturally caffeine-free organic Earl Grey of roiboos and bergamot oil",
+            "02": "From the Cederberg region in South Africa",
+            "03": "In a practical tea caddy or refill bag",
+            "04": "Rooibos* (92%), bergamot orange zest*, bergamot oil*, safflowers*, marigold* (*organic)"
+        }
+    },
+    {
+        "product_id": 46,
+        "product_name": "Mount Olympus",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/freisteller-Mount_Olympus_N824_Organic_12150.png?v=1712072849&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/lifestyle-Mount_Olympus_n_824_6af7ca72-62cb-4a3d-8b63-6b64f6414c73.jpg?v=1712072850&width=811",
+        "image03":"https://www.paperandtea.com/cdn/shop/files/12152_Mount_20Olympus_20N824_20-_20Aromabag_20250g_1_5.webp?v=1712072850&width=600",
+        "product_category": "Herbal",
+        "product_price": "1356.87",
+        "product_details": {
+            "01": "Greek mountain tea blend with spearmint, fennel & lemongrass",
+            "02": "Naturally caffeine-free herbal tea blend",
+            "03": "In a practical tea caddy or refill bag",
+            "04": "Greek mountain tea* (30 %), fennel* (26 %), orange peel* (14 %), lemongrass*, sweet blackberry leaves* (5 %), sea buckthorn berries*, goji berries*, spearmint* (2 %), lemon peel (2 %), moringa leaves*, sunflower blossoms* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 47,
+        "product_name": "Unter den Linden",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Unter_20den_20Linden_20N818_10917_10_9b550ce3-98ed-4f5b-9229-a93fbef42809.png?v=1712072722&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/webUnterDenLindenCupLeavesCaddy.jpg?v=1712072722&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/10914_UnterdenLindenN818-Teabags_1_15.png?v=1712072723&width=600",
+        "product_category": "Herbal",
+        "product_price": "1356.87",
+        "product_details": {
+            "01": "Naturally caffeine-free organic herbal tea blend with apple, elderflower & lime-tree blossom",
+            "02": "Exceptional recipe by Fascino",
+            "03": "100% natural flavors",
+            "04": "Apples* (48%), lime blossoms* (20%), elderflowers* (16%), lemon balm*, lemon myrtle*, sunflower petals* (* certified organic)"
+        }
+    },
+    {
+        "product_id": 48,
+        "product_name": "Magic Mum",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/12121_Magic_20Mum_20N833_20-_20Caddy_1_hq.webp?v=1726887754&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/12200_Magic_20Mum_20N833_20-_20Teabags_1_hq.webp?v=1726887755&width=600",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/12139_Magic_20Mum_20N833_20-_20Aromabag_2050g_1_hq.webp?v=1726887754&width=600",
+        "product_category": "Herbal",
+        "product_price": "1356.87",
+        "product_details": {
+            "01": "Organic herbal tea blend with fenugreek seeds, lemongrass and vanilla aroma",
+            "02": "naturally caffeine-free treat for the whole family",
+            "03": "Exceptional recipe by Fascino",
+            "04": "Fenugreek seeds* (20%), hibiscus* (18%), lemongrass* (9%), beetroot*, lemon verbena*, cardamom seed* (7%), basil*, nettle leaves*, chamomile*, turmeric*, lavender*, hop*, natural vanilla flavour (*certified organic)"
+        }
+    },
+    {
+        "product_id": 49,
+        "product_name": "Gabacha",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Gabacha_20N405_10568_20_c5cfb9b6-a95c-466b-9400-ce8a3bc11f3a.png?v=1717008620&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/web_Gaba_DSCF4573_1.jpg?v=1717008620&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/gabacha-preparation.jpg?v=1724318464&width=1000",
+        "product_category": "Oolong Tea",
+        "product_price": "1356.87",
+        "product_details": {
+            "01": "Famous Gaba Oolong from China",
+            "02": "Natural butter flavors",
+            "03": "Authentic tea tradition",
+            "04": "Chinese Oolong tea* (*certified organic)"
+        }
+    },
+    {
+        "product_id": 50,
+        "product_name": "Four Seasons of Spring",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Four_20Seasons_20of_20Spring_20N402_10454_20.png?v=1715788675&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/lifestyle-four_seasons_of_spring_n_402_2.jpg?v=1715788676&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/10147_FourSeasonsofSpringN402-Aromabag50g_1_5.png?v=1715788676&width=600",
+        "product_category": "Oolong Tea",
+        "product_price": "2623.29",
+        "product_details": {
+            "01": "Well-known Oolong from Taiwan",
+            "02": "Carefully rolled whole-leaf tea",
+            "03": "Floral aroma like spring",
+            "04": "Taiwanese Oolong tea"
+        }
+    },
+    {
+        "product_id": 51,
+        "product_name": "Oriental Beauty",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Oriental_20Beauty_20N403_10467_20_34fb86c1-cf3f-41fe-ae65-74b0a3a0a459.png?v=1726542193&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/1562f3d6-534f-4bea-a1d7-a20691dcb886_65be940d-e847-4f6f-9ee4-df4997a5cb1c.jpg?v=1726542193&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/10155_OrientalBeautyN403-Aromabag20g_1_5_7947e7b8-4aef-462c-9d19-d5cc95683992.png?v=1726542194&width=600",
+        "product_category": "Oolong Tea",
+        "product_price": "3346.95",
+        "product_details": {
+            "01": "Well-known Oriental Beauty oolong tea",
+            "02": "High-quality tea specialty from Taiwan",
+            "03": "Several infusions recommended",
+            "04": "Taiwanese Oolong tea"
+        }
+    },
+    {
+        "product_id": 52,
+        "product_name": "Milk River",
+        "product_image": "https://www.paperandtea.com/cdn/shop/files/Milk_20River_20N406_11917_20_ec0ecaed-adc3-4f2b-970e-8061c602bd6c.png?v=1715788835&width=600",
+        "image02": "https://www.paperandtea.com/cdn/shop/files/lifestyle-milk_river_n_406.jpg?v=1715788835&width=811",
+        "image03": "https://www.paperandtea.com/cdn/shop/files/11913_MilkRiverN406-Aromabag50g_1_5.png?v=1715788835&width=600",
+        "product_category": "Oolong Tea",
+        "product_price": "2171",
+        "product_details": {
+            "01": "Creamy oolong from Thailand",
+            "02": "Jin Xuan Milky Oolong specialty",
+            "03": "Hand-rolled tea leaves",
+            "04": "Taiwanese Oolong tea"
+        }
+    }
+]

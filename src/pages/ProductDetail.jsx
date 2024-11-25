@@ -9,31 +9,40 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/slices/userSlice";
 
 function ProductDetail() {
-    const [selectedProduct, setselectedProduct] = useState([]);
+  const [selectedProduct, setselectedProduct] = useState([]);
 
-    const dispatch = useDispatch();
-    const user = useSelector((state)=> state.user.Loggedin);
-  
-    const { productId }  = useParams();
-    const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.Loggedin);
 
-    useEffect(() => {
-        fetch(teaCollection)
-            .then((response) => response.json())
-            .then((data) => {
-                const product = data.find(item => item.product_id == productId);
-                setselectedProduct(product);
-                console.log("Product found:", product);
-            });
-    }, [teaCollection, productId]);
+  const { productId } = useParams();
+  const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
 
-    const addtocart = () => {
-      if(!user){
-        alert("Login First");
-      }
-      dispatch(addToCart({id: selectedProduct.product_id, image:selectedProduct.product_image, name: selectedProduct.product_name, category: selectedProduct.product_category, price: selectedProduct.product_price, quantity: 1}));
+  useEffect(() => {
+    fetch(teaCollection)
+      .then((response) => response.json())
+      .then((data) => {
+        const product = data.find((item) => item.product_id == productId);
+        setselectedProduct(product);
+        console.log("Product found:", product);
+      });
+  }, [teaCollection, productId]);
+
+  const addtocart = () => {
+    if (!user) {
+      alert("Login First");
     }
-    
+    dispatch(
+      addToCart({
+        id: selectedProduct.product_id,
+        image: selectedProduct.product_image,
+        name: selectedProduct.product_name,
+        category: selectedProduct.product_category,
+        price: selectedProduct.product_price,
+        quantity: 1,
+      })
+    );
+  };
+
   return (
     <>
       <SubHeader />
@@ -51,23 +60,28 @@ function ProductDetail() {
           <div className="product-info-wrapper w-full md:w-1/2 p-6 md:p-10">
             <div className="heading-wrapper space-y-4 mb-6">
               <h1 className="text-3xl md:text-2xl lg:text-4xl font-serif">
-              {selectedProduct.product_name}
+                {selectedProduct.product_name}
               </h1>
               <span className="text-sm md:text-base w-fit border border-black px-3 py-1 rounded">
-              {selectedProduct.product_category}
+                {selectedProduct.product_category}
               </span>
               <p className="text-base md:text-lg mt-3">
-              {selectedProduct.product}
+                {selectedProduct.product}
               </p>
             </div>
 
             <div className="add_to_cart_section bg-gray-100 rounded-md p-5">
               <div className="price mb-4">
-                <h1 className="text-2xl font-bold">₹ {selectedProduct.product_price}</h1>
+                <h1 className="text-2xl font-bold">
+                  ₹ {selectedProduct.product_price}
+                </h1>
                 <span className="text-sm">incl. VAT, plus shipping</span>
               </div>
 
-              <button onClick={() => addtocart()} className="w-full md:w-auto py-3 px-6 bg-black text-white text-base md:text-lg">
+              <button
+                onClick={() => addtocart()}
+                className="w-full md:w-auto py-3 px-6 bg-black text-white text-base md:text-lg"
+              >
                 Add to cart
               </button>
 
