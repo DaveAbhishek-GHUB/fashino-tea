@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
 import { useDispatch, useSelector } from "react-redux";
 import { removeFromCart, updateQuantity } from "../store/slices/userSlice";
@@ -48,14 +47,13 @@ function Cart() {
   };
 
   const navigateToCheckout = () => {
-      navigate("/checkout")
+    navigate("/checkout")
   }
 
   return (
     <>
-      <Header />
       <SubHeader />
-      <div className="main-wrapper w-full min-h-screen overflow-y-scroll">
+      <div className="main-wrapper w-full min-h-screen overflow-y-scroll mt-20">
         {/* Shipping information */}
         <div className="shipping-unit w-full flex justify-center items-center gap-5 p-5 bg-[#d0e2b2]">
           <svg
@@ -93,7 +91,7 @@ function Cart() {
         <div className="cart-wrapper w-full flex flex-col items-center p-2">
           {cartitems.length > 0 ? (
             cartitems.map((items, index) => (
-              <div                     
+              <div
                 key={index}
                 className="cart w-full h-[15vw] max-md:h-[20vw] max-sm:h-[25vw] border-black border-b-[1px] flex items-center p-2"
               >
@@ -174,7 +172,13 @@ function Cart() {
               </div>
             ))
           ) : (
-            <span>No products are available</span>
+            <>
+
+              <span>No products are available</span>
+              <div className="navigate w-full flex justify-center items-center">
+                <button onClick={() => navigate("/")} className="px-10 py-2 bg-black text-white mt-2">Continue Shopping</button>
+              </div>
+            </>
           )}
         </div>
 

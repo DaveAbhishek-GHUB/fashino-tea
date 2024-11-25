@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
@@ -30,8 +29,7 @@ function Signuppage() {
   };
 
   return (
-    <div className="main-register-wrapper w-full min-h-screen">
-      <Header />
+    <div className="main-register-wrapper w-full mt-12">
       <SubHeader />
       <div className="register-form-wrapper w-full h-auto flex flex-col p-4 sm:p-8">
         <div className="register-form-heading mt-4 sm:mt-[1vw] flex flex-col text-center">

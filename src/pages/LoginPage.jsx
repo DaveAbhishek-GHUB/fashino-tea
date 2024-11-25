@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
@@ -36,9 +35,8 @@ function LoginPage() {
 
   return (
     <>
-      <div className="main-register-wrapper w-full min-h-screen">
-        <Header />
         <SubHeader />
+      <div className="main-register-wrapper w-full mt-[8vw] max-sm:mt-[20vw]">
         <div className="register-form-wrapper w-full h-auto flex flex-col">
           <div className="register-form-heading mt-[1vw] flex flex-col">
             <h1 className="font-sans text-[3vw] m-auto max-md:text-[5vw] max-sm:text-[6vw]">Login</h1>

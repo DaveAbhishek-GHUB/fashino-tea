@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
 import ExclusiveBenefits from "../utils/ExclusiveBenefits";
 import Yourbenefits from "../utils/Yourbenefits";
@@ -29,9 +28,8 @@ function ProfilePage() {
 
   return (
     <>
-      <Header />
       <SubHeader />
-      <div className="main-wrapper w-full min-h-screen">
+      <div className="main-wrapper w-full min-h-screen mt-24">
         <div className="mydearclub-wrapper w-full min-h-[20vw]">
           <div className="heading-wrapper w-full flex justify-center items-center">
             <h1 className="text-[4vw] font-serif">My Dear Club</h1>

@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
 import Welovewhatwedosection from "../utils/Welovewhatwedosection";
 import Yourbenefits from "../utils/Yourbenefits";
@@ -37,9 +36,8 @@ function ProductDetail() {
     
   return (
     <>
-      <Header />
       <SubHeader />
-      <div className="main-product-detail-wrapper w-full min-h-screen">
+      <div className="main-product-detail-wrapper w-full min-h-screen mt-12">
         <div className="imageanddetailwrapper w-full min-h-screen flex flex-col md:flex-row">
           {/* Product Image */}
           <div className="product-image w-full md:w-1/2 h-64 md:h-auto">

@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
-import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
 import ConfirmOrder from '../lottie/Confirm.json'
 import Lottie from "react-lottie";
@@ -8,10 +7,9 @@ import Lottie from "react-lottie";
 function OrderConfirm() {
   return (
     <>
-      <Header />
       <SubHeader />
       <>
-        <div className="main-wrapper w-full">
+        <div className="main-wrapper w-full mt-12">
             <div className="animation-wrapper w-full h-[10vw] mt-[10vw]">
             <Lottie options={{
                 animationData: ConfirmOrder,

@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 // Component imports
-import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
 import StandardBanner from "../utils/Standardbanner";
 import Storeclosetoyou from "../utils/Storeclosetoyou";
@@ -27,6 +26,7 @@ function AllProducts() {
   const [minimumPrice, setMinimumPrice] = useState(null);
   const [maximumPrice, setMaximumPrice] = useState(null);
   const [openDropdown, setOpenDropdown] = useState(null);
+  const [hoveredProductId, setHoveredProductId] = useState(null);
   const [isMenuOpen, setisMenuOpen] = useState();
 
   const dispatch = useDispatch();
@@ -42,7 +42,7 @@ function AllProducts() {
       });
   }, []);
   const toggleDropdown = (category) => {
-    setOpenDropdown(openDropdown === category ? null : category);
+    setOpenDropdown(openDropdown === category ? null : category);    
   };
 
   const user = useSelector((state) => state.user.Loggedin);
@@ -95,6 +95,7 @@ function AllProducts() {
     setCategory(CATEGORY);
     setMinimumPrice(null);
     setMaximumPrice(null);
+    setisMenuOpen(false);
   };
 
   console.log(minimumPrice);
@@ -102,7 +103,6 @@ function AllProducts() {
 
   return (
     <>
-      <Header />
       <SubHeader />
       <ToastContainer
         position="top-center"
@@ -128,14 +128,14 @@ function AllProducts() {
         pauseOnHover
         theme="light"
       />
-      <div className="main-wrapper w-full min-h-screen bg-gray-50">
+      <div className="main-wrapper w-full min-h-screen mt-[6vw]  max-sm:mt-[22vw]">
         <div className="inner-wrapper w-full h-full flex relative">
           {/* Sidebar */}
           <div
             className="sidebar w-[20vw] max-lg:w-[30vw] min-h-screen hidden lg:flex flex-col p-4"
           >
             <div className="category-wrapper">
-              <div className="heading mb-4">
+              <div className="heading mb-4 w-full flex items-center justify-between">
                 <span className="text-lg font-bold">Category</span>
               </div>
 
@@ -307,8 +307,8 @@ function AllProducts() {
           </div>
 
           {/* Mobile Sidebar */}
-          {isMenuOpen && (
-            <div className="sidebar w-[70vw] max-md:w-[80vw] max-sm:w-full max-sm:absolute z-20  shadow-lg h-full max-sm:min-h-screen p-4 lg:hidden bg-white">
+          {isMenuOpen === true && (
+            <div className={`sidebar w-[70vw] max-md:w-[80vw] max-sm:w-full max-sm:absolute z-20 shadow-lg h-full max-sm:min-h-screen p-4 lg:hidden bg-white ${isMenuOpen === false && "left-[-100%]"}`}>
               <div className="category-wrapper">
                 <div className="heading mb-4">
                   <span className="text-lg font-bold">Category</span>
@@ -377,6 +377,7 @@ function AllProducts() {
             </div>
           )}
 
+
           {/* Main Content */}
           <div className="main-content w-full lg:w-[80vw] h-full">
             <div className="header flex justify-between items-center p-4 border-b">
@@ -421,32 +422,45 @@ function AllProducts() {
                   ).map((TeaData, index) => (
                     <div
                       key={index}
-                      className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[30vw] relative"
+                      className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[30vw] relative max-sm:h-[100vw]"
                     >
-                      <button
-                        onClick={() => AddToCart(TeaData)}
-                        className="absolute bottom-[16vw] right-[1vw]  p-2 rounded-full border-black border-[1px] max-sm:bottom-[22vw] bg-white"
+                  <button
+                    onMouseEnter={() => setHoveredProductId(TeaData.product_id)}
+                    onMouseLeave={() => setHoveredProductId(null)}
+                    onClick={() => AddToCart(TeaData)}
+                    className="absolute bottom-[16vw] right-[1vw] bg-white p-2 rounded-full border-zinc-700 border-2 max-sm:bottom-[55vw] max-sm:right-[5vw] max-md:bottom-[27vw]"
+                  >
+                    {hoveredProductId === TeaData.product_id ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#000000"} fill={"none"}>
+                        <path d="M8 16H15.2632C19.7508 16 20.4333 13.1808 21.261 9.06908C21.4998 7.88311 21.6192 7.29013 21.3321 6.89507C21.045 6.5 20.4947 6.5 19.3941 6.5H19M6 6.5H8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        <path d="M11 8.5C11.4915 9.0057 12.7998 11 13.5 11M16 8.5C15.5085 9.0057 14.2002 11 13.5 11M13.5 11V3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M8 16L5.37873 3.51493C5.15615 2.62459 4.35618 2 3.43845 2H2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        <path d="M8.88 16H8.46857C7.10522 16 6 17.1513 6 18.5714C6 18.8081 6.1842 19 6.41143 19H17.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <circle cx="10.5" cy="20.5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+                        <circle cx="17.5" cy="20.5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+                      </svg>
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width={24}
+                        height={24}
+                        color={"#000000"}
+                        fill={"none"}
                       >
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          width={20}
-                          height={20}
-                          color={"#000000"}
-                          fill={"none"}
-                        >
-                          <path
-                            d="M3.87289 17.0194L2.66933 9.83981C2.48735 8.75428 2.39637 8.21152 2.68773 7.85576C2.9791 7.5 3.51461 7.5 4.58564 7.5H19.4144C20.4854 7.5 21.0209 7.5 21.3123 7.85576C21.6036 8.21152 21.5126 8.75428 21.3307 9.83981L20.1271 17.0194C19.7282 19.3991 19.5287 20.5889 18.7143 21.2945C17.9 22 16.726 22 14.3782 22H9.62182C7.27396 22 6.10003 22 5.28565 21.2945C4.47127 20.5889 4.27181 19.3991 3.87289 17.0194Z"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                          />
-                          <path
-                            d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5"
-                            stroke="currentColor"
-                            strokeWidth="1.5"
-                          />
-                        </svg>
-                      </button>
+                        <path
+                          d="M3.87289 17.0194L2.66933 9.83981C2.48735 8.75428 2.39637 8.21152 2.68773 7.85576C2.9791 7.5 3.51461 7.5 4.58564 7.5H19.4144C20.4854 7.5 21.0209 7.5 21.3123 7.85576C21.6036 8.21152 21.5126 8.75428 21.3307 9.83981L20.1271 17.0194C19.7282 19.3991 19.5287 20.5889 18.7143 21.2945C17.9 22 16.726 22 14.3782 22H9.62182C7.27396 22 6.10003 22 5.28565 21.2945C4.47127 20.5889 4.27181 19.3991 3.87289 17.0194Z"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                        />
+                        <path
+                          d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                        />
+                      </svg>
+                    )}
+                  </button>
                       <Link to={`/adventcalendar/${TeaData.product_id}`}>
                         <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
                           <img
@@ -474,7 +488,7 @@ function AllProducts() {
                   ))
                 ) : (
                   <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-red-500">
-                    No product is available!
+                    No products are available at this price point!
                   </span>
                 )
               ) : (

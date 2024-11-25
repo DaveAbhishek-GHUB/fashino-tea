@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useForm } from "react-hook-form";
-import Header from "../components/Header";
 import SubHeader from "../components/SubHeader";
 import { addAddress, clearcart, removeFromCart, updateQuantity } from "../store/slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -80,9 +79,8 @@ function Checkout() {
   };
   return (
     <>
-      <Header />
       <SubHeader />
-      <div className="main-wrapper w-full min-h-screen flex max-md:flex-col">
+      <div className="main-wrapper w-full min-h-screen flex max-md:flex-col mt-12">
         <div className="form-wrapper w-[60vw] h-full p-3 max-md:w-full">
           <div className="account flex flex-col p-5 border-b-2">
             <span className="text-[1.2vw] text-[#636363] max-md:text-[3vw]">Account</span>

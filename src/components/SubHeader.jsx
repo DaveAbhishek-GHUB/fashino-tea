@@ -2,32 +2,62 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import Logo from "../assets/Final_logo_02.png";
+import "react-toastify/dist/ReactToastify.css";
+
 
 function SubHeader() {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const loggedinuser = useSelector((state) => state.user.Loggedin);
   const navigate = useNavigate();
+
+  const users = useSelector((state) => state.user.user);
+  const loggedinuser = useSelector((state) => state.user.Loggedin);
+  const loggedinuserData = users.find((user) => user.email === loggedinuser)
+  console.log(loggedinuserData, "loggedinuserData")
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-  
+
 
   const isLoggedin = () => {
-    if(loggedinuser){
+    if (loggedinuser) {
       navigate("/cart")
     }
-    else{
-      alert("Login first")
+    else {
+      toast.warn("Login First!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
   }
   return (
-    <div className="relative border-black border-b-[1px]">
-      <div className="main-subheader-container mb-3">
-        <div className="subheader w-full h-12 sm:h-[3vw] flex items-center">
+    <div className="relative">
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      <div className="main-subheader-container mb-3 w-full bg-white fixed z-10 top-0">
+        <div className="subheader w-full h-12 sm:h-[3vw] flex items-center my-5">
           {/* Hamburger Menu Button - Only visible on small screens */}
-          <button 
+          <button
             className="sm:hidden ml-4 p-2"
             onClick={toggleMenu}
           >
@@ -60,47 +90,55 @@ function SubHeader() {
               </svg>
             )}
           </button>
+          <div className="logo w-[20vw] flex justify-center items-center max-sm:w-[24vw]">
+            <Link to="/">
+              <img className="w-[12vw] max-sm:w-[35vw]" src={Logo} alt="" />
+            </Link>
+          </div>
 
           {/* Navigation Links - Hidden on small screens */}
-          <div className="hidden sm:flex navlinks-wrapper w-[70%] h-full items-center gap-[5vw] px-10 text-[1.5vw]">
-            <Link to="/ourproducts">our products</Link>
-            <Link to="/teablends">tea-blends</Link>
-            <Link to="/herbaltea">herbal-Tea</Link>
-            <Link to="/greentea">green-Tea</Link>
-            <Link to="/matcha">matcha</Link>
+          <div className="hidden sm:flex navlinks-wrapper w-[70vw] h-full gap-[5vw] px-10 text-[1.3vw] justify-center items-center">
+            <Link to="/ourproducts">Products</Link>
+            <Link to="/teablends">Tea-Blends</Link>
+            <Link to="/herbaltea">Herbal-Tea</Link>
+            <Link to="/greentea">Green-Tea</Link>
+            <Link to="/matcha">Matcha</Link>
           </div>
 
           {/* User Icons */}
-          <div className="user-icons-wrapper ml-auto sm:w-[30%] h-full flex justify-center items-center gap-4 sm:gap-[3vw] pr-4">
+          <div className="user-icons-wrapper ml-auto sm:w-[10vw] h-full flex justify-center items-center gap-4 sm:gap-[3vw] pr-4">
             <div className="profile-icon-wrapper">
-              <Link to="/account">              
-              <svg
-                className="w-6 sm:w-[2vw]"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width={24}
-                height={24}
-                color={"#000000"}
-                fill={"none"}
-              >
-                <path
-                  d="M6.57757 15.4816C5.1628 16.324 1.45336 18.0441 3.71266 20.1966C4.81631 21.248 6.04549 22 7.59087 22H16.4091C17.9545 22 19.1837 21.248 20.2873 20.1966C22.5466 18.0441 18.8372 16.324 17.4224 15.4816C14.1048 13.5061 9.89519 13.5061 6.57757 15.4816Z"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M16.5 6.5C16.5 8.98528 14.4853 11 12 11C9.51472 11 7.5 8.98528 7.5 6.5C7.5 4.01472 9.51472 2 12 2C14.4853 2 16.5 4.01472 16.5 6.5Z"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                />
-              </svg>
+              <Link to="/account">
+                <svg
+                  className="w-6 sm:w-[2vw]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  height={24}
+                  color={"#000000"}
+                  fill={"none"}
+                >
+                  <path
+                    d="M6.57757 15.4816C5.1628 16.324 1.45336 18.0441 3.71266 20.1966C4.81631 21.248 6.04549 22 7.59087 22H16.4091C17.9545 22 19.1837 21.248 20.2873 20.1966C22.5466 18.0441 18.8372 16.324 17.4224 15.4816C14.1048 13.5061 9.89519 13.5061 6.57757 15.4816Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M16.5 6.5C16.5 8.98528 14.4853 11 12 11C9.51472 11 7.5 8.98528 7.5 6.5C7.5 4.01472 9.51472 2 12 2C14.4853 2 16.5 4.01472 16.5 6.5Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  />
+                </svg>
               </Link>
             </div>
-            <div className="cart-icon-wrapper">            
+            <div className="cart-icon-wrapper relative">
+              {loggedinuserData.cart.length != "0" ? (
+                <span className="text-[0.8vw] absolute bg-[#CFE1B2] px-1 rounded-full right-0 text-zinc-950 max-sm:text-[2vw] max-md:text-[1.5vw] max-md:right-0">{loggedinuserData.cart.length}</span>
+              ) : (null)}
               <svg
-               onClick={isLoggedin}
+                onClick={isLoggedin}
                 className="w-6 sm:w-[2vw] cursor-pointer"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -150,8 +188,11 @@ function SubHeader() {
 
       {/* Mobile Menu - Positioned right after the subheader */}
       {isMenuOpen && (
-        <div className="sm:hidden w-full bg-white shadow-lg border-t">
+        <div className="sm:hidden w-full bg-white shadow-lg border-t mt-[25vw]">
           <div className="flex flex-col py-2">
+          <Link to="/ourproducts" className="px-6 py-3 hover:bg-gray-100 text-gray-800">
+              Products
+            </Link>
             <Link to="/teablends" className="px-6 py-3 hover:bg-gray-100 text-gray-800">
               Tea-blends
             </Link>
