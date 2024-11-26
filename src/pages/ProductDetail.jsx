@@ -103,35 +103,52 @@ function ProductDetail() {
       <SubHeader />
       <div className="main-product-detail-wrapper w-full min-h-screen mt-12">
         <div className="imageanddetailwrapper w-full min-h-screen flex flex-col md:flex-row">
-          <div className="product-all-image-wrapper w-[10vw] min-h-screen flex flex-col justify-center gap-3 p-1">
-            <div className="image01">
-              <img onClick={() => setImage(selectedProduct.product_image)} className="w-ful cursor-pointer" src={selectedProduct.product_image} alt="..." />
+          {/* Image Section: Main Product Image and Thumbnails */}
+          <div className="image-section w-full md:w-1/2 flex flex-col md:flex-row-reverse">
+            {/* Main Product Image */}
+            <div className="product-image w-full h-64 md:h-auto p-5">
+              <img className="w-full h-full object-contain" src={setimage} alt="Product Image" />
             </div>
-            <div className="image02">
-              <img onClick={() => setImage(selectedProduct.image02)} className="w-ful cursor-pointer" src={selectedProduct.image02} alt="..." />
+
+            {/* Thumbnails for Mobile */}
+            <div className="product-all-image-wrapper w-full flex flex-row justify-center gap-3 p-1 md:flex-col md:w-[10vw] md:min-h-screen">
+              <div className="image01 w-1/4 md:w-full">
+                <img
+                  onClick={() => setImage(selectedProduct.product_image)}
+                  className="w-full cursor-pointer"
+                  src={selectedProduct.product_image}
+                  alt="..."
+                />
+              </div>
+              <div className="image02 w-1/4 md:w-full">
+                <img
+                  onClick={() => setImage(selectedProduct.image02)}
+                  className="w-full cursor-pointer"
+                  src={selectedProduct.image02}
+                  alt="..."
+                />
+              </div>
+              <div className="image03 w-1/4 md:w-full">
+                <img
+                  onClick={() => setImage(selectedProduct.image03)}
+                  className="w-full cursor-pointer"
+                  src={selectedProduct.image03}
+                  alt="..."
+                />
+              </div>
             </div>
-            <div className="image03">
-              <img onClick={() => setImage(selectedProduct.image03)} className="w-ful cursor-pointer" src={selectedProduct.image03} alt="..." />
-            </div>
-          </div>
-          {/* Product Image */}
-          <div className="product-image w-full md:w-1/2 h-64 md:h-auto p-5">
-            <img
-              className="w-full h-full object-contain"
-              src={setimage}
-              alt="Product Image"
-            />
           </div>
 
+          {/* Product Info Section */}
           <div className="product-info-wrapper w-full md:w-1/2 p-6 md:p-10">
             <div className="heading-wrapper space-y-4 mb-6">
-              <h1 className="text-3xl md:text-2xl lg:text-4xl font-serif mb-5">
+              <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-4xl font-serif mb-5">
                 {selectedProduct.product_name}
               </h1>
-              <span className="text-sm md:text-base w-fit border border-black px-3 py-1 rounded">
+              <span className="text-xs sm:text-sm md:text-base w-fit border border-black px-3 py-1 rounded">
                 {selectedProduct.product_category}
               </span>
-              <div className="productinfo-wrapper w-full text-[1.3vw] flex flex-col gap-2 text-gray-600">
+              <div className="productinfo-wrapper w-full text-sm sm:text-base md:text-[1.3vw] flex flex-col gap-2 text-gray-600">
                 {selectedProduct.product_details && (
                   <>
                     <div className="inner-infowrapper flex items-center gap-1">
@@ -156,15 +173,15 @@ function ProductDetail() {
             </div>
             <div className="add_to_cart_section bg-gray-100 rounded-md p-5">
               <div className="price mb-4">
-                <h1 className="text-2xl font-bold">
+                <h1 className="text-xl sm:text-2xl font-bold">
                   ₹ {selectedProduct.product_price}
                 </h1>
-                <span className="text-sm">incl. VAT, plus shipping</span>
+                <span className="text-xs sm:text-sm">incl. VAT, plus shipping</span>
               </div>
 
               <button
                 onClick={() => AddToCart()}
-                className="w-full md:w-auto py-3 px-6 bg-black text-white text-base md:text-lg"
+                className="w-full md:w-auto py-2 sm:py-3 px-4 sm:px-6 bg-black text-white text-sm sm:text-base md:text-lg"
               >
                 Add to cart
               </button>
@@ -350,13 +367,15 @@ function ProductDetail() {
           </div>
         </div>
 
+
+
         <div className="simillar-product-wrapper w-full">
-          <div className="heading-wrapper w-full px-10">
+          <div className="heading-wrapper w-full px-[10vw]">
             <h1 className="text-[3vw]">What you might also like</h1>
             <span className="text-[1.2vw]">Maybe the next thing you wont want to miss</span>
           </div>
           <div className="products-wrapper">
-            <div className="product-wrapper w-full h-auto flex flex-wrap justify-between gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
+            <div className="product-wrapper w-full h-auto flex flex-wrap justify-center gap-[8vw] gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
               {TeaCollection.length > 0 ? (
                 TeaCollection.filter(
                   (Teafilter) => Teafilter.product_category === `${selectedProduct.product_category}`
@@ -405,7 +424,7 @@ function ProductDetail() {
                         )}
                       </button>
                       <Link to={`/${selectedProduct.product_category}/${TeaData.product_id}`}>
-                        <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
+                        <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%] rounded-md">
                           <img
                             className="w-full h-full object-contain sm:object-cover"
                             src={TeaData.product_image}
