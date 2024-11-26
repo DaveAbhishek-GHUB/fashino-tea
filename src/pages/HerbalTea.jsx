@@ -158,7 +158,7 @@ function HerbalTea() {
                       </svg>
                     )}
                   </button>
-                  <Link to={`/wintertea/${TeaData.product_id}`}>
+                  <Link to={`/Herbal/${TeaData.product_id}`}>
                     <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
                       <img
                         className="w-full h-full object-contain sm:object-cover"

@@ -32,23 +32,23 @@ function App() {
         <Route path="/register" element={<Signuppage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/teablends" element={<TeaBlends />} />
-        <Route path="/teablends/:productId" element={<ProductDetail />} />
+        <Route path="/Tea blend/:productId" element={<ProductDetail />} />
         <Route path="/adventcalendar" element={<AdventCalendar />} />
-        <Route path="/adventcalendar/:productId" element={<ProductDetail />} />
+        <Route path="/Advent Calendar/:productId" element={<ProductDetail />} />
         <Route path="/teachocolate" element={<TeaChocolate />} />
-        <Route path="/teachocolate/:productId" element={<ProductDetail />} />
+        <Route path="/Chocolate/:productId" element={<ProductDetail />} />
         <Route path="/matcha" element={<Matcha />} />
-        <Route path="/matcha/:productId" element={<ProductDetail />} />
+        <Route path="/Matcha/:productId" element={<ProductDetail />} />
         <Route path="/wintertea" element={<Wintertea />} />
-        <Route path="/wintertea/:productId" element={<ProductDetail />} />
+        <Route path="/Gift Set/:productId" element={<ProductDetail />} />
         <Route path="/greentea" element={<GreenTea />} />
-        <Route path="/greentea/:productId" element={<ProductDetail />} />
+        <Route path="/Green tea/:productId" element={<ProductDetail />} />
         <Route path="/blacktea" element={<BlackTea />} />
-        <Route path="/blacktea/:productId" element={<ProductDetail />} />
+        <Route path="/Black Tea/:productId" element={<ProductDetail />} />
         <Route path="/herbaltea" element={<HerbalTea />} />
-        <Route path="/herbaltea/:productId" element={<ProductDetail />} />
+        <Route path="/Herbal/:productId" element={<ProductDetail />} />
         <Route path="/oolongtea" element={<Oolongtea />} />
-        <Route path="/oolongtea/:productId" element={<ProductDetail />} />
+        <Route path="/Oolong Tea/:productId" element={<ProductDetail />} />
         <Route path="/account" element={<ProfilePage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />

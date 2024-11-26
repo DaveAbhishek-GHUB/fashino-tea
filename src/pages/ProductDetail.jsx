@@ -4,15 +4,28 @@ import SubHeader from "../components/SubHeader";
 import Welovewhatwedosection from "../utils/Welovewhatwedosection";
 import Yourbenefits from "../utils/Yourbenefits";
 import Footer from "../components/Footer";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/slices/userSlice";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Storeclosetoyou from "../utils/Storeclosetoyou";
 
 function ProductDetail() {
   const [selectedProduct, setselectedProduct] = useState([]);
+  const [setimage, setsetimage] = useState("");
+  const [correctIcon, setCorrectIcon] = useState(<>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#4b5563"} fill={"none"}>
+      <path d="M5 14L8.5 17.5L19 6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  </>);
 
+
+  console.log(selectedProduct, "selectedProduct");
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.Loggedin);
+  const [hoveredProductId, setHoveredProductId] = useState(null);
+  const [TeaCollection, setTeaCollection] = useState([]);
 
   const { productId } = useParams();
   const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
@@ -27,49 +40,120 @@ function ProductDetail() {
       });
   }, [teaCollection, productId]);
 
-  const addtocart = () => {
+
+  useEffect(() => {
+    fetch(teaCollection)
+      .then((Response) => Response.json())
+      .then((Data) => {
+        console.log(Data);
+        setTeaCollection(Data);
+      });
+  }, []);
+
+  const AddToCart = (Data) => {
     if (!user) {
-      alert("Login First");
+      toast.warn("Login First!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      dispatch(
+        addToCart({
+          id: Data.product_id,
+          image: Data.product_image,
+          name: Data.product_name,
+          category: Data.product_category,
+          price: Data.product_price,
+          quantity: 1,
+        })
+      );
+      console.log(Data);
+      toast.success("Successfully added to cart", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     }
-    dispatch(
-      addToCart({
-        id: selectedProduct.product_id,
-        image: selectedProduct.product_image,
-        name: selectedProduct.product_name,
-        category: selectedProduct.product_category,
-        price: selectedProduct.product_price,
-        quantity: 1,
-      })
-    );
   };
+
+  useEffect(() => {
+    if (selectedProduct && selectedProduct.product_image) {
+      setsetimage(selectedProduct.product_image);
+    }
+  }, [selectedProduct]);
+
+
+  const setImage = (url) => {
+    setsetimage(url);
+  }
 
   return (
     <>
       <SubHeader />
       <div className="main-product-detail-wrapper w-full min-h-screen mt-12">
         <div className="imageanddetailwrapper w-full min-h-screen flex flex-col md:flex-row">
+          <div className="product-all-image-wrapper w-[10vw] min-h-screen flex flex-col justify-center gap-3 p-1">
+            <div className="image01">
+              <img onClick={() => setImage(selectedProduct.product_image)} className="w-ful cursor-pointer" src={selectedProduct.product_image} alt="..." />
+            </div>
+            <div className="image02">
+              <img onClick={() => setImage(selectedProduct.image02)} className="w-ful cursor-pointer" src={selectedProduct.image02} alt="..." />
+            </div>
+            <div className="image03">
+              <img onClick={() => setImage(selectedProduct.image03)} className="w-ful cursor-pointer" src={selectedProduct.image03} alt="..." />
+            </div>
+          </div>
           {/* Product Image */}
-          <div className="product-image w-full md:w-1/2 h-64 md:h-auto">
+          <div className="product-image w-full md:w-1/2 h-64 md:h-auto p-5">
             <img
               className="w-full h-full object-contain"
-              src={selectedProduct.product_image}
+              src={setimage}
               alt="Product Image"
             />
           </div>
 
           <div className="product-info-wrapper w-full md:w-1/2 p-6 md:p-10">
             <div className="heading-wrapper space-y-4 mb-6">
-              <h1 className="text-3xl md:text-2xl lg:text-4xl font-serif">
+              <h1 className="text-3xl md:text-2xl lg:text-4xl font-serif mb-5">
                 {selectedProduct.product_name}
               </h1>
               <span className="text-sm md:text-base w-fit border border-black px-3 py-1 rounded">
                 {selectedProduct.product_category}
               </span>
-              <p className="text-base md:text-lg mt-3">
-                {selectedProduct.product}
-              </p>
+              <div className="productinfo-wrapper w-full text-[1.3vw] flex flex-col gap-2 text-gray-600">
+                {selectedProduct.product_details && (
+                  <>
+                    <div className="inner-infowrapper flex items-center gap-1">
+                      {correctIcon}
+                      <p>{selectedProduct.product_details["01"]}</p>
+                    </div>
+                    <div className="inner-infowrapper flex items-center gap-1">
+                      {correctIcon}
+                      <p>{selectedProduct.product_details["02"]}</p>
+                    </div>
+                    <div className="inner-infowrapper flex items-center gap-1">
+                      {correctIcon}
+                      <p>{selectedProduct.product_details["03"]}</p>
+                    </div>
+                    <div className="inner-infowrapper flex items-center gap-1">
+                      {correctIcon}
+                      <p>{selectedProduct.product_details["04"]}</p>
+                    </div>
+                  </>
+                )}
+              </div>
             </div>
-
             <div className="add_to_cart_section bg-gray-100 rounded-md p-5">
               <div className="price mb-4">
                 <h1 className="text-2xl font-bold">
@@ -79,7 +163,7 @@ function ProductDetail() {
               </div>
 
               <button
-                onClick={() => addtocart()}
+                onClick={() => AddToCart()}
                 className="w-full md:w-auto py-3 px-6 bg-black text-white text-base md:text-lg"
               >
                 Add to cart
@@ -266,123 +350,116 @@ function ProductDetail() {
           </div>
         </div>
 
-        <div className="main-teainfo-wrapper w-full h-auto flex flex-col md:flex-row mb-10">
-          {/* Text and Features container */}
-          <div className="ourblends w-full md:w-[50vw] h-auto md:h-full px-4 sm:px-[2vw] py-8 sm:py-[8vw] text-center md:text-left">
-            <div className="additional-info-wrapper flex gap-[1.7vw]">
-              <svg
-                width={32}
-                height={14}
-                className="icon icon--check mt-[1.1vw]"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M20 6L9 17L4 12"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="text-[3vw] sm:text-[1.5vw] md:text-[1.2vw] font-sans text-[#9F9F9F] block mt-2">
-                Our Blends are a highlight in your cup – carefully crafted tea
-                blends you must try. Let each cup guide you to a new world of
-                flavors!
-              </span>
-            </div>
-
-            <div className="additional-info-wrapper flex gap-[0.8vw]">
-              <svg
-                width={32}
-                height={14}
-                className="icon icon--check mt-[1.1vw]"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M20 6L9 17L4 12"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="text-[3vw] sm:text-[1.5vw] md:text-[1.2vw] font-sans text-[#9F9F9F] block mt-2">
-                16 exclusive new teas from farms around the world
-              </span>
-            </div>
-
-            <div className="additional-info-wrapper flex gap-[0.8vw]">
-              <svg
-                width={32}
-                height={14}
-                className="icon icon--check mt-[1.1vw]"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M20 6L9 17L4 12"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="text-[3vw] sm:text-[1.5vw] md:text-[1.2vw] font-sans text-[#9F9F9F] block mt-2">
-                8 exquisite tea chocolates crafted in collaboration with
-                Original Beans
-              </span>
-            </div>
-
-            <div className="additional-info-wrapper flex gap-[1.7vw]">
-              <svg
-                width={32}
-                height={14}
-                className="icon icon--check mt-[1.1vw]"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M20 6L9 17L4 12"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="text-[3vw] sm:text-[1.5vw] md:text-[1.2vw] font-sans text-[#9F9F9F] block mt-2">
-                Each day, you learn more about our partners social or ecological
-                projects as well as the tea and the corresponding tea farm
-              </span>
-            </div>
-
-            <div className="additional-info-wrapper flex gap-[0.8vw]">
-              <svg
-                width={32}
-                height={14}
-                className="icon icon--check mt-[1.1vw]"
-                viewBox="0 0 24 24"
-                fill="none"
-              >
-                <path
-                  d="M20 6L9 17L4 12"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="text-[3vw] sm:text-[1.5vw] md:text-[1.2vw] font-sans text-[#9F9F9F] block mt-2">
-                100% recyclable packaging made from innovative tea paper
-              </span>
-            </div>
+        <div className="simillar-product-wrapper w-full">
+          <div className="heading-wrapper w-full px-10">
+            <h1 className="text-[3vw]">What you might also like</h1>
+            <span className="text-[1.2vw]">Maybe the next thing you wont want to miss</span>
           </div>
-          {/* Image container */}
-          <div className="image-container w-full md:w-[50vw] h-[50vw] md:h-full p-5 md:p-10">
-            <img
-              className="w-full h-full object-cover rounded-md"
-              src={selectedProduct.product_hover_image}
-              alt="..."
-            />
+          <div className="products-wrapper">
+            <div className="product-wrapper w-full h-auto flex flex-wrap justify-between gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
+              {TeaCollection.length > 0 ? (
+                TeaCollection.filter(
+                  (Teafilter) => Teafilter.product_category === `${selectedProduct.product_category}`
+                )
+                  .slice(1, 4)
+                  .map((TeaData, index) => (
+                    <div
+                      key={index}
+                      className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[35vw] sm:h-[50vw] md:h-[40vw] relative"
+                    >
+                      <button
+                        onMouseEnter={() => setHoveredProductId(TeaData.product_id)}
+                        onMouseLeave={() => setHoveredProductId(null)}
+                        onClick={() => AddToCart(TeaData)}
+                        className="absolute bottom-[21vw] right-[2vw] bg-white p-2 rounded-full border-zinc-700 border-2 max-sm:bottom-[70vw] max-sm:right-[5vw] max-md:bottom-[27vw]"
+                      >
+                        {hoveredProductId === TeaData.product_id ? (
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#000000"} fill={"none"}>
+                            <path d="M8 16H15.2632C19.7508 16 20.4333 13.1808 21.261 9.06908C21.4998 7.88311 21.6192 7.29013 21.3321 6.89507C21.045 6.5 20.4947 6.5 19.3941 6.5H19M6 6.5H8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                            <path d="M11 8.5C11.4915 9.0057 12.7998 11 13.5 11M16 8.5C15.5085 9.0057 14.2002 11 13.5 11M13.5 11V3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M8 16L5.37873 3.51493C5.15615 2.62459 4.35618 2 3.43845 2H2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                            <path d="M8.88 16H8.46857C7.10522 16 6 17.1513 6 18.5714C6 18.8081 6.1842 19 6.41143 19H17.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <circle cx="10.5" cy="20.5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+                            <circle cx="17.5" cy="20.5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+                          </svg>
+                        ) : (
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            width={24}
+                            height={24}
+                            color={"#000000"}
+                            fill={"none"}
+                          >
+                            <path
+                              d="M3.87289 17.0194L2.66933 9.83981C2.48735 8.75428 2.39637 8.21152 2.68773 7.85576C2.9791 7.5 3.51461 7.5 4.58564 7.5H19.4144C20.4854 7.5 21.0209 7.5 21.3123 7.85576C21.6036 8.21152 21.5126 8.75428 21.3307 9.83981L20.1271 17.0194C19.7282 19.3991 19.5287 20.5889 18.7143 21.2945C17.9 22 16.726 22 14.3782 22H9.62182C7.27396 22 6.10003 22 5.28565 21.2945C4.47127 20.5889 4.27181 19.3991 3.87289 17.0194Z"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                            />
+                            <path
+                              d="M17.5 7.5C17.5 4.46243 15.0376 2 12 2C8.96243 2 6.5 4.46243 6.5 7.5"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                            />
+                          </svg>
+                        )}
+                      </button>
+                      <Link to={`/${selectedProduct.product_category}/${TeaData.product_id}`}>
+                        <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
+                          <img
+                            className="w-full h-full object-contain sm:object-cover"
+                            src={TeaData.product_image}
+                            alt={TeaData.product_name}
+                          />
+                        </div>
+                        <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
+                          <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[4vw]">
+                            {TeaData.product_category}
+                          </span>
+                          <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[5vw]">
+                            {TeaData.product_name}
+                          </span>
+                          <span className="text-[1.2vw] text-[#484848] max-sm:text-[4vw]">
+                            {TeaData.product}
+                          </span>
+                          <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[4vw]">
+                            ₹ {TeaData.product_price}
+                          </span>
+                        </div>
+                      </Link>
+                    </div>
+                  ))
+              ) : (
+                <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-red-500">
+                  Fetch Issue!
+                </span>
+              )}
+            </div>
           </div>
         </div>
-        <Welovewhatwedosection />
+        <Storeclosetoyou />
+        <div className="product-review-wrapper w-full p-5">
+          <div className="heading-wrapper w-full">
+            <h1 className="text-[3vw] font-sans">Ratings & Reviews</h1>
+          </div>
+          {selectedProduct && selectedProduct.reviews && selectedProduct.reviews.length > 0 ? (
+            <div className="flex flex-wrap -mx-2">
+              {selectedProduct.reviews.map((review, index) => (
+                <div key={index} className="review-item mb-4 p-4 border-b border-gray-200 w-full md:w-1/2 px-2">
+                  <h3 className="reviewer-name font-bold">{review.reviewer}</h3>
+                  <p className="review-username text-sm text-gray-500">@{review.username}</p>
+                  <div className="review-rating text-yellow-500">
+                    {'★'.repeat(Math.floor(review.rating))}{'☆'.repeat(5 - Math.floor(review.rating))}
+                  </div>
+                  <p className="review-comment mt-2">{review.comment}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-gray-500">No reviews available for this product.</p>
+          )}
+        </div>
+
         <Yourbenefits />
         <Footer />
       </div>
