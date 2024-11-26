@@ -367,8 +367,6 @@ function ProductDetail() {
           </div>
         </div>
 
-
-
         <div className="simillar-product-wrapper w-full">
           <div className="heading-wrapper w-full px-[10vw]">
             <h1 className="text-[3vw]">What you might also like</h1>
@@ -426,7 +424,7 @@ function ProductDetail() {
                       <Link to={`/${selectedProduct.product_category}/${TeaData.product_id}`}>
                         <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%] rounded-md">
                           <img
-                            className="w-full h-full object-contain sm:object-cover"
+                            className="w-full h-full object-contain sm:object-contain"
                             src={TeaData.product_image}
                             alt={TeaData.product_name}
                           />

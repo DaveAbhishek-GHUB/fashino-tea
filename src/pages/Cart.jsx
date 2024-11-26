@@ -13,7 +13,8 @@ function Cart() {
   const user = useSelector((state) => state.user.user);
   const loggedinuser = useSelector((state) => state.user.Loggedin);
   const loggedinuserdata = user.find((user) => user.email === loggedinuser);
-  const cartitems = loggedinuserdata.cart;
+  const cartitems = loggedinuserdata?.cart || {};
+  
 
   // Function to increase the quantity of a cart item
   const increaseQuantity = (id) => {

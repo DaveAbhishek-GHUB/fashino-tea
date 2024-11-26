@@ -28,6 +28,7 @@ function AllProducts() {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [hoveredProductId, setHoveredProductId] = useState(null);
   const [isMenuOpen, setisMenuOpen] = useState();
+  const [wishList, setwishList] = useState([]);
 
   const dispatch = useDispatch();
   const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
@@ -41,6 +42,7 @@ function AllProducts() {
         setTeaCollection(Data);
       });
   }, []);
+
   const toggleDropdown = (category) => {
     setOpenDropdown(openDropdown === category ? null : category);    
   };
@@ -50,16 +52,7 @@ function AllProducts() {
   // Cart handling
   const AddToCart = (Data) => {
     if (!user) {
-      toast.warn("Login First!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.warn("Login First!");
     } else {
       dispatch(
         addToCart({
@@ -71,17 +64,7 @@ function AllProducts() {
           quantity: 1,
         })
       );
-      console.log(Data);
-      toast.success("Successfully added to cart", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.success("Successfully added to cart");
     }
   };
 
@@ -98,36 +81,19 @@ function AllProducts() {
     setisMenuOpen(false);
   };
 
-  console.log(minimumPrice);
-  console.log(maximumPrice);
+  const toggleWishlist = (productId) => {
+    setwishList((prevWishList) => {
+      if (prevWishList.includes(productId)) {
+        return prevWishList.filter((id) => id !== productId);
+      } else {
+        return [...prevWishList, productId];
+      }
+    });
+  };
 
   return (
     <>
       <SubHeader />
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
       <div className="main-wrapper w-full min-h-screen mt-[6vw]  max-sm:mt-[22vw]">
         <div className="inner-wrapper w-full h-full flex relative">
           {/* Sidebar */}
@@ -424,6 +390,35 @@ function AllProducts() {
                       key={index}
                       className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[30vw] relative max-sm:h-[100vw]"
                     >
+                       <button
+                  onClick={() => toggleWishlist(TeaData.product_id)}
+                  className="wishlist absolute top-[1vw] right-[1vw]"
+                >
+                  {wishList.includes(TeaData.product_id) ? (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width={24}
+                      height={24}
+                      color={"#4b5563"}
+                      fill={"black"}
+                    >
+                      <path d="M19.4626 3.99415C16.7809 2.34923 14.4404 3.01211 13.0344 4.06801C12.4578 4.50096 12.1696 4.71743 12 4.71743C11.8304 4.71743 11.5422 4.50096 10.9656 4.06801C9.55962 3.01211 7.21909 2.34923 4.53744 3.99415C1.01807 6.15294 0.221721 13.2749 8.33953 19.2834C9.88572 20.4278 10.6588 21 12 21C13.3412 21 14.1143 20.4278 15.6605 19.2834C23.7783 13.2749 22.9819 6.15294 19.4626 3.99415Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                  ) : (
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width={24}
+                      height={24}
+                      color={"#4b5563"}
+                      fill={"none"}
+                    >
+                      <path d="M19.4626 3.99415C16.7809 2.34923 14.4404 3.01211 13.0344 4.06801C12.4578 4.50096 12.1696 4.71743 12 4.71743C11.8304 4.71743 11.5422 4.50096 10.9656 4.06801C9.55962 3.01211 7.21909 2.34923 4.53744 3.99415C1.01807 6.15294 0.221721 13.2749 8.33953 19.2834C9.88572 20.4278 10.6588 21 12 21C13.3412 21 14.1143 20.4278 15.6605 19.2834C23.7783 13.2749 22.9819 6.15294 19.4626 3.99415Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                  )}
+                </button>
+
                   <button
                     onMouseEnter={() => setHoveredProductId(TeaData.product_id)}
                     onMouseLeave={() => setHoveredProductId(null)}
@@ -464,7 +459,7 @@ function AllProducts() {
                       <Link to={`/${TeaData.product_category}/${TeaData.product_id}`}>
                         <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
                           <img
-                            className="w-full h-full object-contain sm:object-cover"
+                            className="w-full h-full object-contain sm:object-contain"
                             src={TeaData.product_image}
                             alt={TeaData.product_name}
                           />

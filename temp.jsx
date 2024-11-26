@@ -1,49 +1,25 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { addToCart } from "../store/slices/userSlice";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import SubHeader from "../components/SubHeader";
 import StandardBanner from "../utils/Standardbanner";
 import Storeclosetoyou from "../utils/Storeclosetoyou";
 import Welovewhatwedosection from "../utils/Welovewhatwedosection";
 import Yourbenefits from "../utils/Yourbenefits";
 import Footer from "../components/Footer";
-import { Link } from "react-router-dom";
-import { addToCart } from "../store/slices/userSlice";
-import { useDispatch, useSelector } from "react-redux";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 function HomePage() {
-
-  const responsive = {
-    superLargeDesktop: {
-
-      breakpoint: { max: 4000, min: 3000 },
-      items: 5,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 7,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 4,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 3,
-    },
-  };
-
   const [hoveredProductId, setHoveredProductId] = useState(null);
-  const [wishList, setwishList] = useState([]);
+  const [wishList, setwishList] = useState([]); // Initialize as an array
   const [TeaCollection, setTeaCollection] = useState([]);
   const dispatch = useDispatch();
 
   const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
-
   const user = useSelector((state) => state.user.Loggedin);
 
   useEffect(() => {
@@ -57,8 +33,7 @@ function HomePage() {
 
   const AddToCart = (Data) => {
     if (!user) {
-      toast.warn("Login First!", {
-      });
+      toast.warn("Login First!");
     } else {
       dispatch(
         addToCart({
@@ -77,8 +52,10 @@ function HomePage() {
   const toggleWishlist = (productId) => {
     setwishList((prevWishList) => {
       if (prevWishList.includes(productId)) {
+        // Remove product from wishlist
         return prevWishList.filter((id) => id !== productId);
       } else {
+        // Add product to wishlist
         return [...prevWishList, productId];
       }
     });
@@ -129,141 +106,7 @@ function HomePage() {
 
         {/* Category Section */}
         <Carousel className="py-10 px-3" responsive={responsive}>
-          <div>
-            {/* adventcalendars */}
-            <Link to="/Adventcalendar">
-              <div className="advent-calendars w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-                <img
-                  className="w-full h-full rounded-full"
-                  src="https://www.paperandtea.com/cdn/shop/files/UNICORN_collection_page_1.jpg?v=1725981579&width=200"
-                  alt="..."
-                />
-                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
-                  Advent-calendars
-                </span>
-              </div>
-            </Link>
-          </div>
-          <div>
-            {/* teachocolate */}
-            <Link to="/teachocolate">
-              <div className="tea-chocolate w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-                <img
-                  className="w-full h-full rounded-full"
-                  src="https://www.paperandtea.com/cdn/shop/files/Collection_Circle.jpg?v=1727185858&width=200"
-                  alt="..."
-                />
-                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
-                  Tea-chocolate
-                </span>
-              </div>
-            </Link>
-          </div>
-          <div>
-            {/* matcha */}
-            <Link to="/matcha">
-              <div className="tea-matcha w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-                <img
-                  className="w-full h-full rounded-full"
-                  src="https://www.paperandtea.com/cdn/shop/files/icon-matchatee.jpg?v=1721139547&width=200"
-                  alt="..."
-                />
-                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
-                  Matcha
-                </span>
-              </div>
-            </Link>
-          </div>
-          <div>
-            {/* tea-blends */}
-            <Link to="/teablends">
-              <div className="tea-blends w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-                <img
-                  className="w-full h-full rounded-full"
-                  src="https://www.paperandtea.com/cdn/shop/files/icon-teemischungen.jpg?v=1721139547&width=200"
-                  alt="..."
-                />
-                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
-                  Tea-blends
-                </span>
-              </div>
-            </Link>
-          </div>
-          <div>
-            {/* winter-teas */}
-            <Link to="/wintertea">
-              <div className="winter-teas w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-                <img
-                  className="w-full h-full rounded-full"
-                  src="https://www.paperandtea.com/cdn/shop/files/Bilder_Startseite_Winter_Teas.jpg?v=1729069408&width=200"
-                  alt="..."
-                />
-                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
-                  Winter-teas
-                </span>
-              </div>
-            </Link>
-          </div>
-          <div>
-            {/* Green Tea */}
-            <Link to="/greentea">
-              <div className="green-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-                <img
-                  className="w-full h-full rounded-full"
-                  src="https://www.paperandtea.com/cdn/shop/files/icon-gruenertee.jpg?v=1721139547&width=200"
-                  alt="..."
-                />
-                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
-                  Green-tea
-                </span>
-              </div>
-            </Link>
-          </div>
-          <div>
-            {/* Black Tea */}
-            <Link to="/blacktea">
-              <div className="black-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-                <img
-                  className="w-full h-full rounded-full"
-                  src="https://www.paperandtea.com/cdn/shop/files/icon-schwarzertee.jpg?v=1721139547&width=200"
-                  alt="..."
-                />
-                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
-                  Black-tea
-                </span>
-              </div>
-            </Link>
-          </div>
-          <div>
-            {/* Herbal Tea */}
-            <Link to="herbaltea">
-              <div className="herbal-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-                <img
-                  className="w-full h-full rounded-full"
-                  src="https://www.paperandtea.com/cdn/shop/files/icon-kraeutertee.jpg?v=1721139547&width=200"
-                  alt="..."
-                />
-                <span className="w-full flex justify-center text-[3vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
-                  Herbal-tea
-                </span>
-              </div>
-            </Link>
-          </div>
-          <div>
-            {/* Oolong Tea */}
-            <Link to="/oolongtea">
-              <div className="oolong-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
-                <img
-                  className="w-full h-full rounded-full"
-                  src="https://www.paperandtea.com/cdn/shop/files/icon-oolong.jpg?v=1721139547&width=200"
-                  alt="..."
-                />
-                <span className="w-full flex justify-center text-[3.5vw] text-center sm:text-[1.5vw] md:text-[1.2vw]">
-                  Oolong-tea
-                </span>
-              </div>
-            </Link>
-          </div>
+          {/* Your carousel items here */}
         </Carousel>
 
         {/* Cozy moments */}
@@ -290,7 +133,7 @@ function HomePage() {
                   >
                     <button
                       onClick={() => toggleWishlist(TeaData.product_id)}
-                      className="wishlist absolute top-[1vw] right-[1vw]"
+                      className="wishlist"
                     >
                       {wishList.includes(TeaData.product_id) ? (
                         <svg
@@ -320,7 +163,7 @@ function HomePage() {
                       onMouseEnter={() => setHoveredProductId(TeaData.product_id)}
                       onMouseLeave={() => setHoveredProductId(null)}
                       onClick={() => AddToCart(TeaData)}
-                      className="absolute bottom-[21vw] right-[2vw] bg-white p-2 rounded-full border-zinc-700 border-[1px] max-sm:bottom-[70vw] max-sm:right-[5vw] max-md:bottom-[27vw]"
+                      className="absolute bottom-[21vw] right-[2vw] bg-white p-2 rounded-full border-zinc-700 border-2 max-sm:bottom-[70vw] max-sm:right-[5vw] max-md:bottom-[27vw]"
                     >
                       {hoveredProductId === TeaData.product_id ? (
                         <svg
@@ -363,7 +206,7 @@ function HomePage() {
                     <Link to={`/Gift Set/${TeaData.product_id}`}>
                       <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
                         <img
-                          className="w-full h-full object-contain sm:object-contain"
+                          className="w-full h-full object-contain sm:object-cover"
                           src={TeaData.product_image}
                           alt={TeaData.product_name}
                         />
@@ -424,38 +267,10 @@ function HomePage() {
                     className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[35vw] sm:h-[50vw] md:h-[40vw] relative"
                   >
                     <button
-                      onClick={() => toggleWishlist(TeaData.product_id)}
-                      className="wishlist absolute top-[1vw] right-[1vw]"
-                    >
-                      {wishList.includes(TeaData.product_id) ? (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          width={24}
-                          height={24}
-                          color={"#4b5563"}
-                          fill={"black"}
-                        >
-                          <path d="M19.4626 3.99415C16.7809 2.34923 14.4404 3.01211 13.0344 4.06801C12.4578 4.50096 12.1696 4.71743 12 4.71743C11.8304 4.71743 11.5422 4.50096 10.9656 4.06801C9.55962 3.01211 7.21909 2.34923 4.53744 3.99415C1.01807 6.15294 0.221721 13.2749 8.33953 19.2834C9.88572 20.4278 10.6588 21 12 21C13.3412 21 14.1143 20.4278 15.6605 19.2834C23.7783 13.2749 22.9819 6.15294 19.4626 3.99415Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                        </svg>
-                      ) : (
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 24 24"
-                          width={24}
-                          height={24}
-                          color={"#4b5563"}
-                          fill={"none"}
-                        >
-                          <path d="M19.4626 3.99415C16.7809 2.34923 14.4404 3.01211 13.0344 4.06801C12.4578 4.50096 12.1696 4.71743 12 4.71743C11.8304 4.71743 11.5422 4.50096 10.9656 4.06801C9.55962 3.01211 7.21909 2.34923 4.53744 3.99415C1.01807 6.15294 0.221721 13.2749 8.33953 19.2834C9.88572 20.4278 10.6588 21 12 21C13.3412 21 14.1143 20.4278 15.6605 19.2834C23.7783 13.2749 22.9819 6.15294 19.4626 3.99415Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                        </svg>
-                      )}
-                    </button>
-                    <button
                       onMouseEnter={() => setHoveredProductId(TeaData.product_id)}
                       onMouseLeave={() => setHoveredProductId(null)}
                       onClick={() => AddToCart(TeaData)}
-                      className="absolute bottom-[21vw] right-[2vw] bg-white p-2 rounded-full border-zinc-700 border-[1px] max-sm:bottom-[70vw] max-sm:right-[5vw] max-md:bottom-[27vw]"
+                      className="absolute bottom-[21vw] right-[2vw] bg-white p-2 rounded-full border-zinc-700 border-2 max-sm:bottom-[70vw] max-sm:right-[5vw] max-md:bottom-[27vw]"
                     >
                       {hoveredProductId === TeaData.product_id ? (
                         <svg
@@ -495,10 +310,10 @@ function HomePage() {
                         </svg>
                       )}
                     </button>
-                    <Link to={`/Gift Set/${TeaData.product_id}`}>
+                    <Link to={`/Advent Calendar/${TeaData.product_id}`}>
                       <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
                         <img
-                          className="w-full h-full object-contain sm:object-contain"
+                          className="w-full h-full object-contain sm:object-cover"
                           src={TeaData.product_image}
                           alt={TeaData.product_name}
                         />
@@ -526,7 +341,6 @@ function HomePage() {
               </span>
             )}
           </div>
-
           <div className="button-wrapper w-full flex justify-center items-center mt-8 mb-10">
             <Link to="/Adventcalendar">
               <button className="py-2 sm:py-2.5 md:py-3 px-6 sm:px-8 md:px-10 border-black border-[1px] font-sans text-[4vw] sm:text-[1.5vw] md:text-[1.2vw]">

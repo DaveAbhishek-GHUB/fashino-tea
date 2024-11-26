@@ -15,7 +15,7 @@ import Wintertea from "./pages/Wintertea";
 import GreenTea from "./pages/GreenTea";
 import BlackTea from "./pages/BlackTea";
 import HerbalTea from "./pages/HerbalTea";
-import Oolongtea from "./pages/Oolongtea"; 
+import Oolongtea from "./pages/Oolongtea";
 import ProductDetail from "./pages/ProductDetail";
 import ProfilePage from "./pages/ProfilePage";
 import Cart from "./pages/Cart";
@@ -23,10 +23,23 @@ import Checkout from "./pages/Checkout";
 import Page404 from "./pages/Page404";
 import OrderConfirm from "./pages/OrderConfirm";
 import AllProducts from "./pages/AllProducts";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/register" element={<Signuppage />} />
@@ -52,8 +65,8 @@ function App() {
         <Route path="/account" element={<ProfilePage />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<Checkout />} />
-        <Route path="/orderconfirm" element={<OrderConfirm/>}/>
-        <Route path="/ourproducts" element={<AllProducts/>}/> 
+        <Route path="/orderconfirm" element={<OrderConfirm />} />
+        <Route path="/ourproducts" element={<AllProducts />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
     </>
