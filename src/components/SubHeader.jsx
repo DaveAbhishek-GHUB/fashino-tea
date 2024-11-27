@@ -6,54 +6,37 @@ import { ToastContainer, toast } from "react-toastify";
 import Logo from "../assets/Final_logo_02.png";
 import "react-toastify/dist/ReactToastify.css";
 
-
 function SubHeader() {
-
+  // State to manage the menu open/close status
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Hook to programmatically navigate
   const navigate = useNavigate();
 
+  // Selectors to get user data from the Redux store
   const users = useSelector((state) => state.user.user);
   const loggedinuser = useSelector((state) => state.user.Loggedin);
-  const loggedinuserData = users.find((user) => user.email === loggedinuser)
-  console.log(loggedinuserData, "loggedinuserData")
 
+  // Find the logged-in user's data
+  const loggedinuserData = users.find((user) => user.email === loggedinuser);
 
+  // Function to toggle the menu open/close state
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-
+  // Function to check if the user is logged in and navigate accordingly
   const isLoggedin = () => {
     if (loggedinuser) {
-      navigate("/cart")
+      navigate("/cart");
+    } else {
+      toast.warn("Login First!");
     }
-    else {
-      toast.warn("Login First!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-    }
-  }
+  };
+
+  // Return statement and JSX can be added here
   return (
     <div className="relative">
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
       <div className="main-subheader-container mb-3 w-full bg-white fixed z-10 top-0">
         <div className="subheader w-full h-12 sm:h-[3vw] flex items-center my-5">
           {/* Hamburger Menu Button - Only visible on small screens */}

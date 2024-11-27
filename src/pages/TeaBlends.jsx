@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
+
 import React, { useEffect, useState } from "react";
 import SubHeader from "../components/SubHeader";
 import Storenearyou from "../utils/Storeclosetoyou";
@@ -13,48 +14,48 @@ import "react-toastify/dist/ReactToastify.css";
 
 function TeaBlends() {
   const [TeaCollection, setTeaCollection] = useState([]);
-  const [wishList, setwishList] = useState([]);
+  const [wishList, setWishList] = useState([]);
   const [hoveredProductId, setHoveredProductId] = useState(null);
   const dispatch = useDispatch();
 
   // API key which contains all the products
-  const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
+  const teaCollectionAPI = import.meta.env.VITE_TEACOLLECTION_API;
 
   // Fetch tea collection data from API
   useEffect(() => {
-    fetch(teaCollection)
-      .then((Response) => Response.json())
-      .then((Data) => {
-        console.log(Data);
-        setTeaCollection(Data);
+    fetch(teaCollectionAPI)
+      .then((response) => response.json())
+      .then((data) => {
+        setTeaCollection(data);
       });
   }, []);
 
   const user = useSelector((state) => state.user.Loggedin);
 
-  const AddToCart = (Data) => {
+  // Function to add a product to the cart
+  const AddToCart = (data) => {
     if (!user) {
       toast.dismiss();
       toast.warn("Login First!");
     } else {
       dispatch(
         addToCart({
-          id: Data.product_id,
-          image: Data.product_image,
-          name: Data.product_name,
-          category: Data.product_category,
-          price: Data.product_price,
+          id: data.product_id,
+          image: data.product_image,
+          name: data.product_name,
+          category: data.product_category,
+          price: data.product_price,
           quantity: 1,
         })
       );
-      console.log(Data);
       toast.dismiss();
       toast.success("Successfully added to cart");
     }
-    
   };
+
+  // Function to toggle wishlist status of a product
   const toggleWishlist = (productId) => {
-    setwishList((prevWishList) => {
+    setWishList((prevWishList) => {
       if (prevWishList.includes(productId)) {
         return prevWishList.filter((id) => id !== productId);
       } else {
@@ -70,7 +71,7 @@ function TeaBlends() {
         {/* Page header with background image and title */}
         <div className="page-header-wrapper w-full h-[30vw] relative max-sm:h-[60vw]">
           <img
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-b-2xl"
             src="https://www.paperandtea.com/cdn/shop/collections/Collection_Header.jpg?v=1724072203&width=2400"
             alt="Tea Blends"
           />
@@ -97,20 +98,23 @@ function TeaBlends() {
         </div>
 
         {/* Product display section */}
-        <div className="product-wrapper w-full h-auto flex flex-wrap justify-between gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
+        <div className="product-wrapper w-full h-auto flex flex-wrap justify-between mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
           {TeaCollection.length > 0 ? (
+            // Filter and map through the TeaCollection to display products in the "Chocolate" category
             TeaCollection.filter(
               (Teafilter) => Teafilter.product_category === "Tea blend"
             ).map((TeaData, index) => (
               <div
                 key={index}
-                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[35vw] sm:h-[50vw] md:h-[40vw] relative"
+                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[35vw] sm:h-[50vw] md:h-[30vw] relative max-sm:h-[100vw]"
               >
+                {/* Wishlist button */}
                 <button
                   onClick={() => toggleWishlist(TeaData.product_id)}
                   className="wishlist absolute top-[1vw] right-[1vw]"
                 >
                   {wishList.includes(TeaData.product_id) ? (
+                    // Filled heart icon for items in wishlist
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -122,6 +126,7 @@ function TeaBlends() {
                       <path d="M19.4626 3.99415C16.7809 2.34923 14.4404 3.01211 13.0344 4.06801C12.4578 4.50096 12.1696 4.71743 12 4.71743C11.8304 4.71743 11.5422 4.50096 10.9656 4.06801C9.55962 3.01211 7.21909 2.34923 4.53744 3.99415C1.01807 6.15294 0.221721 13.2749 8.33953 19.2834C9.88572 20.4278 10.6588 21 12 21C13.3412 21 14.1143 20.4278 15.6605 19.2834C23.7783 13.2749 22.9819 6.15294 19.4626 3.99415Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
                   ) : (
+                    // Outline heart icon for items not in wishlist
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -134,13 +139,16 @@ function TeaBlends() {
                     </svg>
                   )}
                 </button>
+
+                {/* Add to cart button */}
                 <button
                   onMouseEnter={() => setHoveredProductId(TeaData.product_id)}
                   onMouseLeave={() => setHoveredProductId(null)}
                   onClick={() => AddToCart(TeaData)}
-                  className="absolute bottom-[21vw] right-[2vw] bg-white p-2 rounded-full border-zinc-700 border-[1px] max-sm:bottom-[70vw] max-sm:right-[5vw] max-md:bottom-[27vw]"
+                  className="absolute bottom-[16vw] right-[1vw] bg-white p-2 rounded-full border-zinc-700 border-[1px] max-sm:bottom-[54vw] max-sm:right-[3vw] max-md:bottom-[27vw]"
                 >
                   {hoveredProductId === TeaData.product_id ? (
+                    // Cart icon when hovered
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -157,6 +165,7 @@ function TeaBlends() {
                       <circle cx="17.5" cy="20.5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
                     </svg>
                   ) : (
+                    // Cart icon when not hovered
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -178,6 +187,8 @@ function TeaBlends() {
                     </svg>
                   )}
                 </button>
+
+                {/* Product link and details */}
                 <Link to={`/Gift Set/${TeaData.product_id}`}>
                   <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%]">
                     <img
@@ -204,6 +215,7 @@ function TeaBlends() {
               </div>
             ))
           ) : (
+            // Display message if there is an issue fetching products
             <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-red-500">
               Fetch Issue!
             </span>

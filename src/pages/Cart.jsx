@@ -11,10 +11,9 @@ function Cart() {
 
   // Select user and logged-in user data from the Redux store
   const user = useSelector((state) => state.user.user);
-  const loggedinuser = useSelector((state) => state.user.Loggedin);
-  const loggedinuserdata = user.find((user) => user.email === loggedinuser);
-  const cartitems = loggedinuserdata?.cart || {};
-  
+  const loggedInUser = useSelector((state) => state.user.Loggedin);
+  const loggedInUserData = user.find((user) => user.email === loggedInUser);
+  const cartitems = loggedInUserData?.cart || [];
 
   // Function to increase the quantity of a cart item
   const increaseQuantity = (id) => {
@@ -47,9 +46,10 @@ function Cart() {
     }, 0);
   };
 
+  // Function to navigate to the checkout page
   const navigateToCheckout = () => {
-    navigate("/checkout")
-  }
+    navigate("/checkout");
+  };
 
   return (
     <>
@@ -96,13 +96,16 @@ function Cart() {
                 key={index}
                 className="cart w-full h-[15vw] max-md:h-[20vw] max-sm:h-[25vw] border-black border-b-[1px] flex items-center p-2"
               >
+                {/* Image section */}
                 <div className="image-wrapper w-[30vw] max-md:w-[40vw] max-sm:w-[50vw] h-full flex justify-center items-center">
                   <img
                     className="w-full h-full object-contain"
                     src={items.image}
-                    alt="..."
+                    alt="Product Image"
                   />
                 </div>
+
+                {/* Product information section */}
                 <div className="product-info-wrapper flex flex-col w-[40vw] max-md:w-[50vw] max-sm:w-[60vw]">
                   <span className="text-[2vw] max-md:text-[3vw] max-sm:text-[4vw]">
                     {items.name}
@@ -114,13 +117,14 @@ function Cart() {
                     ₹ {items.price}
                   </span>
                 </div>
+
+                {/* Quantity control section */}
                 <div className="quantity-button-wrapper flex items-center gap-5 w-[20vw] max-md:w-[30vw] max-sm:w-[40vw]">
                   <button
                     onClick={() => descreaseQuantity(items.id)}
                     className="p-3 text-[2vw] max-md:text-[3vw] max-sm:text-[4vw]"
                   >
-                    {" "}
-                    -{" "}
+                    -
                   </button>
                   <span className="text-[2vw] max-md:text-[3vw] max-sm:text-[4vw]">
                     {items.quantity}
@@ -129,10 +133,11 @@ function Cart() {
                     onClick={() => increaseQuantity(items.id)}
                     className="p-3 text-[2vw] max-md:text-[3vw] max-sm:text-[4vw]"
                   >
-                    {" "}
-                    +{" "}
+                    +
                   </button>
                 </div>
+
+                {/* Remove product button */}
                 <div className="remove-product-container w-[10vw] max-md:w-[15vw] max-sm:w-[20vw]">
                   <button onClick={() => RemoveFromCart(items.id)}>
                     <svg
@@ -174,10 +179,12 @@ function Cart() {
             ))
           ) : (
             <>
-
+              {/* No products message */}
               <span>No products are available</span>
               <div className="navigate w-full flex justify-center items-center">
-                <button onClick={() => navigate("/")} className="px-10 py-2 bg-black text-white mt-2">Continue Shopping</button>
+                <button onClick={() => navigate("/")} className="px-10 py-2 bg-black text-white mt-2">
+                  Continue Shopping
+                </button>
               </div>
             </>
           )}

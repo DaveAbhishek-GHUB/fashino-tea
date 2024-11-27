@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // Component imports
 import SubHeader from "../components/SubHeader";
@@ -11,15 +12,11 @@ import Storeclosetoyou from "../utils/Storeclosetoyou";
 import Welovewhatwedosection from "../utils/Welovewhatwedosection";
 import Footer from "../components/Footer";
 import Yourbenefits from "../utils/Yourbenefits";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 // Redux actions
 import { addToCart } from "../store/slices/userSlice";
 
 function AllProducts() {
-
-
   // State management
   const [TeaCollection, setTeaCollection] = useState([]);
   const [category, setCategory] = useState("Tea blend");
@@ -27,41 +24,41 @@ function AllProducts() {
   const [maximumPrice, setMaximumPrice] = useState(null);
   const [openDropdown, setOpenDropdown] = useState(null);
   const [hoveredProductId, setHoveredProductId] = useState(null);
-  const [isMenuOpen, setisMenuOpen] = useState();
-  const [wishList, setwishList] = useState([]);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [wishList, setWishList] = useState([]);
 
   const dispatch = useDispatch();
-  const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
+  const teaCollectionAPI = import.meta.env.VITE_TEACOLLECTION_API;
 
   // Fetch tea collection data
   useEffect(() => {
-    fetch(teaCollection)
-      .then((Response) => Response.json())
-      .then((Data) => {
-        console.log(Data);
-        setTeaCollection(Data);
+    fetch(teaCollectionAPI)
+      .then((response) => response.json())
+      .then((data) => {
+        setTeaCollection(data);
       });
-  }, []);
+  }, [teaCollectionAPI]);
 
+  // Toggle dropdown for categories
   const toggleDropdown = (category) => {
     setOpenDropdown(openDropdown === category ? null : category);
   };
 
   const user = useSelector((state) => state.user.Loggedin);
 
-  // Cart handling
-  const AddToCart = (Data) => {
+  // Add product to cart
+  const AddToCart = (data) => {
     if (!user) {
       toast.dismiss();
       toast.warn("Login First!");
     } else {
       dispatch(
         addToCart({
-          id: Data.product_id,
-          image: Data.product_image,
-          name: Data.product_name,
-          category: Data.product_category,
-          price: Data.product_price,
+          id: data.product_id,
+          image: data.product_image,
+          name: data.product_name,
+          category: data.product_category,
+          price: data.product_price,
           quantity: 1,
         })
       );
@@ -70,21 +67,23 @@ function AllProducts() {
     }
   };
 
-  // Filter handling
+  // Set price filter
   const setFilter = (minimum, maximum) => {
     setMinimumPrice(minimum);
     setMaximumPrice(maximum);
   };
 
-  const SETCategory = (CATEGORY) => {
-    setCategory(CATEGORY);
+  // Set product category
+  const SETCategory = (category) => {
+    setCategory(category);
     setMinimumPrice(null);
     setMaximumPrice(null);
-    setisMenuOpen(false);
+    setIsMenuOpen(false);
   };
 
+  // Toggle wishlist for a product
   const toggleWishlist = (productId) => {
-    setwishList((prevWishList) => {
+    setWishList((prevWishList) => {
       if (prevWishList.includes(productId)) {
         return prevWishList.filter((id) => id !== productId);
       } else {
@@ -100,7 +99,7 @@ function AllProducts() {
         <div className="inner-wrapper w-full h-full flex relative">
           {/* Sidebar */}
           <div
-            className="sidebar w-[20vw] max-lg:w-[30vw] min-h-screen hidden lg:flex flex-col p-4"
+            className="sidebar w-[20vw] msetIsMenuOpenax-lg:w-[30vw] min-h-screen hidden lg:flex flex-col p-4"
           >
             <div className="category-wrapper">
               <div className="heading mb-4 w-full flex items-center justify-between">
@@ -175,7 +174,7 @@ function AllProducts() {
                     {['Advent Calendar', 'Gift Set'].map((item) => (
                       <button
                         key={item}
-                        onClick={() => setCategory(item)}
+                        onClick={() => SETCategory(item)}
                         className="w-full p-2 border-b border-gray-300 text-start hover:bg-gray-100"
                       >
                         <span className="capitalize text-sm">
@@ -215,7 +214,7 @@ function AllProducts() {
                     {['Chocolate'].map((item) => (
                       <button
                         key={item}
-                        onClick={() => setCategory(item)}
+                        onClick={() => SETCategory(item)}
                         className="w-full p-2 border-b border-gray-300 text-start hover:bg-gray-100"
                       >
                         <span className="capitalize text-sm">
@@ -354,7 +353,7 @@ function AllProducts() {
               </span>
               <button
                 className="filter-btn lg:hidden"
-                onClick={() => setisMenuOpen(true)}
+                onClick={() => setIsMenuOpen(true)}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -370,7 +369,7 @@ function AllProducts() {
                 </svg>
               </button>
             </div>
-            <div className="product-wrapper w-full h-auto flex flex-wrap justify-between gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
+            <div className="product-wrapper w-full h-auto flex flex-wrap justify-between mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
               {TeaCollection.length > 0 ? (
                 TeaCollection.filter(
                   (Teafilter) =>
@@ -425,7 +424,7 @@ function AllProducts() {
                         onMouseEnter={() => setHoveredProductId(TeaData.product_id)}
                         onMouseLeave={() => setHoveredProductId(null)}
                         onClick={() => AddToCart(TeaData)}
-                        className="absolute bottom-[16vw] right-[1vw] bg-white p-2 rounded-full border-zinc-700 border-2 max-sm:bottom-[55vw] max-sm:right-[5vw] max-md:bottom-[27vw]"
+                        className="absolute bottom-[16vw] right-[1vw] bg-white p-2 rounded-full border-zinc-700 border-[1px] max-sm:bottom-[55vw] max-sm:right-[5vw] max-md:bottom-[27vw]"
                       >
                         {hoveredProductId === TeaData.product_id ? (
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#000000"} fill={"none"}>

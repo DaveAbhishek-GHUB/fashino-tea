@@ -10,18 +10,19 @@ function Checkout() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // Retrieve user data from the Redux store
   const user = useSelector((state) => state.user.user);
-  console.log(user);
 
+  // Retrieve logged-in user information
   const loggedinuser = useSelector((state) => state.user.Loggedin);
-  console.log(loggedinuser);
 
+  // Find the logged-in user's data
   const loggedinuserdata = user.find((user) => user.email === loggedinuser);
-  console.log(loggedinuserdata);
 
+  // Get the cart items for the logged-in user
   const cartitems = loggedinuserdata?.cart;
-  console.log(cartitems);
 
+  // Function to increase the quantity of a cart item
   const increaseQuantity = (id) => {
     const product = cartitems.find((item) => id === item.id);
     if (product) {
@@ -30,6 +31,7 @@ function Checkout() {
     }
   };
 
+  // Function to decrease the quantity of a cart item
   const descreaseQuantity = (id) => {
     const product = cartitems.find((item) => id === item.id);
     if (product && product.quantity > 1) {
@@ -38,20 +40,21 @@ function Checkout() {
     }
   };
 
+  // Function to remove an item from the cart
   const RemoveFromCart = (id) => {
     dispatch(removeFromCart(id));
   };
 
+  // Calculate the total price of the cart
   const calculateCartPrice = () => {
     const totalprice = cartitems.reduce((total, item) => {
       const itemPrice = parseFloat(item.price.replace(/,/g, ""));
       return total + itemPrice * item.quantity;
     }, 0);
-    console.log(totalprice);
-    console.log(cartitems);
     return totalprice;
   };
 
+  // Initialize form handling with default values
   const {
     register,
     handleSubmit,
@@ -72,215 +75,181 @@ function Checkout() {
     },
   });
 
+  // Handle form submission
   const onSubmit = (data) => {
-    dispatch(addAddress({firstname: data.firstname, lastname: data.lastname, address: data.address, apartment: data.apartment, aptno: data.apartment, postalcode: data.postalcode, city: data.city}));
+    dispatch(addAddress({
+      firstname: data.firstname,
+      lastname: data.lastname,
+      address: data.address,
+      apartment: data.apartment,
+      aptno: data.apartment,
+      postalcode: data.postalcode,
+      city: data.city
+    }));
     navigate("/orderconfirm");
     dispatch(clearcart());
   };
+
   return (
     <>
       <SubHeader />
       <div className="main-wrapper w-full min-h-screen flex max-md:flex-col mt-12">
         <div className="form-wrapper w-[60vw] h-full p-3 max-md:w-full">
+          {/* Account Information Section */}
           <div className="account flex flex-col p-5 border-b-2">
             <span className="text-[1.2vw] text-[#636363] max-md:text-[3vw]">Account</span>
             <span className="text-[1.5vw] max-md:text-[3vw]">johndoe@gmail.com</span>
           </div>
+
+          {/* Delivery Information Section */}
           <div className="Delivery p-5">
             <h1 className="text-[2vw] font-bold">Delivery</h1>
-            <form
-              className="flex flex-col gap-3"
-              onSubmit={handleSubmit(onSubmit)}
-            >
+            <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
+
+              {/* Country/Region Input */}
               <div className="ForCountry">
                 <input
                   type="text"
-                  className="text-[1.3vw border-[#9BA3AF] border-[1px] p-2 w-full rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
+                  className="text-[1.3vw] border-[#9BA3AF] border-[1px] p-2 w-full rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
                   placeholder="Country/Region"
-                  {...register("country", {
-                    required: "Country/Region Required...",
-                  })}
+                  {...register("country", { required: "Country/Region Required..." })}
                 />
-                <p className="text-sm sm:text-[1vw] text-red-500">
-                  {errors.country?.message}
-                </p>
+                <p className="text-sm sm:text-[1vw] text-red-500">{errors.country?.message}</p>
               </div>
+
+              {/* Name Inputs */}
               <div className="Name-wrapper flex gap-2 max-md:w-full">
                 <div className="ForFirstname max-md:w-1/2">
                   <input
                     type="text"
-                    className="text-[1.3vw border-[#9BA3AF] border-[1px] p-2  rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw] max-md:w-full"
+                    className="text-[1.3vw] border-[#9BA3AF] border-[1px] p-2 rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw] max-md:w-full"
                     placeholder="Firstname"
-                    {...register("firstname", {
-                      required: "firstname Required...",
-                    })}
+                    {...register("firstname", { required: "Firstname Required..." })}
                   />
-                  <p className="text-sm sm:text-[1vw] text-red-500">
-                    {errors.firstname?.message}
-                  </p>
+                  <p className="text-sm sm:text-[1vw] text-red-500">{errors.firstname?.message}</p>
                 </div>
                 <div className="ForLastname max-md:w-1/2">
                   <input
                     type="text"
-                    className="text-[1.3vw border-[#9BA3AF] border-[1px] p-2 rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw] max-md:w-full"
+                    className="text-[1.3vw] border-[#9BA3AF] border-[1px] p-2 rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw] max-md:w-full"
                     placeholder="Lastname"
-                    {...register("lastname", {
-                      required: "lastname Required...",
-                    })}
+                    {...register("lastname", { required: "Lastname Required..." })}
                   />
-                  <p className="text-sm sm:text-[1vw] text-red-500">
-                    {errors.lastname?.message}
-                  </p>
+                  <p className="text-sm sm:text-[1vw] text-red-500">{errors.lastname?.message}</p>
                 </div>
               </div>
+
+              {/* Address Input */}
               <div className="Foraddress">
                 <input
                   type="text"
-                  className="text-[1.3vw border-[#9BA3AF] border-[1px] p-2 w-full rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw] "
+                  className="text-[1.3vw] border-[#9BA3AF] border-[1px] p-2 w-full rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
                   placeholder="Address"
-                  {...register("address", {
-                    required: "address Required...",
-                  })}
+                  {...register("address", { required: "Address Required..." })}
                 />
-                <p className="text-sm sm:text-[1vw] text-red-500">
-                  {errors.address?.message}
-                </p>
+                <p className="text-sm sm:text-[1vw] text-red-500">{errors.address?.message}</p>
               </div>
+
+              {/* Apartment Input */}
               <div className="Forapartment max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]">
                 <input
                   type="text"
-                  className="text-[1.3vw border-[#9BA3AF] border-[1px] p-2 w-full rounded-md"
+                  className="text-[1.3vw] border-[#9BA3AF] border-[1px] p-2 w-full rounded-md"
                   placeholder="Apartment no."
-                  {...register("apartment", {
-                    required: "apartment Required...",
-                  })}
+                  {...register("apartment", { required: "Apartment Required..." })}
                 />
-                <p className="text-sm sm:text-[1vw] text-red-500">
-                  {errors.apartment?.message}
-                </p>
+                <p className="text-sm sm:text-[1vw] text-red-500">{errors.apartment?.message}</p>
               </div>
+
+              {/* Postal Code and City Inputs */}
               <div className="postalcode-city flex gap-2 max-md:w-full">
                 <div className="ForPostalcode max-md:w-1/2">
                   <input
                     type="number"
-                    className="text-[1.3vw border-[#9BA3AF] border-[1px] p-2 rounded-md max-md:w-full max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
+                    className="text-[1.3vw] border-[#9BA3AF] border-[1px] p-2 rounded-md max-md:w-full max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
                     placeholder="Postal Code"
-                    {...register("postalcode", {
-                      required: "postalcode Required...",
-                    })}
+                    {...register("postalcode", { required: "Postal Code Required..." })}
                   />
-                  <p className="text-sm sm:text-[1vw] text-red-500">
-                    {errors.postalcode?.message}
-                  </p>
+                  <p className="text-sm sm:text-[1vw] text-red-500">{errors.postalcode?.message}</p>
                 </div>
                 <div className="ForCity max-md:w-1/2">
                   <input
                     type="text"
-                    className="text-[1.3vw border-[#9BA3AF] border-[1px] p-2 rounded-md max-md:w-full max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
+                    className="text-[1.3vw] border-[#9BA3AF] border-[1px] p-2 rounded-md max-md:w-full max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
                     placeholder="City"
-                    {...register("city", {
-                      required: "City Required...",
-                    })}
+                    {...register("city", { required: "City Required..." })}
                   />
-                  <p className="text-sm sm:text-[1vw] text-red-500">
-                    {errors.city?.message}
-                  </p>
+                  <p className="text-sm sm:text-[1vw] text-red-500">{errors.city?.message}</p>
                 </div>
               </div>
 
+              {/* Payment Method Section */}
               <div className="payment-method">
                 <div className="creadit-cart">
                   <div className="heading-wrapper w-[90%] flex justify-between">
-                    <span className="text-[1.8vw] font-bold">Creadit Card</span>
+                    <span className="text-[1.8vw] font-bold">Credit Card</span>
                     <div className="icons-wrapper flex gap-1">
-                      <img
-                        src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/visa.sxIq5Dot.svg"
-                        alt="..."
-                      />
-                      <img
-                        src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/maestro.ByfUQi1c.svg"
-                        alt="..."
-                      />
-                      <img
-                        src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/mastercard.1c4_lyMp.svg"
-                        alt="..."
-                      />
-                      <img
-                        src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/amex.Csr7hRoy.svg"
-                        alt="..."
-                      />
+                      <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/visa.sxIq5Dot.svg" alt="Visa" />
+                      <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/maestro.ByfUQi1c.svg" alt="Maestro" />
+                      <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/mastercard.1c4_lyMp.svg" alt="Mastercard" />
+                      <img src="https://cdn.shopify.com/shopifycloud/checkout-web/assets/c1.en/assets/amex.Csr7hRoy.svg" alt="Amex" />
                     </div>
                   </div>
 
+                  {/* Payment Form Inputs */}
                   <div className="payment-form-wrapper flex flex-col gap-2 mt-5">
                     <div className="ForcardNumber">
                       <input
                         type="number"
-                        className="text-[1.3vw border-[#9BA3AF] border-[1px] p-2 w-full rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
+                        className="text-[1.3vw] border-[#9BA3AF] border-[1px] p-2 w-full rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
                         placeholder="Card Number"
-                        {...register("cardnumber", {
-                          required: "Card Number Required...",
-                        })}
+                        {...register("cardnumber", { required: "Card Number Required..." })}
                       />
-                      <p className="text-sm sm:text-[1vw] text-red-500">
-                        {errors.cardnumber?.message}
-                      </p>
+                      <p className="text-sm sm:text-[1vw] text-red-500">{errors.cardnumber?.message}</p>
                     </div>
                     <div className="mm-security-codewrapper flex gap-2 w-full">
                       <div className="Forexprirationdata w-1/2">
                         <input
                           type="date"
-                          className="text-[1.3vw border-[#9BA3AF] border-[1px] p-2 w-full rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
-                          placeholder="Expriration Data"
-                          {...register("exprirationdata", {
-                            required: "Expriration Data Required...",
-                          })}
+                          className="text-[1.3vw] border-[#9BA3AF] border-[1px] p-2 w-full rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
+                          placeholder="Expiration Date"
+                          {...register("exprirationdata", { required: "Expiration Date Required..." })}
                         />
-                        <p className="text-sm sm:text-[1vw] text-red-500">
-                          {errors.exprirationdata?.message}
-                        </p>
+                        <p className="text-sm sm:text-[1vw] text-red-500">{errors.exprirationdata?.message}</p>
                       </div>
                       <div className="Forsecuritycode w-1/2">
                         <input
                           type="number"
-                          className="text-[1.3vw border-[#9BA3AF] border-[1px] p-2 w-full rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
+                          className="text-[1.3vw] border-[#9BA3AF] border-[1px] p-2 w-full rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
                           placeholder="Security Code"
-                          {...register("securitycode", {
-                            required: "securitycode Required...",
-                          })}
+                          {...register("securitycode", { required: "Security Code Required..." })}
                         />
-                        <p className="text-sm sm:text-[1vw] text-red-500">
-                          {errors.securitycode?.message}
-                        </p>
+                        <p className="text-sm sm:text-[1vw] text-red-500">{errors.securitycode?.message}</p>
                       </div>
                     </div>
                     <div className="Fornameoncard">
                       <input
                         type="text"
-                        className="text-[1.3vw border-[#9BA3AF] border-[1px] p-2 w-full rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
+                        className="text-[1.3vw] border-[#9BA3AF] border-[1px] p-2 w-full rounded-md max-md:text-[1.5vw] max-md:p-2 max-sm:text-[2vw]"
                         placeholder="Name on card"
-                        {...register("nameoncard", {
-                          required: "Card name Required...",
-                        })}
+                        {...register("nameoncard", { required: "Card Name Required..." })}
                       />
-                      <p className="text-sm sm:text-[1vw] text-red-500">
-                        {errors.securitycode?.message}
-                      </p>
+                      <p className="text-sm sm:text-[1vw] text-red-500">{errors.nameoncard?.message}</p>
                     </div>
                   </div>
                 </div>
               </div>
+
+              {/* Submit Button */}
               <div className="submit-btn-wrapper">
-                <button
-                  className="text-white bg-black p-2 rounded-md w-full"
-                  type="submit"
-                >
+                <button className="text-white bg-black p-2 rounded-md w-full" type="submit">
                   Review Order
                 </button>
               </div>
             </form>
           </div>
         </div>
+
         <div className="price-checkout w-full md:w-[40vw] h-full p-2">
           <div className="carted-item-wrapper w-full h-[55vw] overflow-y-scroll">
             <div className="cart-wrapper w-full flex flex-col items-center p-2">
@@ -371,11 +340,11 @@ function Checkout() {
               )}
             </div>
             <div className="totolwrapper flex justify-center">
-            <div className="total-wrapper flex gap-2">
-              <span>Total :</span>
-              <h1 className="font-bold">₹ {Math.round(calculateCartPrice())}</h1>
+              <div className="total-wrapper flex gap-2">
+                <span>Total :</span>
+                <h1 className="font-bold">₹ {Math.round(calculateCartPrice())}</h1>
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </div>

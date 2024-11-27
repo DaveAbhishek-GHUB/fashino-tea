@@ -23,9 +23,6 @@ function ProductDetail() {
   const [giveProductInfo, setGiveProductInfo] = useState(false);
   const [hoveredimage, setHoveredimage] = useState(false);
 
-
-
-  console.log(selectedProduct, "selectedProduct");
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.Loggedin);
   const [hoveredProductId, setHoveredProductId] = useState(null);
@@ -40,7 +37,6 @@ function ProductDetail() {
       .then((data) => {
         const product = data.find((item) => item.product_id == productId);
         setselectedProduct(product);
-        console.log("Product found:", product);
       });
   }, [teaCollection, productId]);
 
@@ -49,7 +45,6 @@ function ProductDetail() {
     fetch(teaCollection)
       .then((Response) => Response.json())
       .then((Data) => {
-        console.log(Data);
         setTeaCollection(Data);
       });
   }, []);
