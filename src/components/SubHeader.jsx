@@ -135,7 +135,7 @@ function SubHeader() {
             </div>
             <div className="cart-icon-wrapper relative">
               {loggedinuserData?.cart.length != "0" ? (
-                <span className="text-[0.8vw] absolute bg-[#CFE1B2] px-1 rounded-full right-0 text-zinc-950 max-sm:text-[2vw] max-md:text-[1.5vw] max-md:right-0">{loggedinuserData.cart.length}</span>
+                <span className="text-[0.8vw] absolute bg-[#CFE1B2] px-1 rounded-full right-0 text-zinc-950 max-sm:text-[2vw] max-md:text-[1.5vw] max-md:right-0">{loggedinuserData?.cart.length}</span>
               ) : (null)}
               <svg
                 onClick={isLoggedin}

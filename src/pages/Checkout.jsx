@@ -19,7 +19,7 @@ function Checkout() {
   const loggedinuserdata = user.find((user) => user.email === loggedinuser);
   console.log(loggedinuserdata);
 
-  const cartitems = loggedinuserdata.cart;
+  const cartitems = loggedinuserdata?.cart;
   console.log(cartitems);
 
   const increaseQuantity = (id) => {

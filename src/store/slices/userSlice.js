@@ -48,17 +48,17 @@ const userSlice = createSlice({
       );
     
       if (userForCart) {
-        const alreadyAvailable = userForCart.cart.find(
+        const alreadyAvailable = userForCart?.cart.find(
           (item) => item.name === action.payload.name
         );
     
         if (alreadyAvailable) {
           alreadyAvailable.quantity += 1;
         } else {
-          userForCart.cart.push(action.payload);
+          userForCart?.cart.push(action.payload);
         }
     
-        console.log("Cart updated:", userForCart.cart);
+        console.log("Cart updated:", userForCart?.cart);
       }
     },
 
