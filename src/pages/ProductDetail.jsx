@@ -15,14 +15,28 @@ import ReactImageMagnify from "react-image-magnify";
 function ProductDetail() {
   const [selectedProduct, setselectedProduct] = useState([]);
   const [setimage, setsetimage] = useState("");
-  const [correctIcon, setCorrectIcon] = useState(<>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#4b5563"} fill={"none"}>
-      <path d="M5 14L8.5 17.5L19 6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  </>);
+  const [correctIcon, setCorrectIcon] = useState(
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width={24}
+        height={24}
+        color={"#4b5563"}
+        fill={"none"}
+      >
+        <path
+          d="M5 14L8.5 17.5L19 6.5"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </>
+  );
   const [giveProductInfo, setGiveProductInfo] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
-
 
   console.log(selectedProduct, "selectedProduct");
   const dispatch = useDispatch();
@@ -44,7 +58,6 @@ function ProductDetail() {
       });
   }, [teaCollection, productId]);
 
-
   useEffect(() => {
     fetch(teaCollection)
       .then((Response) => Response.json())
@@ -60,10 +73,10 @@ function ProductDetail() {
     };
 
     // Add event listener
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     // Clean up event listener
-    return () => window.removeEventListener('resize', handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const AddToCart = (Data) => {
@@ -92,10 +105,9 @@ function ProductDetail() {
     }
   }, [selectedProduct]);
 
-
   const setImage = (url) => {
     setsetimage(url);
-  }
+  };
 
   return (
     <>
@@ -105,31 +117,36 @@ function ProductDetail() {
           {/* Image Section: Main Product Image and Thumbnails */}
           <div className="image-section w-full md:w-1/2 flex flex-col md:flex-row-reverse">
             {/* Main Product Image */}
-            <div onMouseEnter={() => setHoveredimage(true)}
-              onMouseLeave={() => setHoveredimage(false)} className="product-image w-full h-64 md:h-auto p-5 mt-10">
+            <div
+              onMouseEnter={() => setHoveredimage(true)}
+              onMouseLeave={() => setHoveredimage(false)}
+              className="product-image w-full h-64 md:h-auto p-5 mt-10"
+            >
               {isLargeScreen ? (
-                <ReactImageMagnify {...{
-                  // box sizing
-                  smallImage: {
-                    alt: 'Product Image',
-                    src: setimage,
-                    isFluidWidth: true,
-                    width: 600,
-                    height: 600,
-                  },
-                  // how much do you want to zoom
-                  largeImage: {
-                    src: setimage,
-                    width: 1800,
-                    height: 1800
-                  },
-                  enlargedImageContainerStyle: {
-                    zIndex: 1000
-                  },
-                  enlargedImageStyle: {
-                    maxWidth: 'none'
-                  }
-                }} />
+                <ReactImageMagnify
+                  {...{
+                    // box sizing
+                    smallImage: {
+                      alt: "Product Image",
+                      src: setimage,
+                      isFluidWidth: true,
+                      width: 600,
+                      height: 600,
+                    },
+                    // how much do you want to zoom
+                    largeImage: {
+                      src: setimage,
+                      width: 1800,
+                      height: 1800,
+                    },
+                    enlargedImageContainerStyle: {
+                      zIndex: 1000,
+                    },
+                    enlargedImageStyle: {
+                      maxWidth: "none",
+                    },
+                  }}
+                />
               ) : (
                 <img
                   className="w-full h-full object-contain"
@@ -172,7 +189,11 @@ function ProductDetail() {
           </div>
 
           {/* Product Info Section */}
-          <div className={`product-info-wrapper w-full md:w-1/2 p-6 md:p-10 ${hoveredimage === true && "hidden"}`}>
+          <div
+            className={`product-info-wrapper w-full md:w-1/2 p-6 md:p-10 ${
+              hoveredimage === true && "hidden"
+            }`}
+          >
             <div className="heading-wrapper space-y-4 mb-6">
               <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-4xl font-serif mb-5">
                 {selectedProduct.product_name}
@@ -190,7 +211,14 @@ function ProductDetail() {
                     <div className="inner-infowrapper flex items-center gap-1">
                       {correctIcon}
                       <p>{selectedProduct.product_details["02"]}</p>
-                      <button onClick={() => setGiveProductInfo(true)} className={`text-[1vw] text-blue-400 ${giveProductInfo === true && "hidden"}`}>Read More...</button>
+                      <button
+                        onClick={() => setGiveProductInfo(true)}
+                        className={`text-[1vw] text-blue-400 ${
+                          giveProductInfo === true && "hidden"
+                        }`}
+                      >
+                        Read More...
+                      </button>
                     </div>
                     {giveProductInfo === true && (
                       <div className="more-about-product">
@@ -213,7 +241,9 @@ function ProductDetail() {
                 <h1 className="text-xl sm:text-2xl font-bold">
                   ₹ {selectedProduct.product_price}
                 </h1>
-                <span className="text-xs sm:text-sm">incl. VAT, plus shipping</span>
+                <span className="text-xs sm:text-sm">
+                  incl. VAT, plus shipping
+                </span>
               </div>
 
               <button
@@ -407,13 +437,17 @@ function ProductDetail() {
         <div className="simillar-product-wrapper w-full">
           <div className="heading-wrapper w-full px-[10vw]">
             <h1 className="text-[3vw]">What you might also like</h1>
-            <span className="text-[1.2vw]">Maybe the next thing you wont want to miss</span>
+            <span className="text-[1.2vw]">
+              Maybe the next thing you wont want to miss
+            </span>
           </div>
           <div className="products-wrapper">
             <div className="product-wrapper w-full h-auto flex flex-wrap justify-center gap-[8vw] gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
               {TeaCollection.length > 0 ? (
                 TeaCollection.filter(
-                  (Teafilter) => Teafilter.product_category === `${selectedProduct.product_category}`
+                  (Teafilter) =>
+                    Teafilter.product_category ===
+                    `${selectedProduct.product_category}`
                 )
                   .slice(1, 4)
                   .map((TeaData, index) => (
@@ -422,19 +456,62 @@ function ProductDetail() {
                       className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[35vw] sm:h-[50vw] md:h-[40vw] relative"
                     >
                       <button
-                        onMouseEnter={() => setHoveredProductId(TeaData.product_id)}
+                        onMouseEnter={() =>
+                          setHoveredProductId(TeaData.product_id)
+                        }
                         onMouseLeave={() => setHoveredProductId(null)}
                         onClick={() => AddToCart(TeaData)}
                         className="absolute bottom-[21vw] right-[2vw] bg-white p-2 rounded-full border-zinc-700 border-2 max-sm:bottom-[70vw] max-sm:right-[5vw] max-md:bottom-[27vw]"
                       >
                         {hoveredProductId === TeaData.product_id ? (
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#000000"} fill={"none"}>
-                            <path d="M8 16H15.2632C19.7508 16 20.4333 13.1808 21.261 9.06908C21.4998 7.88311 21.6192 7.29013 21.3321 6.89507C21.045 6.5 20.4947 6.5 19.3941 6.5H19M6 6.5H8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                            <path d="M11 8.5C11.4915 9.0057 12.7998 11 13.5 11M16 8.5C15.5085 9.0057 14.2002 11 13.5 11M13.5 11V3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            <path d="M8 16L5.37873 3.51493C5.15615 2.62459 4.35618 2 3.43845 2H2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                            <path d="M8.88 16H8.46857C7.10522 16 6 17.1513 6 18.5714C6 18.8081 6.1842 19 6.41143 19H17.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                            <circle cx="10.5" cy="20.5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
-                            <circle cx="17.5" cy="20.5" r="1.5" stroke="currentColor" strokeWidth="1.5" />
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            width={24}
+                            height={24}
+                            color={"#000000"}
+                            fill={"none"}
+                          >
+                            <path
+                              d="M8 16H15.2632C19.7508 16 20.4333 13.1808 21.261 9.06908C21.4998 7.88311 21.6192 7.29013 21.3321 6.89507C21.045 6.5 20.4947 6.5 19.3941 6.5H19M6 6.5H8"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                            />
+                            <path
+                              d="M11 8.5C11.4915 9.0057 12.7998 11 13.5 11M16 8.5C15.5085 9.0057 14.2002 11 13.5 11M13.5 11V3"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <path
+                              d="M8 16L5.37873 3.51493C5.15615 2.62459 4.35618 2 3.43845 2H2.5"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                            />
+                            <path
+                              d="M8.88 16H8.46857C7.10522 16 6 17.1513 6 18.5714C6 18.8081 6.1842 19 6.41143 19H17.5"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                            <circle
+                              cx="10.5"
+                              cy="20.5"
+                              r="1.5"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                            />
+                            <circle
+                              cx="17.5"
+                              cy="20.5"
+                              r="1.5"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                            />
                           </svg>
                         ) : (
                           <svg
@@ -458,7 +535,10 @@ function ProductDetail() {
                           </svg>
                         )}
                       </button>
-                      <Link target="_blank" to={`/${selectedProduct.product_category}/${TeaData.product_id} `}>
+                      <Link
+                        target="_blank"
+                        to={`/${selectedProduct.product_category}/${TeaData.product_id} `}
+                      >
                         <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%] rounded-md">
                           <img
                             className="w-full h-full object-contain sm:object-contain"
@@ -496,21 +576,31 @@ function ProductDetail() {
           <div className="heading-wrapper w-full">
             <h1 className="text-[3vw] font-sans">Ratings & Reviews</h1>
           </div>
-          {selectedProduct && selectedProduct.reviews && selectedProduct.reviews.length > 0 ? (
+          {selectedProduct &&
+          selectedProduct.reviews &&
+          selectedProduct.reviews.length > 0 ? (
             <div className="flex flex-wrap -mx-2">
               {selectedProduct.reviews.map((review, index) => (
-                <div key={index} className="review-item mb-4 p-4 border-b border-gray-200 w-full md:w-1/2 px-2">
+                <div
+                  key={index}
+                  className="review-item mb-4 p-4 border-b border-gray-200 w-full md:w-1/2 px-2"
+                >
                   <h3 className="reviewer-name font-bold">{review.reviewer}</h3>
-                  <p className="review-username text-sm text-gray-500">@{review.username}</p>
+                  <p className="review-username text-sm text-gray-500">
+                    @{review.username}
+                  </p>
                   <div className="review-rating text-yellow-500">
-                    {'★'.repeat(Math.floor(review.rating))}{'☆'.repeat(5 - Math.floor(review.rating))}
+                    {"★".repeat(Math.floor(review.rating))}
+                    {"☆".repeat(5 - Math.floor(review.rating))}
                   </div>
                   <p className="review-comment mt-2">{review.comment}</p>
                 </div>
               ))}
             </div>
           ) : (
-            <p className="text-gray-500">No reviews available for this product.</p>
+            <p className="text-gray-500">
+              No reviews available for this product.
+            </p>
           )}
         </div>
 
