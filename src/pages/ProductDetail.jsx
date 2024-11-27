@@ -10,6 +10,7 @@ import { addToCart } from "../store/slices/userSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Storeclosetoyou from "../utils/Storeclosetoyou";
+import ReactImageMagnify from "react-image-magnify";
 
 function ProductDetail() {
   const [selectedProduct, setselectedProduct] = useState([]);
@@ -19,12 +20,15 @@ function ProductDetail() {
       <path d="M5 14L8.5 17.5L19 6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   </>);
+  const [giveProductInfo, setGiveProductInfo] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
 
 
   console.log(selectedProduct, "selectedProduct");
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.Loggedin);
   const [hoveredProductId, setHoveredProductId] = useState(null);
+  const [hoveredimage, setHoveredimage] = useState(false);
   const [TeaCollection, setTeaCollection] = useState([]);
 
   const { productId } = useParams();
@@ -48,6 +52,18 @@ function ProductDetail() {
         console.log(Data);
         setTeaCollection(Data);
       });
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 768);
+    };
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const AddToCart = (Data) => {
@@ -89,41 +105,74 @@ function ProductDetail() {
           {/* Image Section: Main Product Image and Thumbnails */}
           <div className="image-section w-full md:w-1/2 flex flex-col md:flex-row-reverse">
             {/* Main Product Image */}
-            <div className="product-image w-full h-64 md:h-auto p-5">
-              <img className="w-full h-full object-contain" src={setimage} alt="Product Image" />
+            <div onMouseEnter={() => setHoveredimage(true)}
+              onMouseLeave={() => setHoveredimage(false)} className="product-image w-full h-64 md:h-auto p-5 mt-10">
+              {isLargeScreen ? (
+                <ReactImageMagnify {...{
+                  // box sizing
+                  smallImage: {
+                    alt: 'Product Image',
+                    src: setimage,
+                    isFluidWidth: true,
+                    width: 600,
+                    height: 600,
+                  },
+                  // how much do you want to zoom
+                  largeImage: {
+                    src: setimage,
+                    width: 1800,
+                    height: 1800
+                  },
+                  enlargedImageContainerStyle: {
+                    zIndex: 1000
+                  },
+                  enlargedImageStyle: {
+                    maxWidth: 'none'
+                  }
+                }} />
+              ) : (
+                <img
+                  className="w-full h-full object-contain"
+                  src={setimage}
+                  alt="Product Image"
+                />
+              )}
             </div>
 
-            {/* Thumbnails for Mobile */}
+            {/* Thumbnails section */}
             <div className="product-all-image-wrapper w-full flex flex-row justify-center gap-3 p-1 md:flex-col md:w-[10vw] md:min-h-screen">
-              <div className="image01 w-1/4 md:w-full">
-                <img
-                  onClick={() => setImage(selectedProduct.product_image)}
-                  className="w-full cursor-pointer"
-                  src={selectedProduct.product_image}
-                  alt="..."
-                />
-              </div>
-              <div className="image02 w-1/4 md:w-full">
-                <img
-                  onClick={() => setImage(selectedProduct.image02)}
-                  className="w-full cursor-pointer"
-                  src={selectedProduct.image02}
-                  alt="..."
-                />
-              </div>
-              <div className="image03 w-1/4 md:w-full">
-                <img
-                  onClick={() => setImage(selectedProduct.image03)}
-                  className="w-full cursor-pointer"
-                  src={selectedProduct.image03}
-                  alt="..."
-                />
+              {/* Thumbnails for Mobile */}
+              <div className="product-all-image-wrapper w-full flex flex-row justify-center gap-3 p-1 md:flex-col md:w-[10vw] md:min-h-screen">
+                <div className="image01 w-1/4 md:w-full">
+                  <img
+                    onClick={() => setImage(selectedProduct.product_image)}
+                    className="w-full cursor-pointer"
+                    src={selectedProduct.product_image}
+                    alt="..."
+                  />
+                </div>
+                <div className="image02 w-1/4 md:w-full">
+                  <img
+                    onClick={() => setImage(selectedProduct.image02)}
+                    className="w-full cursor-pointer"
+                    src={selectedProduct.image02}
+                    alt="..."
+                  />
+                </div>
+                <div className="image03 w-1/4 md:w-full">
+                  <img
+                    onClick={() => setImage(selectedProduct.image03)}
+                    className="w-full cursor-pointer"
+                    src={selectedProduct.image03}
+                    alt="..."
+                  />
+                </div>
               </div>
             </div>
           </div>
 
           {/* Product Info Section */}
-          <div className="product-info-wrapper w-full md:w-1/2 p-6 md:p-10">
+          <div className={`product-info-wrapper w-full md:w-1/2 p-6 md:p-10 ${hoveredimage === true && "hidden"}`}>
             <div className="heading-wrapper space-y-4 mb-6">
               <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-4xl font-serif mb-5">
                 {selectedProduct.product_name}
@@ -141,15 +190,20 @@ function ProductDetail() {
                     <div className="inner-infowrapper flex items-center gap-1">
                       {correctIcon}
                       <p>{selectedProduct.product_details["02"]}</p>
+                      <button onClick={() => setGiveProductInfo(true)} className={`text-[1vw] text-blue-400 ${giveProductInfo === true && "hidden"}`}>Read More...</button>
                     </div>
-                    <div className="inner-infowrapper flex items-center gap-1">
-                      {correctIcon}
-                      <p>{selectedProduct.product_details["03"]}</p>
-                    </div>
-                    <div className="inner-infowrapper flex items-center gap-1">
-                      {correctIcon}
-                      <p>{selectedProduct.product_details["04"]}</p>
-                    </div>
+                    {giveProductInfo === true && (
+                      <div className="more-about-product">
+                        <div className="inner-infowrapper flex items-center gap-1">
+                          {correctIcon}
+                          <p>{selectedProduct.product_details["03"]}</p>
+                        </div>
+                        <div className="inner-infowrapper flex items-center gap-1">
+                          {correctIcon}
+                          <p>{selectedProduct.product_details["04"]}</p>
+                        </div>
+                      </div>
+                    )}
                   </>
                 )}
               </div>
