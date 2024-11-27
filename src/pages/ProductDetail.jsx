@@ -15,36 +15,22 @@ import ReactImageMagnify from "react-image-magnify";
 function ProductDetail() {
   const [selectedProduct, setselectedProduct] = useState([]);
   const [setimage, setsetimage] = useState("");
-  const [correctIcon, setCorrectIcon] = useState(
-    <>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        width={24}
-        height={24}
-        color={"#4b5563"}
-        fill={"none"}
-      >
-        <path
-          d="M5 14L8.5 17.5L19 6.5"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </>
-  );
+  const [correctIcon, setCorrectIcon] = useState(<>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#4b5563"} fill={"none"}>
+      <path d="M5 14L8.5 17.5L19 6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  </>);
   const [giveProductInfo, setGiveProductInfo] = useState(false);
-  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
+  const [hoveredimage, setHoveredimage] = useState(false);
+
+
 
   console.log(selectedProduct, "selectedProduct");
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.Loggedin);
   const [hoveredProductId, setHoveredProductId] = useState(null);
-  const [hoveredimage, setHoveredimage] = useState(false);
   const [TeaCollection, setTeaCollection] = useState([]);
-
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
   const { productId } = useParams();
   const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
 
@@ -58,6 +44,7 @@ function ProductDetail() {
       });
   }, [teaCollection, productId]);
 
+
   useEffect(() => {
     fetch(teaCollection)
       .then((Response) => Response.json())
@@ -65,18 +52,6 @@ function ProductDetail() {
         console.log(Data);
         setTeaCollection(Data);
       });
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsLargeScreen(window.innerWidth >= 768);
-    };
-
-    // Add event listener
-    window.addEventListener("resize", handleResize);
-
-    // Clean up event listener
-    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   const AddToCart = (Data) => {
@@ -105,9 +80,22 @@ function ProductDetail() {
     }
   }, [selectedProduct]);
 
+
   const setImage = (url) => {
     setsetimage(url);
-  };
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 768);
+    };
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Clean up event listener
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
