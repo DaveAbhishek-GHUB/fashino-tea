@@ -52,16 +52,8 @@ function ProductDetail() {
 
   const AddToCart = (Data) => {
     if (!user) {
-      toast.warn("Login First!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.dismiss();
+      toast.warn("Login First!");
     } else {
       dispatch(
         addToCart({
@@ -73,17 +65,8 @@ function ProductDetail() {
           quantity: 1,
         })
       );
-      console.log(Data);
-      toast.success("Successfully added to cart", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.dismiss();
+      toast.success("Successfully added to cart");
     }
   };
 
@@ -180,7 +163,7 @@ function ProductDetail() {
               </div>
 
               <button
-                onClick={() => AddToCart()}
+                onClick={() => AddToCart(selectedProduct)}
                 className="w-full md:w-auto py-2 sm:py-3 px-4 sm:px-6 bg-black text-white text-sm sm:text-base md:text-lg"
               >
                 Add to cart
@@ -421,7 +404,7 @@ function ProductDetail() {
                           </svg>
                         )}
                       </button>
-                      <Link to={`/${selectedProduct.product_category}/${TeaData.product_id}`}>
+                      <Link target="_blank" to={`/${selectedProduct.product_category}/${TeaData.product_id} `}>
                         <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%] rounded-md">
                           <img
                             className="w-full h-full object-contain sm:object-contain"
