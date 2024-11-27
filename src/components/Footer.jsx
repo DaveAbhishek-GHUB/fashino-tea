@@ -1,7 +1,29 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 function Footer() {
+  const [showButton, setShowButton] = useState(false);
+
+  // Function to scroll to the top of the page
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <div className="w-full lg:h-[40vw] md:h-auto flex flex-col lg:flex-row">
@@ -205,6 +227,20 @@ function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Back to Top Button */}
+      {showButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-[1vw] right-[1vw] bg-white text-black p-2  hover:bg-gray-200 border-black border-[1px] rounded-full transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#4b5563"} fill={"none"}>
+            <path d="M12 4L12 20" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M16.9998 8.99996C16.9998 8.99996 13.3174 4.00001 11.9998 4C10.6822 3.99999 6.99982 9 6.99982 9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </button>
+      )}
+
     </>
   );
 }
