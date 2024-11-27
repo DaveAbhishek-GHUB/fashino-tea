@@ -35,6 +35,7 @@ function Wintertea() {
 
   const AddToCart = (Data) => {
     if (!user) {
+      toast.dismiss();
       toast.warn("Login First!");
     } else {
       dispatch(
@@ -48,6 +49,7 @@ function Wintertea() {
         })
       );
       console.log(Data);
+      toast.dismiss();
       toast.success("Successfully added to cart");
     }
   };

@@ -57,8 +57,8 @@ function HomePage() {
 
   const AddToCart = (Data) => {
     if (!user) {
-      toast.warn("Login First!", {
-      });
+      toast.dismiss();
+      toast.warn("Login First!");
     } else {
       dispatch(
         addToCart({
@@ -70,6 +70,7 @@ function HomePage() {
           quantity: 1,
         })
       );
+      toast.dismiss();
       toast.success("Successfully added to cart");
     }
   };

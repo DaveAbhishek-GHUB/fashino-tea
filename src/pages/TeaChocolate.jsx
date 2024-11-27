@@ -34,6 +34,7 @@ function TeaChocolate() {
 
   const AddToCart = (Data) => {
     if (!user) {
+      toast.dismiss();
       toast.warn("Login First!");
     } else {
       dispatch(
@@ -46,6 +47,7 @@ function TeaChocolate() {
           quantity: 1,
         })
       );
+      toast.dismiss();
       toast.success("Successfully added to cart");
     }
   };

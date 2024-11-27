@@ -34,16 +34,8 @@ function AdventCalendars() {
 
   const AddToCart = (Data) => {
     if (!user) {
-      toast.warn("Login First!", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.dismiss();
+      toast.warn("Login First!");
     } else {
       dispatch(
         addToCart({
@@ -56,16 +48,8 @@ function AdventCalendars() {
         })
       );
       console.log(Data);
-      toast.success("Successfully added to cart", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.dismiss();
+      toast.success("Successfully added to cart");
     }
   };
 
@@ -82,30 +66,6 @@ function AdventCalendars() {
   return (
     <>
       <SubHeader />
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
-      <ToastContainer
-        position="top-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
       <div className="main-wrapper w-full h-screen mt-12">
         {/* main page wrapper */}
         <div className="page-header-wrapper w-full h-[30vw] relative max-sm:h-[60vw]">

@@ -33,6 +33,7 @@ function GreenTea() {
 
   const AddToCart = (Data) => {
     if (!user) {
+      toast.dismiss();
       toast.warn("Login First!");
     } else {
       dispatch(
@@ -46,6 +47,7 @@ function GreenTea() {
         })
       );
       console.log(Data);
+      toast.dismiss();
       toast.success("Successfully added to cart");
     }
   };
