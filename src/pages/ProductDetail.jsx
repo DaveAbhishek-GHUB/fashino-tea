@@ -96,14 +96,14 @@ function ProductDetail() {
     <>
       <SubHeader />
       <div className="main-product-detail-wrapper w-full min-h-screen mt-12">
-        <div className="imageanddetailwrapper w-full min-h-screen flex flex-col md:flex-row">
+        <div className="imageanddetailwrapper w-full flex flex-col md:flex-row">
           {/* Image Section: Main Product Image and Thumbnails */}
           <div className="image-section w-full md:w-1/2 flex flex-col md:flex-row-reverse">
             {/* Main Product Image */}
             <div
               onMouseEnter={() => setHoveredimage(true)}
               onMouseLeave={() => setHoveredimage(false)}
-              className="product-image w-full h-64 md:h-auto p-5 mt-10"
+              className="product-image w-full h-64 md:h-auto p-5 mt-10 flex justify-center items-center"
             >
               {isLargeScreen ? (
                 <ReactImageMagnify
@@ -140,9 +140,9 @@ function ProductDetail() {
             </div>
 
             {/* Thumbnails section */}
-            <div className="product-all-image-wrapper w-full flex flex-row justify-center gap-3 p-1 md:flex-col md:w-[10vw] md:min-h-screen">
+            <div className="product-all-image-wrapper w-full flex flex-row justify-center gap-3 p-1 md:flex-col md:w-[10vw]">
               {/* Thumbnails for Mobile */}
-              <div className="product-all-image-wrapper w-full flex flex-row justify-center gap-3 p-1 md:flex-col md:w-[10vw] md:min-h-screen">
+              <div className="product-all-image-wrapper w-full flex flex-row justify-center gap-3 p-1 md:flex-col md:w-[10vw] ">
                 <div className="image01 w-1/4 md:w-full">
                   <img
                     onClick={() => setImage(selectedProduct.product_image)}
@@ -173,9 +173,8 @@ function ProductDetail() {
 
           {/* Product Info Section */}
           <div
-            className={`product-info-wrapper w-full md:w-1/2 p-6 md:p-10 ${
-              hoveredimage === true && "hidden"
-            }`}
+            className={`product-info-wrapper w-full md:w-1/2 p-6 md:p-10 ${hoveredimage === true && "hidden"
+              }`}
           >
             <div className="heading-wrapper space-y-4 mb-6">
               <h1 className="text-2xl sm:text-3xl md:text-2xl lg:text-4xl font-serif mb-5">
@@ -187,30 +186,35 @@ function ProductDetail() {
               <div className="productinfo-wrapper w-full text-sm sm:text-base md:text-[1.3vw] flex flex-col gap-2 text-gray-600">
                 {selectedProduct.product_details && (
                   <>
-                    <div className="inner-infowrapper flex items-center gap-1">
-                      {correctIcon}
+                    <div className="inner-infowrapper flex items-start gap-1 text-[1.8vw] max-md:text-[2vw] max-sm:text-[4vw]">
+                      <div className="icon">
+                        {correctIcon}
+                      </div>
                       <p>{selectedProduct.product_details["01"]}</p>
                     </div>
-                    <div className="inner-infowrapper flex items-center gap-1">
+                    <div className="inner-infowrapper flex items-start gap-1 text-[1.8vw] max-md:text-[2vw] max-sm:text-[4vw]">
                       {correctIcon}
                       <p>{selectedProduct.product_details["02"]}</p>
                       <button
                         onClick={() => setGiveProductInfo(true)}
-                        className={`text-[1vw] text-blue-400 ${
-                          giveProductInfo === true && "hidden"
-                        }`}
+                        className={`text-[1.3vw] text-blue-400 max-sm:text-[3vw] ${giveProductInfo === true && "hidden"
+                          }`}
                       >
                         Read More...
                       </button>
                     </div>
                     {giveProductInfo === true && (
-                      <div className="more-about-product">
-                        <div className="inner-infowrapper flex items-center gap-1">
-                          {correctIcon}
+                      <div className="more-about-product flex flex-col gap-1">
+                        <div className="inner-infowrapper flex items-start gap-1 text-[1.8vw] max-md:text-[2vw] max-sm:text-[4vw]">
+                          <div className="icon">
+                            {correctIcon}
+                          </div>
                           <p>{selectedProduct.product_details["03"]}</p>
                         </div>
-                        <div className="inner-infowrapper flex items-center gap-1">
-                          {correctIcon}
+                        <div className="inner-infowrapper flex items-start gap-1 text-[1.8vw] max-md:text-[2vw] max-sm:text-[4vw]">
+                          <div className="icon">
+                            {correctIcon}
+                          </div>
                           <p>{selectedProduct.product_details["04"]}</p>
                         </div>
                       </div>
@@ -221,10 +225,10 @@ function ProductDetail() {
             </div>
             <div className="add_to_cart_section bg-gray-100 rounded-md p-5">
               <div className="price mb-4">
-                <h1 className="text-xl sm:text-2xl font-bold">
+                <h1 className="text-[2.5vw] font-bold max-md:text-[4vw]">
                   ₹ {selectedProduct.product_price}
                 </h1>
-                <span className="text-xs sm:text-sm">
+                <span className="text-[1.2vw] max-md:text-[2vw]">
                   incl. VAT, plus shipping
                 </span>
               </div>
@@ -418,14 +422,14 @@ function ProductDetail() {
         </div>
 
         <div className="simillar-product-wrapper w-full">
-          <div className="heading-wrapper w-full px-[10vw]">
-            <h1 className="text-[3vw]">What you might also like</h1>
-            <span className="text-[1.2vw]">
+          <div className="heading-wrapper w-full px-[8vw]">
+            <h1 className="text-[3vw] max-md:text-[5vw]">What you might also like</h1>
+            <span className="text-[1.2vw] max-md:text-[2vw]">
               Maybe the next thing you wont want to miss
             </span>
           </div>
           <div className="products-wrapper">
-            <div className="product-wrapper w-full h-auto flex flex-wrap justify-center gap-[8vw] gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
+            <div className="product-wrapper w-full h-auto flex justify-center gap-[8vw] gap-y-4 mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5 max-md:flex-wrap">
               {TeaCollection.length > 0 ? (
                 TeaCollection.filter(
                   (Teafilter) =>
@@ -560,8 +564,8 @@ function ProductDetail() {
             <h1 className="text-[3vw] font-sans">Ratings & Reviews</h1>
           </div>
           {selectedProduct &&
-          selectedProduct.reviews &&
-          selectedProduct.reviews.length > 0 ? (
+            selectedProduct.reviews &&
+            selectedProduct.reviews.length > 0 ? (
             <div className="flex flex-wrap -mx-2">
               {selectedProduct.reviews.map((review, index) => (
                 <div
