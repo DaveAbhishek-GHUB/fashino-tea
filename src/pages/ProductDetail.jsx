@@ -1,13 +1,12 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import SubHeader from "../components/SubHeader";
-import Welovewhatwedosection from "../utils/Welovewhatwedosection";
 import Yourbenefits from "../utils/Yourbenefits";
 import Footer from "../components/Footer";
 import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/slices/userSlice";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Storeclosetoyou from "../utils/Storeclosetoyou";
 import ReactImageMagnify from "react-image-magnify";
@@ -202,8 +201,10 @@ function ProductDetail() {
                       <p>{selectedProduct.product_details["01"]}</p>
                     </div>
                     <div className="inner-infowrapper items-start gap-1 text-[1.8vw] max-md:text-[2vw] max-sm:text-[4vw] flex flex-col">
-                      <div className="flex">
+                      <div className="flex gap-1">
+                        <div>
                       {correctIcon}
+                        </div>
                       <p>{selectedProduct.product_details["02"]}</p>
                       </div>
                       <button
