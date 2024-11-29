@@ -25,7 +25,10 @@ function ProductDetail() {
 
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.Loggedin);
+  const [AllProducts, setAllProducts] = useState([]);
   const [hoveredProductId, setHoveredProductId] = useState(null);
+  const [isCompare, setIsCompare] = useState(false);
+  const [productForCompare, setproductForCompare] = useState();
   const [TeaCollection, setTeaCollection] = useState([]);
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 768);
   const { productId } = useParams();
@@ -35,11 +38,11 @@ function ProductDetail() {
     fetch(teaCollection)
       .then((response) => response.json())
       .then((data) => {
+        setAllProducts(data);
         const product = data.find((item) => item.product_id == productId);
         setselectedProduct(product);
       });
   }, [teaCollection, productId]);
-
 
   useEffect(() => {
     fetch(teaCollection)
@@ -91,6 +94,12 @@ function ProductDetail() {
     // Clean up event listener
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const forCompare = (forcompareId) => {
+    setIsCompare(true);
+    const producForcompare = AllProducts.find((product) => product.product_id === forcompareId);
+    setproductForCompare(producForcompare);
+  }
 
   return (
     <>
@@ -440,7 +449,7 @@ function ProductDetail() {
                   .map((TeaData, index) => (
                     <div
                       key={index}
-                      className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] min-h-[35vw] sm:h-[50vw] md:h-[40vw] relative"
+                      className="product w-[25vw] relative max-md:w-[40vw] max-sm:w-[100vw]"
                     >
                       <button
                         onMouseEnter={() =>
@@ -448,7 +457,7 @@ function ProductDetail() {
                         }
                         onMouseLeave={() => setHoveredProductId(null)}
                         onClick={() => AddToCart(TeaData)}
-                        className="absolute bottom-[21vw] right-[2vw] bg-white p-2 rounded-full border-zinc-700 border-2 max-sm:bottom-[70vw] max-sm:right-[5vw] max-md:bottom-[27vw]"
+                        className="absolute bottom-[18vw] right-[1vw] bg-white p-2 rounded-full border-zinc-700 border-[1px] max-md:bottom-[30vw] max-md:right-[1.5vw] max-sm:bottom-[63vw] max-sm:right-[2vw]"
                       >
                         {hoveredProductId === TeaData.product_id ? (
                           <svg
@@ -543,11 +552,25 @@ function ProductDetail() {
                           <span className="text-[1.2vw] text-[#484848] max-sm:text-[4vw]">
                             {TeaData.product}
                           </span>
-                          <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[4vw]">
+                          <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[4vw] w-full flex justify-between">
                             ₹ {TeaData.product_price}
                           </span>
                         </div>
                       </Link>
+                      <span className="w-full flex justify-between items-end">
+                        <div className="conpare-icon">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#4b5563"} fill={"none"}>
+                            <path d="M19 17L19 11C19 8.17157 19 6.75736 18.1213 5.87868C17.2426 5 15.8284 5 13 5H10M10 5C10 4.29977 11.9943 2.99153 12.5 2.5M10 5C10 5.70023 11.9943 7.00847 12.5 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M5 7.5L5 13.5C5 16.3284 5 17.7426 5.87868 18.6213C6.75736 19.5 8.17157 19.5 11 19.5H14M14 19.5C14 20.2002 12.0057 21.5085 11.5 22M14 19.5C14 18.7998 12.0057 17.4915 11.5 17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <circle cx="19" cy="19" r="2" stroke="currentColor" strokeWidth="1.5" />
+                            <circle cx="5" cy="5" r="2" stroke="currentColor" strokeWidth="1.5" />
+                          </svg>
+                        </div>
+                        <button
+                          onClick={() => forCompare(TeaData.product_id)} className="text-black">
+                          Compare product
+                        </button>
+                      </span>
                     </div>
                   ))
               ) : (
@@ -558,6 +581,63 @@ function ProductDetail() {
             </div>
           </div>
         </div>
+        {isCompare === true && (
+          <div className="compare-products w-full bg-white rounded-lg overflow-hidden p-10 max-sm:p-2">
+            <div className="product-sections-wrapper rounded-2xl border-2">
+
+              <div className="product-section w-full flex  md:flex-row justify-between items-center p-4">
+                <div className="heading-wrapper w-full md:w-1/5 p-2 flex justify-center md:justify-start">
+                  <span className="text-lg max-sm:text-[3.3vw] md:text-xl font-bold uppercase">Product Name:</span>
+                </div>
+                <div className="current-product-info w-full md:w-2/5 p-2 flex justify-center">
+                  <span className="text-lg max-sm:text-[3.3vw] md:text-xl">
+                    <img className="w-[20vw]" src={selectedProduct.product_image} alt="" />
+                  </span>
+                </div>
+                <div className="forcompare-product-info w-full md:w-2/5 p-2 flex justify-center">
+                  <span className="text-lg max-sm:text-[3.3vw] md:text-xl"><img className="w-[20vw]" src={productForCompare.product_image} alt="" /></span>
+                </div>
+              </div>
+
+              <div className="product-section w-full flex  md:flex-row justify-between items-center p-4">
+                <div className="heading-wrapper w-full md:w-1/5 p-2 flex justify-center md:justify-start">
+                  <span className="text-lg max-sm:text-[3.3vw] md:text-xl font-bold uppercase">Product Name:</span>
+                </div>
+                <div className="current-product-info w-full md:w-2/5 p-2 flex justify-center">
+                  <span className="text-lg max-sm:text-[3.3vw] md:text-xl">{selectedProduct.product_name}</span>
+                </div>
+                <div className="forcompare-product-info w-full md:w-2/5 p-2 flex justify-center">
+                  <span className="text-lg max-sm:text-[3.3vw] md:text-xl">{productForCompare.product_name}</span>
+                </div>
+              </div>
+
+              <div className="product-section w-full flex  md:flex-row justify-between items-center p-4">
+                <div className="heading-wrapper w-full md:w-1/5 p-2 flex justify-center md:justify-start">
+                  <span className="text-lg max-sm:text-[3.3vw] md:text-xl font-bold uppercase">Product Category:</span>
+                </div>
+                <div className="current-product-info w-full md:w-2/5 p-2 flex justify-center">
+                  <span className="text-lg max-sm:text-[3.3vw] md:text-xl">{selectedProduct.product_category}</span>
+                </div>
+                <div className="forcompare-product-info w-full md:w-2/5 p-2 flex justify-center">
+                  <span className="text-lg max-sm:text-[3.3vw] md:text-xl">{productForCompare.product_category}</span>
+                </div>
+              </div>
+
+              <div className="product-section w-full flex  md:flex-row justify-between items-center p-4">
+                <div className="heading-wrapper w-full md:w-1/5 p-2 flex justify-center md:justify-start">
+                  <span className="text-lg max-sm:text-[3.3vw] md:text-xl font-bold uppercase">Product Price:</span>
+                </div>
+                <div className="current-product-info w-full md:w-2/5 p-2 flex justify-center">
+                  <span className="text-lg max-sm:text-[3.3vw] md:text-xl">₹ {selectedProduct.product_price}</span>
+                </div>
+                <div className="forcompare-product-info w-full md:w-2/5 p-2 flex justify-center">
+                  <span className="text-lg max-sm:text-[3.3vw] md:text-xl">₹ {productForCompare.product_price}</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        )}
         <Storeclosetoyou />
         <div className="product-review-wrapper w-full p-5">
           <div className="heading-wrapper w-full">

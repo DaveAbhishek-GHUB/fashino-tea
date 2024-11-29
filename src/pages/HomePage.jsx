@@ -110,7 +110,7 @@ function HomePage() {
             />
           </video>
 
-          <div className="hero-info-wrapper absolute sm:top-[40vw] md:top-[15vw] left-[3vw] max-sm:bottom-[3vw]">
+          <div className="hero-info-wrapper absolute bottom-[5vw] left-[3vw] max-sm:bottom-[3vw]">
             <span className="text-white sm:text-base md:text-lg max-sm:text-[10vw]">
               Small doors, big joy
             </span>
@@ -278,7 +278,7 @@ function HomePage() {
           </div>
 
         {/* First product display section */}
-        <div className="product-wrapper w-full h-auto flex flex-wrap justify-between mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
+        <div className="product-wrapper w-full h-auto flex flex-wrap justify-between max-sm:justify-center mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
           {TeaCollection.length > 0 ? (
             // Filter and map through the TeaCollection to display products in the "Chocolate" category
             TeaCollection.filter(
@@ -286,7 +286,7 @@ function HomePage() {
             ).slice(0, 4).map((TeaData, index) => (
               <div
                 key={index}
-                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[35vw] sm:h-[50vw] md:h-[30vw] relative max-sm:h-[100vw]"
+                className="product w-[20vw] max-md:w-[44vw] h-[35vw] sm:h-[50vw] md:h-[30vw] max-sm:w-[80vw] relative max-sm:h-[100vw]"
               >
                 {/* Wishlist button */}
                 <button
@@ -422,16 +422,16 @@ function HomePage() {
             </span>
           </div>
 
-        {/* Second product display section */}
-        <div className="product-wrapper w-full h-auto flex flex-wrap justify-between mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
+        {/* First product display section */}
+        <div className="product-wrapper w-full h-auto flex flex-wrap justify-between max-sm:justify-center mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
           {TeaCollection.length > 0 ? (
             // Filter and map through the TeaCollection to display products in the "Chocolate" category
             TeaCollection.filter(
               (Teafilter) => Teafilter.product_category === "Advent Calendar"
-            ).map((TeaData, index) => (
+            ).slice(0, 4).map((TeaData, index) => (
               <div
                 key={index}
-                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[35vw] sm:h-[50vw] md:h-[30vw] relative max-sm:h-[100vw]"
+                className="product w-[20vw] max-md:w-[44vw] h-[35vw] sm:h-[50vw] md:h-[30vw] max-sm:w-[80vw] relative max-sm:h-[100vw]"
               >
                 {/* Wishlist button */}
                 <button

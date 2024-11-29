@@ -86,8 +86,8 @@ function TeaChocolate() {
           </div>
         </div>
 
-        {/* Product display section */}
-        <div className="product-wrapper w-full h-auto flex flex-wrap justify-between mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
+        {/* product display section */}
+        <div className="product-wrapper w-full h-auto flex flex-wrap justify-between max-sm:justify-center mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
           {TeaCollection.length > 0 ? (
             // Filter and map through the TeaCollection to display products in the "Chocolate" category
             TeaCollection.filter(
@@ -95,12 +95,12 @@ function TeaChocolate() {
             ).map((TeaData, index) => (
               <div
                 key={index}
-                className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[35vw] sm:h-[50vw] md:h-[30vw] relative max-sm:h-[100vw]"
+                className="product w-[20vw] max-md:w-[44vw] h-[35vw] sm:h-[50vw] md:h-[30vw] max-sm:w-[80vw] relative max-sm:h-[100vw]"
               >
                 {/* Wishlist button */}
                 <button
                   onClick={() => toggleWishlist(TeaData.product_id)}
-                  className="wishlist absolute top-[1vw] right-[1vw]"
+                  className="wishlist absolute top-[1vw] right-[1vw] max-sm:top-[2vw] max-md:right-[2vw]"
                 >
                   {wishList.includes(TeaData.product_id) ? (
                     // Filled heart icon for items in wishlist
@@ -134,7 +134,7 @@ function TeaChocolate() {
                   onMouseEnter={() => setHoveredProductId(TeaData.product_id)}
                   onMouseLeave={() => setHoveredProductId(null)}
                   onClick={() => AddToCart(TeaData)}
-                  className="absolute bottom-[16vw] right-[1vw] bg-white p-2 rounded-full border-zinc-700 border-[1px] max-sm:bottom-[54vw] max-sm:right-[3vw] max-md:bottom-[27vw]"
+                  className="absolute bottom-[16vw] right-[1vw] bg-white p-1 rounded-full border-zinc-700 border-[1px] max-sm:bottom-[54vw] max-sm:right-[3vw] max-md:bottom-[27vw]"
                 >
                   {hoveredProductId === TeaData.product_id ? (
                     // Cart icon when hovered
