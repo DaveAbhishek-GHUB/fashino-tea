@@ -444,10 +444,9 @@ function ProductDetail() {
               {TeaCollection.length > 0 ? (
                 TeaCollection.filter(
                   (Teafilter) =>
-                    Teafilter.product_category ===
-                    `${selectedProduct.product_category}`
-                )
-                  .slice(1, 4)
+                    Teafilter.product_category === selectedProduct.product_category &&
+                    Teafilter.product_id !== selectedProduct.product_id)
+                  .slice(0, 3)
                   .map((TeaData, index) => (
                     <div
                       key={index}
