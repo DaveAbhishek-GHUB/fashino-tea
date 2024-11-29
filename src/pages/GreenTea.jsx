@@ -217,9 +217,9 @@ function GreenTea() {
 
         <div className="main-teainfo-wrapper w-full h-auto flex flex-col md:flex-row">
           {/* Image container */}
-          <div className="image-container w-full md:w-[50vw] h-[50vw] md:h-full p-5 md:p-10">
+          <div className="image-container w-full md:w-[50vw] h-[50vw] md:h-full p-5 md:p-10  max-md:w-full max-md:h-full">
             <img
-              className="w-full h-full object-cover rounded-md"
+              className="w-full h-full object-contain rounded-md"
               src="https://www.paperandtea.com/cdn/shop/files/Category_USP_origins.jpg?v=1723564775&width=1200"
               alt="..."
             />

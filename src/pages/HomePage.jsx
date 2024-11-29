@@ -19,6 +19,8 @@ import "react-multi-carousel/lib/styles.css";
 import "react-toastify/dist/ReactToastify.css";
 
 function HomePage() {
+
+  // manage Carousel responsiveness
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -46,6 +48,7 @@ function HomePage() {
   const teaCollectionApi = import.meta.env.VITE_TEACOLLECTION_API;
   const user = useSelector((state) => state.user.Loggedin);
 
+  // Fetch data from teaCollectionAPI
   useEffect(() => {
     fetch(teaCollectionApi)
       .then((response) => response.json())
@@ -54,6 +57,7 @@ function HomePage() {
       });
   }, []);
 
+ // Functin to add product in cart
   const AddToCart = (data) => {
     if (!user) {
       toast.dismiss();
@@ -74,6 +78,7 @@ function HomePage() {
     }
   };
 
+  // Toggle wishlist 
   const toggleWishlist = (productId) => {
     setWishList((prevWishList) => {
       if (prevWishList.includes(productId)) {
@@ -128,11 +133,11 @@ function HomePage() {
         </div>
 
         {/* Category Section */}
-        <Carousel className="py-10 px-3" responsive={responsive}>
+        <Carousel className="py-10 pl-[2vw]" responsive={responsive}>
           <div>
             {/* adventcalendars */}
             <Link to="/Adventcalendar">
-              <div className="advent-calendars w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <div className="advent-calendars h-[10vw] w-[10vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:h-[20vw] max-sm:w-[20vw]">
                 <img
                   className="w-full h-full rounded-full"
                   src="https://www.paperandtea.com/cdn/shop/files/UNICORN_collection_page_1.jpg?v=1725981579&width=200"
@@ -147,7 +152,7 @@ function HomePage() {
           <div>
             {/* teachocolate */}
             <Link to="/teachocolate">
-              <div className="tea-chocolate w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <div className="tea-chocolate h-[10vw] w-[10vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:h-[20vw] max-sm:w-[20vw]">
                 <img
                   className="w-full h-full rounded-full"
                   src="https://www.paperandtea.com/cdn/shop/files/Collection_Circle.jpg?v=1727185858&width=200"
@@ -162,7 +167,7 @@ function HomePage() {
           <div>
             {/* matcha */}
             <Link to="/matcha">
-              <div className="tea-matcha w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <div className="tea-matcha h-[10vw] w-[10vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:h-[20vw] max-sm:w-[20vw]">
                 <img
                   className="w-full h-full rounded-full"
                   src="https://www.paperandtea.com/cdn/shop/files/icon-matchatee.jpg?v=1721139547&width=200"
@@ -177,7 +182,7 @@ function HomePage() {
           <div>
             {/* tea-blends */}
             <Link to="/teablends">
-              <div className="tea-blends w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <div className="tea-blends h-[10vw] w-[10vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:h-[20vw] max-sm:w-[20vw]">
                 <img
                   className="w-full h-full rounded-full"
                   src="https://www.paperandtea.com/cdn/shop/files/icon-teemischungen.jpg?v=1721139547&width=200"
@@ -192,7 +197,7 @@ function HomePage() {
           <div>
             {/* winter-teas */}
             <Link to="/wintertea">
-              <div className="winter-teas w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <div className="winter-teas h-[10vw] w-[10vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:h-[20vw] max-sm:w-[20vw]">
                 <img
                   className="w-full h-full rounded-full"
                   src="https://www.paperandtea.com/cdn/shop/files/Bilder_Startseite_Winter_Teas.jpg?v=1729069408&width=200"
@@ -207,7 +212,7 @@ function HomePage() {
           <div>
             {/* Green Tea */}
             <Link to="/greentea">
-              <div className="green-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <div className="green-tea h-[10vw] w-[10vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:h-[20vw] max-sm:w-[20vw]">
                 <img
                   className="w-full h-full rounded-full"
                   src="https://www.paperandtea.com/cdn/shop/files/icon-gruenertee.jpg?v=1721139547&width=200"
@@ -222,7 +227,7 @@ function HomePage() {
           <div>
             {/* Black Tea */}
             <Link to="/blacktea">
-              <div className="black-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <div className="black-tea h-[10vw] w-[10vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:h-[20vw] max-sm:w-[20vw]">
                 <img
                   className="w-full h-full rounded-full"
                   src="https://www.paperandtea.com/cdn/shop/files/icon-schwarzertee.jpg?v=1721139547&width=200"
@@ -237,7 +242,7 @@ function HomePage() {
           <div>
             {/* Herbal Tea */}
             <Link to="herbaltea">
-              <div className="herbal-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <div className="herbal-tea h-[10vw] w-[10vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:h-[20vw] max-sm:w-[20vw]">
                 <img
                   className="w-full h-full rounded-full"
                   src="https://www.paperandtea.com/cdn/shop/files/icon-kraeutertee.jpg?v=1721139547&width=200"
@@ -252,7 +257,7 @@ function HomePage() {
           <div>
             {/* Oolong Tea */}
             <Link to="/oolongtea">
-              <div className="oolong-tea w-[20vw] h-[20vw] sm:w-[15vw] sm:h-[15vw] md:w-[10vw] md:h-[10vw] shrink-0">
+              <div className="oolong-tea h-[10vw] w-[10vw] max-md:w-[15vw] max-md:h-[15vw] max-sm:h-[20vw] max-sm:w-[20vw]">
                 <img
                   className="w-full h-full rounded-full"
                   src="https://www.paperandtea.com/cdn/shop/files/icon-oolong.jpg?v=1721139547&width=200"

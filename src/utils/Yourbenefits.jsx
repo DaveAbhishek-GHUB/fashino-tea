@@ -5,7 +5,7 @@ import React from "react";
 function Yourbenefits() {
   return (
     <>
-      <div className="standardbanner-wrapper w-full h-auto sm:h-[25vw] md:h-[20vw] bg-[#D0E2B2] p-4 sm:p-5 md:p-4x mt-10">
+      <div className="standardbanner-wrapper w-full h-auto sm:h-[25vw] md:h-[20vw] bg-[#D0E2B2] p-4 sm:p-5 md:p-4x mt-10 pb-5">
         <div className="heading w-full mb-3 sm:mb-4 md:mb-3">
           <h1 className="text-[6vw] sm:text-[5vw] md:text-[4vw] font-extralight text-zinc-800">
             Your benefits at <b>Fascino</b>
