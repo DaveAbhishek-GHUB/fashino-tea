@@ -459,7 +459,7 @@ function ProductDetail() {
                         }
                         onMouseLeave={() => setHoveredProductId(null)}
                         onClick={() => AddToCart(TeaData)}
-                        className="absolute bottom-[19vw] right-[2vw] p-[0.5vw] border-black border-[1px] bg-white rounded-full max-md:bottom-[30vw] max-md:p-[1vw] max-sm:p-[1.5vw] max-sm:bottom-[65vw] max-sm:right-[3vw]"
+                        className="absolute bottom-[11vw] right-[1.5vw] p-[0.5vw] border-black border-[1px] bg-white rounded-full max-md:bottom-[18vw] max-md:p-[1vw] max-sm:p-[1.5vw] max-sm:bottom-[34vw] max-sm:right-[3vw]"
                       >
                         {hoveredProductId === TeaData.product_id ? (
                           <svg
@@ -537,7 +537,7 @@ function ProductDetail() {
                         target="_blank"
                         to={`/${selectedProduct.product_category}/${TeaData.product_id} `}
                       >
-                        <div className="image-wrapper bg-[#F5F6F3] w-full h-[50%] rounded-md">
+                        <div className="image-wrapper bg-[#F5F6F3] w-full h-[20vw] max-md:h-[30vw] max-sm:h-[50vw] rounded-md">
                           <img
                             className="w-full h-full object-contain sm:object-contain"
                             src={TeaData.product_image}
