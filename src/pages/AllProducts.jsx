@@ -2,13 +2,14 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // Component imports
 import SubHeader from "../components/SubHeader";
 import StandardBanner from "../utils/Standardbanner";
 import Storeclosetoyou from "../utils/Storeclosetoyou";
+import Welovewhatwedosection from "../utils/Welovewhatwedosection";
 import Footer from "../components/Footer";
 import Yourbenefits from "../utils/Yourbenefits";
 
@@ -272,6 +273,77 @@ function AllProducts() {
             </div>
           </div>
 
+          {/* Mobile Sidebar */}
+          {isMenuOpen === true && (
+            <div className={`sidebar w-[70vw] max-md:w-[80vw] max-sm:w-full max-sm:absolute z-20 shadow-lg h-full max-sm:min-h-screen p-4 lg:hidden bg-white ${isMenuOpen === false && "left-[-100%]"}`}>
+              <div className="category-wrapper">
+                <div className="heading mb-4">
+                  <span className="text-lg font-bold">Category</span>
+                </div>
+                <div className="category-links-wrapper flex flex-col gap-2">
+                  {[
+                    "Advent Calendar",
+                    "Chocolate",
+                    "Matcha",
+                    "Tea blend",
+                    "Gift Set",
+                    "Green tea",
+                    "Black Tea",
+                    "Herbal",
+                    "Oolong Tea",
+                  ].map((item) => (
+                    <button
+                      key={item}
+                      onClick={() => SETCategory(item)}
+                      className="w-full p-2 border-b border-gray-300 text-start flex justify-between hover:bg-gray-100"
+                    >
+                      <span className="capitalize text-sm">
+                        {item.toLowerCase().replaceAll(" ", "-")}
+                      </span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width={18}
+                        height={18}
+                        className="text-gray-600"
+                      >
+                        <path
+                          d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="sort-by-price my-6">
+                <div className="heading mb-2">
+                  <span className="text-lg font-bold">Sort by price</span>
+                </div>
+                <div className="sort-by-price-wrapper flex flex-col gap-2">
+                  {[
+                    { range: "₹ 0 - ₹ 2000" },
+                    { range: "₹ 2001 - ₹ 5000" },
+                    { range: "₹ 5001 - ₹ 10000" },
+                    { range: "₹ 10001 - ₹ 20000" },
+                    { range: "₹ 20001 - Above" },
+                  ].map(({ range }) => (
+                    <button
+                      key={range}
+                      onClick={() => setFilter(...range.match(/\d+/g))}
+                      className="w-full p-2 text-start hover:bg-gray-100"
+                    >
+                      <span className="text-sm">{range}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Main Content */}
           <div className="main-content w-full lg:w-[80vw] h-full">
             <div className="header flex justify-between items-center p-4 border-b">
@@ -296,7 +368,7 @@ function AllProducts() {
                 </svg>
               </button>
             </div>
-            <div className="product-wrapper w-full h-auto flex flex-wrap justify-between max-sm:justify-center mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
+            <div className="product-wrapper w-full h-auto flex flex-wrap justify-between max-sm:justify-center mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5 max-sm:gap-3">
               {TeaCollection.length > 0 ? (
                 TeaCollection.filter(
                   (Teafilter) =>
@@ -312,7 +384,7 @@ function AllProducts() {
                   ).map((TeaData, index) => (
                     <div
                       key={index}
-                      className="product w-[23%] max-md:w-[48%] max-sm:w-[48%] h-[35vw] sm:h-[50vw] md:h-[30vw] max-sm:w-[80vw] relative max-sm:h-[100vw]"
+                      className="product w-[23%] max-md:w-[48%] max-sm:w-[48%] h-[35vw] sm:h-[50vw] md:h-[30vw] relative max-sm:h-[100vw]"
                     >
                       <button
                         onClick={() => toggleWishlist(TeaData.product_id)}
@@ -417,12 +489,13 @@ function AllProducts() {
               )}
             </div>
           </div>
+          
         </div>
         <div className="other-components">
-          <StandardBanner />
-          <Storeclosetoyou />
-          <Yourbenefits />
-          <Footer />
+          <StandardBanner/>
+          <Storeclosetoyou/>
+          <Yourbenefits/>
+          <Footer/>
         </div>
       </div>
     </>
