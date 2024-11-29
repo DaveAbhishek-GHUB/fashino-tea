@@ -16,5 +16,4 @@
 
 Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/Fascino.git
-   ```  
+   git clone https://github.com/DaveAbhishek-GHUB/fashino-tea
