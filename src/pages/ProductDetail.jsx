@@ -457,7 +457,7 @@ function ProductDetail() {
                         }
                         onMouseLeave={() => setHoveredProductId(null)}
                         onClick={() => AddToCart(TeaData)}
-                        className="absolute bottom-[18vw] right-[1vw] bg-white p-2 rounded-full border-zinc-700 border-[1px] max-md:bottom-[30vw] max-md:right-[1.5vw] max-sm:bottom-[63vw] max-sm:right-[2vw]"
+                        className="absolute bottom-[23vw] right-[1vw] bg-white p-2 rounded-full border-zinc-700 border-[1px] max-md:bottom-[30vw] max-md:right-[1.5vw] max-sm:bottom-[63vw] max-sm:right-[2vw]"
                       >
                         {hoveredProductId === TeaData.product_id ? (
                           <svg
