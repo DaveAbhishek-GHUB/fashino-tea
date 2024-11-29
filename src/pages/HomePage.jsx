@@ -89,7 +89,7 @@ function HomePage() {
       <SubHeader />
       <div className="main-wrapper w-full min-h-screen mt-12">
         {/* Here section */}
-        <div className="hero-wrapper h-[60vh] sm:h-[55vh] md:h-[60vh] relative max-sm:h-[40vh]">
+        <div className="hero-wrapper h-[60vh] relative max-md:h-[40vw] max-sm:h-[60vw]">
           <video
             className="w-full h-full object-cover"
             playsInline
@@ -111,10 +111,10 @@ function HomePage() {
           </video>
 
           <div className="hero-info-wrapper absolute bottom-[5vw] left-[3vw] max-sm:bottom-[3vw]">
-            <span className="text-white sm:text-base md:text-lg max-sm:text-[10vw]">
+            <span className="text-white sm:text-base md:text-lg max-sm:text-[8vw]">
               Small doors, big joy
             </span>
-            <h1 className="text-white sm:text-[3.5vw] md:text-[4vw] font-serif max-sm:text-[5vw]">
+            <h1 className="text-white sm:text-[3.5vw] md:text-[4vw] font-serif max-sm:text-[4vw]">
               Advent calendars 2024
             </h1>
             <div className="hero-info-button">
@@ -267,7 +267,7 @@ function HomePage() {
         </Carousel>
 
         {/* Cozy moments */}
-        <div className="cozymoments-section-wrapper w-full min-h-screen">
+        <div className="cozymoments-section-wrapper w-full min-h-[40vw]">
           <div className="heading-wrapper w-full h-auto px-4 sm:px-8 md:px-10">
             <h1 className="font-serif text-[6vw] sm:text-[5vw] md:text-[4vw]">
               Cozy moments - the new winter teas
@@ -412,7 +412,7 @@ function HomePage() {
         </div>
 
         {/* Advent calendars 2024 */}
-        <div className="Advent-calendars-section-wrapper w-full min-h-screen">
+        <div className="Advent-calendars-section-wrapper w-full min-h-[40vw]">
           <div className="heading-wrapper w-full h-auto px-4 sm:px-8 md:px-10">
             <h1 className="font-serif text-[6vw] sm:text-[5vw] md:text-[4vw]">
               Advent calendars 2024
