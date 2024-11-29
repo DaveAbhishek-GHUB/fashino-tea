@@ -1,9 +1,20 @@
-# React + Vite
+# Fascino  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Fascino** is a modern e-commerce website designed for tea lovers. It offers a wide variety of premium teas and tea-infused chocolates, providing a seamless and enjoyable shopping experience.  
 
-Currently, two official plugins are available:
+## Features  
+- **Wide Product Range:** Explore a collection of premium teas and tea chocolates.  
+- **State Management:** Built with **Redux Toolkit** for efficient state handling.  
+- **Data Persistence:** Integrated **Redux Persist** to retain cart data and user preferences.  
+- **Responsive Design:** Optimized for mobile, tablet, and desktop devices.  
+- **User-Friendly Interface:** Intuitive navigation and smooth functionality.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# fashino-tea
+## Tech Stack  
+- **Frontend:** React, Redux Toolkit, Redux Persist  
+- **Styling:** Tailwind CSS  
+- **State Management:** Redux  
+
+Clone the repository:  
+   ```bash
+   git clone https://github.com/your-username/Fascino.git
+   ```  
