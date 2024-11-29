@@ -63,9 +63,9 @@ function AdventCalendars() {
   const toggleWishlist = (productId) => {
     setWishList((prevWishList) => {
       if (prevWishList.includes(productId)) {
-        return prevWishList.filter((id) => id !== productId); // Remove from wishlist
+        return prevWishList.filter((id) => id !== productId);
       } else {
-        return [...prevWishList, productId]; // Add to wishlist
+        return [...prevWishList, productId];
       }
     });
   };

@@ -2,14 +2,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // Component imports
 import SubHeader from "../components/SubHeader";
 import StandardBanner from "../utils/Standardbanner";
 import Storeclosetoyou from "../utils/Storeclosetoyou";
-import Welovewhatwedosection from "../utils/Welovewhatwedosection";
 import Footer from "../components/Footer";
 import Yourbenefits from "../utils/Yourbenefits";
 
@@ -99,7 +98,7 @@ function AllProducts() {
         <div className="inner-wrapper w-full h-full flex relative">
           {/* Sidebar */}
           <div
-            className="sidebar w-[20vw] msetIsMenuOpenax-lg:w-[30vw] min-h-screen hidden lg:flex flex-col p-4"
+            className="sidebar w-[20vw] min-h-screen hidden lg:flex flex-col p-4"
           >
             <div className="category-wrapper">
               <div className="heading mb-4 w-full flex items-center justify-between">
@@ -273,78 +272,6 @@ function AllProducts() {
             </div>
           </div>
 
-          {/* Mobile Sidebar */}
-          {isMenuOpen === true && (
-            <div className={`sidebar w-[70vw] max-md:w-[80vw] max-sm:w-full max-sm:absolute z-20 shadow-lg h-full max-sm:min-h-screen p-4 lg:hidden bg-white ${isMenuOpen === false && "left-[-100%]"}`}>
-              <div className="category-wrapper">
-                <div className="heading mb-4">
-                  <span className="text-lg font-bold">Category</span>
-                </div>
-                <div className="category-links-wrapper flex flex-col gap-2">
-                  {[
-                    "Advent Calendar",
-                    "Chocolate",
-                    "Matcha",
-                    "Tea blend",
-                    "Gift Set",
-                    "Green tea",
-                    "Black Tea",
-                    "Herbal",
-                    "Oolong Tea",
-                  ].map((item) => (
-                    <button
-                      key={item}
-                      onClick={() => SETCategory(item)}
-                      className="w-full p-2 border-b border-gray-300 text-start flex justify-between hover:bg-gray-100"
-                    >
-                      <span className="capitalize text-sm">
-                        {item.toLowerCase().replaceAll(" ", "-")}
-                      </span>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        width={18}
-                        height={18}
-                        className="text-gray-600"
-                      >
-                        <path
-                          d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <div className="sort-by-price my-6">
-                <div className="heading mb-2">
-                  <span className="text-lg font-bold">Sort by price</span>
-                </div>
-                <div className="sort-by-price-wrapper flex flex-col gap-2">
-                  {[
-                    { range: "₹ 0 - ₹ 2000" },
-                    { range: "₹ 2001 - ₹ 5000" },
-                    { range: "₹ 5001 - ₹ 10000" },
-                    { range: "₹ 10001 - ₹ 20000" },
-                    { range: "₹ 20001 - Above" },
-                  ].map(({ range }) => (
-                    <button
-                      key={range}
-                      onClick={() => setFilter(...range.match(/\d+/g))}
-                      className="w-full p-2 text-start hover:bg-gray-100"
-                    >
-                      <span className="text-sm">{range}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-
-
           {/* Main Content */}
           <div className="main-content w-full lg:w-[80vw] h-full">
             <div className="header flex justify-between items-center p-4 border-b">
@@ -369,31 +296,27 @@ function AllProducts() {
                 </svg>
               </button>
             </div>
-            <div className="product-wrapper w-full h-auto flex flex-wrap justify-between mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
+            <div className="product-wrapper w-full h-auto flex flex-wrap justify-between max-sm:justify-center mt-8 sm:mt-[4vw] md:mt-[3vw] px-4 sm:px-5">
               {TeaCollection.length > 0 ? (
                 TeaCollection.filter(
                   (Teafilter) =>
                     Teafilter.product_category === category &&
-                    (minimumPrice === null ||
-                      Teafilter.product_price >= minimumPrice) &&
-                    (maximumPrice === null ||
-                      Teafilter.product_price <= maximumPrice)
+                    (minimumPrice === null || Teafilter.product_price >= minimumPrice) &&
+                    (maximumPrice === null || Teafilter.product_price <= maximumPrice)
                 ).length > 0 ? (
                   TeaCollection.filter(
                     (Teafilter) =>
                       Teafilter.product_category === category &&
-                      (minimumPrice === null ||
-                        Teafilter.product_price >= minimumPrice) &&
-                      (maximumPrice === null ||
-                        Teafilter.product_price <= maximumPrice)
+                      (minimumPrice === null || Teafilter.product_price >= minimumPrice) &&
+                      (maximumPrice === null || Teafilter.product_price <= maximumPrice)
                   ).map((TeaData, index) => (
                     <div
                       key={index}
-                      className="product w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[23%] h-[65vw] sm:h-[50vw] md:h-[30vw] relative max-sm:h-[100vw]"
+                      className="product w-[23%] max-md:w-[48%] max-sm:w-[48%] h-[35vw] sm:h-[50vw] md:h-[30vw] max-sm:w-[80vw] relative max-sm:h-[100vw]"
                     >
                       <button
                         onClick={() => toggleWishlist(TeaData.product_id)}
-                        className="wishlist absolute top-[1vw] right-[1vw]"
+                        className="wishlist absolute top-[1vw] right-[1vw] max-sm:top-[2vw] max-md:right-[2vw]"
                       >
                         {wishList.includes(TeaData.product_id) ? (
                           <svg
@@ -424,7 +347,7 @@ function AllProducts() {
                         onMouseEnter={() => setHoveredProductId(TeaData.product_id)}
                         onMouseLeave={() => setHoveredProductId(null)}
                         onClick={() => AddToCart(TeaData)}
-                        className="absolute bottom-[16vw] right-[1vw] bg-white p-2 rounded-full border-zinc-700 border-[1px] max-sm:bottom-[55vw] max-sm:right-[5vw] max-md:bottom-[27vw]"
+                        className="absolute bottom-[16vw] right-[1vw] bg-white p-1 rounded-full border-zinc-700 border-[1px] max-sm:bottom-[54vw] max-sm:right-[3vw] max-md:bottom-[27vw]"
                       >
                         {hoveredProductId === TeaData.product_id ? (
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#000000"} fill={"none"}>
@@ -466,16 +389,16 @@ function AllProducts() {
                           />
                         </div>
                         <div className="info-wrapper w-full flex flex-col gap-1 mt-2">
-                          <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[3vw]">
+                          <span className="text-[2vw] sm:text-[1.5vw] md:text-[1vw] text-[#868686] max-sm:text-[4vw]">
                             {TeaData.product_category}
                           </span>
-                          <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[3vw]">
+                          <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-sans max-sm:text-[5vw]">
                             {TeaData.product_name}
                           </span>
-                          <span className="text-[1.2vw] text-[#484848] max-sm:text-[2vw]">
+                          <span className="text-[1.2vw] text-[#484848] max-sm:text-[4vw]">
                             {TeaData.product}
                           </span>
-                          <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[3vw]">
+                          <span className="text-[2.3vw] sm:text-[1.8vw] md:text-[1.3vw] font-bold max-sm:text-[4vw]">
                             ₹ {TeaData.product_price}
                           </span>
                         </div>
@@ -494,6 +417,12 @@ function AllProducts() {
               )}
             </div>
           </div>
+        </div>
+        <div className="other-components">
+          <StandardBanner />
+          <Storeclosetoyou />
+          <Yourbenefits />
+          <Footer />
         </div>
       </div>
     </>
