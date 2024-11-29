@@ -201,9 +201,11 @@ function ProductDetail() {
                       </div>
                       <p>{selectedProduct.product_details["01"]}</p>
                     </div>
-                    <div className="inner-infowrapper flex items-start gap-1 text-[1.8vw] max-md:text-[2vw] max-sm:text-[4vw]">
+                    <div className="inner-infowrapper items-start gap-1 text-[1.8vw] max-md:text-[2vw] max-sm:text-[4vw] flex flex-col">
+                      <div className="flex">
                       {correctIcon}
                       <p>{selectedProduct.product_details["02"]}</p>
+                      </div>
                       <button
                         onClick={() => setGiveProductInfo(true)}
                         className={`text-[1.3vw] text-blue-400 max-sm:text-[3vw] ${giveProductInfo === true && "hidden"
