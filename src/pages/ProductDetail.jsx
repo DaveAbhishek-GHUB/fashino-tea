@@ -33,6 +33,7 @@ function ProductDetail() {
   const { productId } = useParams();
   const teaCollection = import.meta.env.VITE_TEACOLLECTION_API;
 
+  // fetch all the products
   useEffect(() => {
     fetch(teaCollection)
       .then((response) => response.json())
@@ -51,6 +52,7 @@ function ProductDetail() {
       });
   }, []);
 
+  // Add to cart sectoin
   const AddToCart = (Data) => {
     if (!user) {
       toast.dismiss();
@@ -71,6 +73,7 @@ function ProductDetail() {
     }
   };
 
+  // Set product image here
   useEffect(() => {
     if (selectedProduct && selectedProduct.product_image) {
       setsetimage(selectedProduct.product_image);
