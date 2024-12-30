@@ -24,8 +24,8 @@ const userSlice = createSlice({
         lastname,
         email,
         password,
-        cart: [],  
-        address: []  
+        cart: [],
+        address: []
       };
 
       // Add the new user to the state
@@ -104,7 +104,7 @@ const userSlice = createSlice({
     // Clear all items from the cart
     clearcart: (state) => {
       const user = state.user.find((user) => user.email === state.Loggedin);
-      if (user) {
+      if (user) { 
         user.cart = [];  
       }
     },

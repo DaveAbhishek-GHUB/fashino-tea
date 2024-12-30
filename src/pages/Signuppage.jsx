@@ -42,7 +42,7 @@ function Signuppage() {
       <SubHeader />
 
       {/* Wrapper for the registration form */}
-      <div className="register-form-wrapper w-full h-auto flex flex-col p-4 sm:p-8  h-[100vh]">
+      <div className="register-form-wrapper w-full h-auto flex flex-col p-4 sm:p-8">
 
         {/* Heading section for the registration form */}
         <div className="register-form-heading mt-4 sm:mt-[1vw] flex flex-col text-center">
